@@ -1,0 +1,553 @@
+/* index, home 페이지 본문 데이터 CSS */
+
+main {
+    max-width: 100% !important;
+}
+
+
+
+/* 모든 차트 관련 CSS 설정 */
+/* 파일 날짜 */
+.containerChart>div:nth-child(1) {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* 멜론, 유튜브, 지니 아이콘 */
+.containerChart>div>div>img {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-bottom: 10px;
+}
+
+tr {
+    width: 300px;
+}
+
+/* 랭킹 */
+tbody>tr:nth-child(2n-1)>td:nth-child(1) {
+    text-align: center;
+    color: rgb(254, 41, 131);
+    /* width: 40px; */
+}
+
+/* 앨범 이미지 */
+tbody>tr>td:nth-child(2) {
+    width: 50px;
+}
+
+tbody>tr>td:nth-child(2)>img {
+    width: 100%;
+}
+
+/* 가수 */
+tbody>tr>td:nth-child(3) {
+    width: 198px;
+    text-align: left;
+    color: aliceblue;
+    padding-left: 12px;
+}
+
+/* 곡 제목 */
+tbody>tr:nth-child(2n)>td {
+    text-align: left;
+    color: rgb(167, 164, 164);
+    padding-left: 12px;
+
+    /* 글자 길이 제한 */
+    width: 198px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* 가수 */
+/* 글자 길이 제한 */
+tbody>tr:nth-child(2n-1)>td:nth-child(3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* 페이지 번호 가운데 정렬 및 커서 포인터로 변경 */
+table>tfoot>tr>td>ul {
+    justify-content: center;
+}
+
+table>tfoot>tr>td>ul>li {
+    cursor: pointer;
+}
+
+
+/* 반응형 미디어쿼리  */
+@media (min-width: 991px) {
+
+    /* .videoContainer {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .videoContainer video {
+        width: 100%;        
+        z-index: 1;
+    }
+
+
+    .videoText {
+       
+        width: 100%;
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%);
+                -webkit-background-clip: text;
+    } */
+
+
+
+    /* 차트 애니메이션 */
+
+    /* 멜론 */
+    .melon0 {
+        max-width: 100%;
+        opacity: 0;
+    }
+
+    .melon1 {
+        opacity: 0;
+    }
+
+    .melon2 {
+        opacity: 0;
+    }
+
+    .melon3 {
+        opacity: 0;
+    }
+
+    .melon4 {
+        opacity: 0;
+    }
+
+    .melon5 {
+        opacity: 0;
+    }
+
+    .melon6 {
+        opacity: 0;
+    }
+
+    .melon7 {
+        opacity: 0;
+    }
+
+    .melon8 {
+        opacity: 0;
+    }
+
+    .melon9 {
+        opacity: 0;
+    }
+
+    /* 지니 */
+    .genie0 {
+        opacity: 0;
+    }
+
+    .genie1 {
+        opacity: 0;
+    }
+
+    .genie2 {
+        opacity: 0;
+    }
+
+    .genie3 {
+        opacity: 0;
+    }
+
+    .genie4 {
+        opacity: 0;
+    }
+
+    .genie5 {
+        opacity: 0;
+    }
+
+    .genie6 {
+        opacity: 0;
+    }
+
+    .genie7 {
+        opacity: 0;
+    }
+
+    .genie8 {
+        opacity: 0;
+    }
+
+    .genie9 {
+        opacity: 0;
+    }
+
+    .melon9 {
+        opacity: 0;
+    }
+
+    /* 유튜브 */
+    .youtube0 {
+        opacity: 0;
+    }
+
+    .youtube1 {
+        opacity: 0;
+    }
+
+    .youtube2 {
+        opacity: 0;
+    }
+
+    .youtube3 {
+        opacity: 0;
+    }
+
+    .youtube4 {
+        opacity: 0;
+    }
+
+    .youtube5 {
+        opacity: 0;
+    }
+
+    .youtube6 {
+        opacity: 0;
+    }
+
+    .youtube7 {
+        opacity: 0;
+    }
+
+    .youtube8 {
+        opacity: 0;
+    }
+
+    .youtube9 {
+        opacity: 0;
+    }
+
+    .aa {
+        display: none;
+    }
+
+
+    .videoContainer {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .video1 {
+        position: fixed;
+        width: 100%;        
+        z-index: 1;
+    }
+
+    .videoCover {
+        position: fixed;
+        width: 100%;
+        height: 56.5vw;
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%);
+        
+    }
+
+
+
+}
+
+@media (min-width: 780px) and (max-width: 990px) {
+    .videoContainer {
+        top:25%;
+        position: fixed;        
+        width: 100%;        
+        z-index: 1;
+        
+    }
+
+    .videoContainer video {
+                
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        transform: scale(1.5);
+    }
+
+
+    .videoCover {
+        top:25%;
+        width: 100%;
+        height: 59vw;
+        position: fixed;
+        transform: scale(1.5);
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%)
+    }
+}
+
+@media (min-width: 660px) and (max-width: 779px) {
+    .videoContainer {
+        top:25%;
+        position: fixed;        
+        width: 100%;        
+        z-index: 1;
+        
+    }
+
+    .videoContainer video {
+                
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        transform: scale(1.7);
+    }
+
+
+    .videoCover {
+        top:25%;
+        width: 100%;
+        height: 59vw;
+        position: fixed;
+        transform: scale(1.7);
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%)
+    }
+}
+@media (min-width: 551px) and (max-width: 659px) {
+    .videoContainer {
+        top:25%;
+        position: fixed;        
+        width: 100%;        
+        z-index: 1;
+        
+    }
+
+    .videoContainer video {
+                
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        transform: scale(2);
+    }
+
+
+    .videoCover {
+        top:25%;
+        width: 100%;
+        height: 59vw;
+        position: fixed;
+        transform: scale(2);
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%)
+    }
+}
+@media (max-width: 550px) {
+    .videoContainer {
+        top:30%;
+        position: fixed;        
+        width: 100%;        
+        z-index: 1;
+        
+    }
+
+    .videoContainer video {
+                
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        transform: scale(2.4);
+    }
+
+
+    .videoCover {
+        top:30%;
+        width: 100%;
+        height: 59vw;
+        position: fixed;
+        transform: scale(2.4);
+        z-index: 2;
+        background: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.999) 1%,
+                rgba(0, 0, 0, 0.988) 2%,
+                rgba(0, 0, 0, 0.977) 3%,
+                rgba(0, 0, 0, 0.966) 4%,
+                rgba(0, 0, 0, 0.95) 5%,
+                rgba(0, 0, 0, 0.60) 25%,
+                rgba(0, 0, 0, 0.60) 75%,
+                rgba(0, 0, 0, 0.95) 95%,
+                rgba(0, 0, 0, 0.966) 96%,
+                rgba(0, 0, 0, 0.977) 97%,
+                rgba(0, 0, 0, 0.988) 98%,
+                rgba(0, 0, 0, 0.999) 99%,
+                rgba(0, 0, 0, 1) 100%)
+    }
+}
+
+
+/* 스크롤 애니메이션*/
+
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 100px;
+}
+
+.arrows path {
+    stroke: #5e6161;
+    fill: transparent;
+    stroke-width: 1px;
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes arrow
+
+/*Safari and Chrome*/
+    {
+    0% {
+        opacity: 0
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.arrows path.a1 {
+    animation-delay: -1s;
+    -webkit-animation-delay: -1s;
+    /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+    animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s;
+    /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    /* Safari 和 Chrome */
+}

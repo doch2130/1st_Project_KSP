@@ -1,0 +1,174 @@
+.container {
+    padding: 0px !important;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+/* 날짜 */
+.container > div:nth-child(1) {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* 멜론, 유튜브, 지니 아이콘 */
+.container > div > div > img {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+caption {
+    padding-top: 0px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+tr {
+    width: 300px;
+}
+
+/* 랭킹 */
+tbody > tr:nth-child(2n-1) > td:nth-child(1){
+    text-align: center;
+    color: rgb(254, 41,131 );
+}
+
+/* 앨범 이미지 */
+tbody > tr > td:nth-child(2) {
+    width: 50px;
+}
+tbody > tr > td:nth-child(2) > img {
+    width: 100%;
+}
+
+/* 가수 */
+tbody > tr > td:nth-child(3) {
+    width: 198px;
+    text-align: left;
+    color: aliceblue;
+    padding-left: 12px;
+}
+
+/* 곡 제목 */
+tbody > tr:nth-child(2n) > td {
+    text-align: left;
+    color: rgb(167, 164, 164);
+    padding-left: 12px;
+
+    /* 글자 길이 제한 */
+    width: 198px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* 가수 */
+/* 글자 길이 제한 */
+tbody > tr:nth-child(2n-1) > td:nth-child(3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* table foot */
+/* 페이지 번호 가운데 정렬 및 커서 포인터로 변경 */
+table > tfoot > tr > td > ul {
+    justify-content: flex-start;
+    margin: 0px;
+    margin-top: 0.5rem;
+}
+
+table > tfoot > tr > td > ul > li {
+    cursor: pointer;
+}
+
+.pagination > .disabled > a {
+    border-color: black !important;
+    background-color: black !important;
+}
+
+.pagination > li:not(.disabled) > a {
+    border-color: black;
+    background-color: black !important;
+    color: white !important;
+}
+
+/* 멜론 페이지 버튼 */
+.container > div:nth-child(2) > div > table > tfoot > tr > td > .pagination > .active >.page-link,
+.container > div:nth-child(5) > div > table > tfoot > tr > td > .pagination > .active >.page-link {
+    background-color: #00CD3C !important;
+    border-color: #00CD3C !important;
+}
+
+/* 지니 페이지 버튼 */
+.container > div:nth-child(3) > div > table > tfoot > tr > td > .pagination > .active >.page-link,
+.container > div:nth-child(6) > div > table > tfoot > tr > td > .pagination > .active >.page-link {
+    background-color: #0096FF !important;
+    border-color: #0096FF !important;
+}
+
+/* 유튜브 페이지 버튼 */
+.container > div:nth-child(4) > div > table > tfoot > tr > td > .pagination > .active >.page-link,
+.container > div:nth-child(7) > div > table > tfoot > tr > td > .pagination > .active >.page-link {
+    background-color: #ED3023 !important;
+    border-color: #ED3023 !important;
+}
+
+
+/* 2번째 줄 */
+/* 멜론 일간, 지니 뮤비, 유튜브 뮤비 */
+.container > div:nth-child(5),
+.container > div:nth-child(6),
+.container > div:nth-child(7) {
+    margin-top: 5rem;
+}
+
+
+@media (max-width: 768px) {
+    /* 날짜 */
+    .container > div:nth-child(1) {
+        margin-bottom: 0rem !important;
+    }
+
+    /* 멜론, 유튜브 이미지 */
+    .container > :not(div:nth-child(3), div:nth-child(6)) > div > img {
+        margin-top: 2rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 지니 이미지 */
+    .container > div:nth-child(3) > div > img,
+    .container > div:nth-child(6) > div > img {
+        margin-top: 2rem !important;
+        margin-bottom: -10px !important;
+    }
+
+    /* 페이지 버튼 */
+    table > tfoot > tr > td > ul {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 멜론 일간, 지니 뮤비, 유튜브 뮤비 */
+    .container > div:nth-child(5),
+    .container > div:nth-child(6),
+    .container > div:nth-child(7) {
+        margin-top: 0px !important;
+    }
+}
+
+
+#allChart_Graph {
+    background-color: black !important;
+}

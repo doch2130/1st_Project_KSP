@@ -1,0 +1,39 @@
+/* 모든 페이지에 적용되는 CSS */
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+body {
+    background-color: black;
+}
+
+/* 스크롤바 관련 설정 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* 부트스트랩 아이콘 메인컬러 */
+.main-color, .main-color {
+
+    color: rgb(254, 41, 131);
+}

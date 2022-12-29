@@ -1,0 +1,196 @@
+    .background_all {
+        
+        justify-content: center;
+        align-items: center;
+        position: static;
+        width: 100%;
+        height: 100%;
+
+    
+    }
+
+      
+    body {
+    
+        /* background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgb(12, 0, 26) 50%, rgba(22, 1, 39, 0.83) 100%); */
+        height: 100%;
+        background-attachment:fixed;
+
+
+
+    }
+
+    
+    div.title{
+        padding-bottom:0px;
+    }
+    dl{
+        margin-bottom:5px;
+        margin-top:10px;
+    }
+    #board_file {
+        margin-top:50px;
+        background-color: transparent;
+        color:white;
+    }
+   .board_wrap {
+        width: 1250px;
+        margin: auto;
+        margin-top: 0px; 
+    
+    }
+  
+   .board_title { 
+      
+       padding:510px;
+       padding-top:0px;
+       padding-bottom:160px;
+        
+       color: white;
+       /* padding-right: 100rem; */
+       font-weight: bold;
+       font-size: 1.5rem;
+       text-align:left !important;
+    
+    
+   }
+
+    .board_write {
+        border-top: 1px solid white;
+    }
+
+    .board_write .title,
+    .board_write .info {
+        padding: 15px;
+        
+        
+    }
+    .board_t {
+        font-size:2rem;
+        margin-top:-20px;
+        margin-bottom: 50px;   
+    }
+
+    .board_write .info {
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px solid white;
+        font-size: 0;
+        
+    }
+
+    .board_write .title dl {
+        font-size: 0;
+    }
+
+    .board_write .info dl {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .board_write .title dt,
+    .board_write .info d1,
+    .board_write .title dd,
+    .board_write .info dt,
+    .board_write .info dd {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1rem;
+        color:#ddd;
+    }
+
+    .board_write .title dt,
+    .board_write .info d1,
+    .board_write .info dt {
+        width: 100px;
+    }
+
+    .board_write .title dd {
+        width: calc(100% - 100px);
+        
+    }
+
+    .board_write .title input[type="text"],
+    .board_write .info input[type="text"] {
+        padding-top: 0px;
+        box-sizing: border-box;
+        color:white;
+        background-color: transparent;
+        border:0 solid black;
+        
+    }
+    
+
+    .board_write .title input[type="text"] {
+        width: 100%;
+        background-color:transparent;
+        vertical-align: middle;
+        
+    }
+
+
+    .board_write .cont {
+        border-bottom: 1px solid white;
+        background-color:transparent;
+        
+    }
+
+    .board_write .cont textarea {
+        display: block;
+        width: 100%;
+        height: 300px;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 0;
+        resize: vertical;
+        align-items: center;
+        background-color:transparent;
+        color:white;
+    }
+
+    dd{
+        margin-left:0px  !important;
+        margin:0px;
+    }
+
+    .bt_wrap {
+        margin-top: 30px;
+        text-align: center;
+        font-size:30px;
+        }
+        .fileupload {
+        margin-top: 30px;
+        }
+  
+
+   @media (max-width: 540px) {
+
+    .board_title {
+        padding:100px;
+        padding-left:40px;
+        padding-bottom:0px;
+        padding-top:30px;
+    }
+    .board_wrap {
+        margin-top:0px;
+    }
+
+    .board_wrap {
+        width:360px;
+        margin-top:40px;
+    }
+    /* div.board_wrap {
+        margin:unset;} */
+    .background_all{
+      height: 70%;
+      width: auto;
+    }
+    #layoutSidenav #layoutSidenav_content {
+        display:block;
+    }
+    .board_t {
+        margin-top:-40px;
+        font-size:1.5rem;
+        margin-bottom:20px;
+       }
+}

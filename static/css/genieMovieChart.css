@@ -1,0 +1,260 @@
+/* 본문 */
+.container {
+    margin: auto;
+}
+
+.col-12 {
+    padding: 0px;
+}
+
+.col-2 {
+    padding: 0px;
+}
+
+/* 상단 멜론 아이콘 */
+.container > div:nth-child(1) > img {
+    width: 220px;
+    display: block;
+    margin: 1rem;
+}
+
+/* 실시간 음원 순위 텍스트 */
+.container > div:nth-child(1) > div {
+    color: white;
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* 날짜, 시간 선택 div */
+.container > div:nth-child(2) {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* 페이지 날짜 */
+#dayTag {
+    color: white;
+}
+
+/* 시간 선택 */
+@media (max-width: 768px) {
+    /* 상단 멜론 아이콘 */
+    .container > div:nth-child(1) > img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* 실시간 음원 순위 텍스트 */
+    .container > div:nth-child(1) {
+        text-align: center;
+        padding-left: 0px;
+        padding-bottom: 1rem;
+    }
+
+    /* 시간 표 크기 */
+    .container > div:nth-child(2) > select {
+        width: 20% !important;
+    }
+}
+
+
+/* 표 div */
+.container > div:nth-child(3) {
+    padding: 0px;
+    margin-bottom: 0.5rem;
+}
+
+/* Table 전체 속성 */
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table thead tr {
+    width: 100%;
+}
+
+table, tr, td {
+    text-align: center;
+    background-color: black !important;
+}
+.table > :not(caption) > * > * {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+/* Table Head */
+
+/* 조회수 */
+thead > tr > td:nth-child(7) > span {
+    white-space: nowrap;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+/* Table Body */
+
+/* 이미지 */
+tbody > tr > td:nth-child(3) > img {
+    max-width: 150px;
+    width: 100%;
+    padding-right: 0.5rem;
+}
+
+/* 노래 제목 */
+tbody > tr > td:nth-child(4) > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+}
+
+tbody > tr > td:nth-child(4) > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+/* 가수 */
+tbody > tr > td:nth-child(5) > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* 앨범 */
+tbody > tr > td:nth-child(6) > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Table Foot */
+
+/* 페이지 하단 버튼 */
+table > tfoot > tr > td {
+    border-bottom: none;
+}
+
+table > tfoot > tr > td > ul {
+    justify-content: center;
+}
+
+table > tfoot > tr > td > ul > li {
+    cursor: pointer;
+}
+
+.pagination > .disabled > a {
+    border-color: black !important;
+    background-color: black !important;
+}
+
+.pagination > li:not(.disabled) > a {
+    border-color: black;
+    background-color: black !important;
+    color: white !important;
+}
+
+.pagination > .active >.page-link {
+    background-color: #0096FF !important;
+    border-color: #0096FF !important;
+}
+
+
+
+/* 표 컬럼 크기 */
+@media (min-width: 768px) {
+    /* Table Head */
+
+    /* 현재 순위 */
+    thead > tr > td:nth-child(1) {
+        width: 50px;
+    }
+
+    /* 지난주 순위 */
+    thead > tr > td:nth-child(2) {
+        width: 55px;
+    }
+
+    /* 차트지속기간 */
+    thead > tr > td:nth-child(6) {
+        width: 160px;
+    }
+
+    /* 조회수 */
+    thead > tr > td:nth-child(7) {
+        width: 100px;
+    }
+    thead > tr > td:nth-child(7) > span {
+        width: 100px;
+    }
+
+    /* 좋아요 */
+    thead > tr > td:nth-child(8) {
+        width: 30px;
+    }
+
+    /* 페이지 번호 */
+    tfoot > tr > td:nth-child(4) {
+        padding-left: 20%;
+    } 
+
+}
+
+/* 표 컬럼 크기 */
+@media (min-width: 1120px) {
+    /* Table Head */
+
+    /* 이미지 */
+    thead > tr > td:nth-child(3) {
+        width: 155px;
+    }
+}
+
+/* 표 컬럼 크기 */
+@media (min-width: 1540px) {
+    /* Table Head */
+
+    /* 노래 제목 */
+    thead > tr > td:nth-child(4) {
+        width: 300px;
+    }
+
+    /* 가수 */
+    thead > tr > td:nth-child(5) {
+        width: 300px;
+    }
+
+    /* 앨범 */
+    thead > tr > td:nth-child(6) {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 지난주 랭킹, 차트 지속기간 */
+    thead > tr > td:nth-child(2),
+    thead > tr > td:nth-child(6) {
+        display: none !important;
+    }
+    tbody > tr > td:nth-child(2),
+    tbody > tr > td:nth-child(6) {
+        display: none !important;
+    }
+
+    tfoot > tr > td:nth-child(2),
+    tfoot > tr > td:nth-child(5) {
+        display: none !important;
+    }
+}

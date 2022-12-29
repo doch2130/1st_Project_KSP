@@ -1,0 +1,16 @@
+{
+    "development": {
+        "host": "127.0.0.1",
+        "database": "ksp",
+        "username": "kimsampark",
+        "password": "Qwer1234!",
+        "dialect": "mysql"
+    },
+    "production": {
+        "host": "127.0.0.1",
+        "database": "ksp",
+        "username": "kimsampark",
+        "password": "Qwer1234!",
+        "dialect": "mysql"
+    }
+}

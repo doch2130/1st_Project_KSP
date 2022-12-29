@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/static/js/basicBoard.js"></script>
+<style>    
+  .background_all {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      
+      position: absolute;
+      width: 100%;
+      height: 1080px;
+      height: 100vh;
+      
+      background-image: url(../static/img/bg_img.jpg) 0 0 no-repeat;
+      background-size: 100% 100%;
+      overflow: hidden;
+  }
+
+  .background_all::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -10%;
+      left: -50%;
+      z-index: -3;
+      background: url(../static/img/bg_img.jpg) 0 0 repeat;
+      transform: rotate(-270deg);
+      background-size: 100% 100%;
+      opacity: 0.2;
+  }
+        
+
+    *{ margin: 100;
+       padding: 50;
+    }
+
+    body{
+      background: black;
+      background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgba(92, 23, 146, 0.2) 50%, rgba(92, 23, 146, 0.4) 100%);
+      height: 100vh;
+      text-align: center;
+    }
+
+     .board_wrap {
+      width: 800px;
+      margin: 100px auto;
+      
+    }
+    
+     .board_title { 
+         margin-bottom:70px;
+         margin:100px;
+      
+     }
+     .board_title strong {
+         font-size:3rems;
+     }
+    
+     .bt_wrap {
+       margin-top: 60px;
+       text-align: center;
+       font-size:30px;
+      
+       
+     }
+    
+    .page{
+       margin-top: 60px;
+       text-align: center;
+
+    }
+
+    a{
+      text-decoration-line:none;
+      color:grey;
+
+    }
+
+    #btn {
+      background: #FE2983;
+      color:white;
+    }
+     
+    .board {
+      
+      justify-content: center;
+      margin-left:auto;
+      margin-right:auto;
+      width:100%;
+      height:200%;
+      border-top: 1px solid #444444;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      border-bottom: 1px solid #444444;
+      padding: 10px;
+    }
+   
+    .page-link {
+       color: #999; 
+       background-color: transparent;
+       border-color: #444;
+      }
+
+    .page-item.active .page-link {
+      z-index: 1;
+      color: #ccc;
+      font-weight:bold;
+      background-color: #333;
+      border-color: #444;
+ 
+      }
+
+    .page-link:focus, .page-link:hover {
+      color: #ccc;
+      background-color: #FE2983; 
+      border-color: #444;
+    }
+
+</style>
+</head>
+
+<body>
+
+  <div class="background_all">
+    <div class="board_wrap">
+      <div class="board_title" style="color:white;" >
+        <strong>자유게시판</strong>
+      </div>
+
+     <form id="form_main">
+      <table class="board table table-hover" style="color:grey;" cellspacing="2" cellpadding="10"  >
+          <colgroup>
+             <col width="10%" />
+             <col width="30%" />
+             <col width="20%" />
+             <col width="20%" />
+             <col width="10%" />
+          </colgroup>
+          <tr>
+             <th>번호</th>
+             <th>제목</th>
+             <th>글쓴이</th>
+             <th>등록일</th>
+             <th>조회수</th>
+          </tr>
+          <tbody>
+
+            <!-- 날짜 비교용 변수 -->
+            <% let date = new Date(); %>
+            <% for (let i=data.length-1; i >= 0; i--) { %>
+            <tr>
+              <td><%= i+1 %></td></a>
+              <td><a href="/board/read?number=<%= data[i].number %>"><%= data[i].title %></a></td>
+              <td><%= data[i].id %></td>
+
+              <% if(date.toLocaleDateString() === data[i].date.toLocaleDateString()) { %>
+                <td><%= data[i].date.toString().slice(16, 21) %></td>
+              <% } else { %>
+                <td><%= data[i].date.toLocaleDateString() %></td>
+              <% } %>
+
+              <td><%= data[i].hit %></td>
+            </tr> 
+            <% } %>
+
+          </tbody>
+          <tfoot>
+            
+          </tfoot>
+       </table>
+    </form>    
+   
+    <div class="page">
+       <nav aria-label="Page navigation example">
+         <ul class="pagination justify-content-center " >
+           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+           <li class="page-item"><a class="page-link" href="#">1</a></li>
+           <li class="page-item"><a class="page-link" href="#">2</a></li>
+           <li class="page-item"><a class="page-link" href="#">3</a></li>
+           <li class="page-item"><a class="page-link" href="#">Next</a></li>
+         </ul>
+       </nav>
+    </div>
+    <div class="bt_wrap">
+      <button type="button" class="btn btn-secondary-lg" title="글작성" id="btn" onclick="document.location.href='/board/write'">글작성</button>
+    </div> 
+  </div>
+</div>  
+
+</body>
+</html>

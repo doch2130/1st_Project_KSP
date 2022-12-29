@@ -1,0 +1,35 @@
+<script type="text/javascript">
+melonDayDataMove = () => {
+    let temp = [];
+    let obj = {};
+    let title, rank, rankVariance, albumImg, singer, albumTitle, likeCount;
+    '<% for(let i = 0; i < result.melonDaydata.data.length; i++) { %>'
+        title = '<%= result.melonDaydata.data[i].title %>';
+        rank = '<%= result.melonDaydata.data[i].rank %>';
+        rankVariance = '<%= result.melonDaydata.data[i].rankVariance %>';
+        albumImg = '<%= result.melonDaydata.data[i].albumImg %>';
+        singer = '<%= result.melonDaydata.data[i].singer %>';
+        albumTitle = '<%= result.melonDaydata.data[i].albumTitle %>';
+        likeCount = '<%= result.melonDaydata.data[i].likeCount %>';
+
+        obj = {
+            "title": title,
+            "rank": rank,
+            "rankVariance": rankVariance,
+            "albumImg": albumImg,
+            "singer": singer,
+            "albumTitle": albumTitle,
+            "likeCount": likeCount
+        }
+        temp.push(obj);
+    '<% } %>'
+
+    // console.log(temp);
+    return temp;
+}
+
+// ******처음 출력을 위한 초기 실행 함수******
+// 1번 실행해서 데이터 저장
+// tableData에서 사용하기 위한 변수
+let ejsDataMelonDay = melonDayDataMove();
+</script>

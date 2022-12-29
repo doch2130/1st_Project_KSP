@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+likeDataMove = () => {
+    let temp = [];
+    let obj = {};
+
+    // 처음 사용자가 좋아요 데이터가 없으면 차트 페이지의 js에서 에러 발생
+    if('<%= result.likeSing.data.length %>' === 0) {
+        obj = {
+            "albumImg": '',
+            "title": '',
+            "singer": ''
+        }
+        
+
+        temp.push(obj);
+    } else {
+        '<% for(let i = 0; i < result.likeSing.data.length; i++) { %>'
+            albumImg = '<%= result.likeSing.data[i].album_img %>';
+            title = '<%= result.likeSing.data[i].title %>';
+            singer = '<%= result.likeSing.data[i].singer %>';
+
+            obj = {
+                "albumImg": albumImg,
+                "title": title,
+                "singer": singer
+            }
+            
+            temp.push(obj);
+        '<% } %>'
+    }
+
+    
+    // console.log(temp);
+    return temp;
+}
+
+
+// ******처음 출력을 위한 초기 실행 함수******
+// 1번 실행해서 데이터 저장
+// tableData에서 사용하기 위한 변수
+let likeSingData = likeDataMove();
+
+// console.log('asdasdad', likeSingData);
+</script>

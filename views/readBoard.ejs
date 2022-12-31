@@ -132,7 +132,8 @@
                                 </dl>
                             </div>
                             <div class="cont">
-                                <%=data.content%><br>
+                                <pre style="font-size: 1.5rem; margin: 0px;"><%=data.content%></pre>
+                                <br>
                             
                             <% if ( data.filename != null ) { %>
                                     <% if ( data.filename.includes(".png") || data.filename.includes(".jpg")) { %>
@@ -148,6 +149,7 @@
                                 <a href="/static/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
                             <% } %>
                             <!-- 만약에, data의 파일이름이 null이 아니면, data의 파일을 보여주는 페이지를 열리게 하는 링크 코드+ a링크 사이에 data.filename을 써서 파일 이름을 바로 보여준다 -->
+                            <!-- </div> -->
                         </div>
                         <div class="bt_wrap">
                             <% if ( result.id == data.id && result.isLogin ) {  %>

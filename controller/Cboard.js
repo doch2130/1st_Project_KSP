@@ -58,11 +58,14 @@ exports.write = (req,res) => {
 
 exports.write_data = (req, res) => {
     console.log( req.file );
+
     let data = {
        title: req.body.title,
        id: req.session.user,
        // id: req.session.user //세션 req.session.user = req.body.id;  이런식으로 나중에 넣기!
-       content: req.body.content,
+       // content에서 엔터키 입력 저장 시 에러 발생 확인
+       // mysql 저장 할 때 엔터 키를 <br /> 로 변경하여 저장
+       content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
        hit: 0
        //글조회 페이지ejs에 함수로 넣어서 클릭하면 조회수올라가게!하고 ejs에서 컨트롤러쪽으로 요청보내면 컨트롤러에서 조회수 올리도록..(?) 날짜올라가는거 전에 배운거~~  req.body서버로 보낸거 응답개수랑 ejs에서 title,content처럼 보내준 갯수랑 일치해야되는거임.
        //id랑 hit은 서버에서 보내주고있는값이아니라 알아서 들어오기때문에 안맞춰줘도 됨 
@@ -85,8 +88,9 @@ exports.read = (req,res) => {
         } 
     })
     .then((result3) => {
-        // res.render("readBoard", {data: result3, result });
-
+        // DB에 저장된 <br/> 태그를 출력할 때는 \r\n 으로 다시 변경하여 출력
+        result3.content = result3.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+        
         // 세션 체크
         if(req.session.user) {
             result["isLogin"] = true;
@@ -154,7 +158,9 @@ exports.update = (req, res) => {
     let data = {
         title: req.body.title,
         id : req.body.id,
-        content : req.body.content
+        // content : req.body.content
+        // 내용 업데이트 할 때도 엔터 키로 인한 에러 안생기게 <br />로 변경 후 데이터베이스 저장
+        content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>')
     }
     if ( req.file ) data["filename"] = req.file.filename;
 

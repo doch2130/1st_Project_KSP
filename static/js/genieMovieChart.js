@@ -249,7 +249,6 @@ window.addEventListener('DOMContentLoaded', event => {
             // console.log(ejsDataGenieMovie);
             rankColorChange();
         });
-
     }
 
     // 유튜브 실시간 차트 시간 변경
@@ -311,12 +310,7 @@ window.addEventListener('DOMContentLoaded', event => {
     window.likeSingEvent = (e, flag) => {
         // e 이벤트 대상
         // flag 좋아요 등록 / 삭제 체크
-
-        // console.log(e.src);
-        // console.log(flag);
-        // console.log(e.parentElement.parentElement);
         const likeParent = e.parentElement.parentElement;
-        // console.log(likeParent);
 
         // 타이틀
         // console.log(likeParent.children[3].textContent);

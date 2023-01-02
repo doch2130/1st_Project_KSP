@@ -282,13 +282,14 @@
     }
 
 
-    $("#login_id").keydown(function (key) {
+    $("#login_id").keydown( (key) => {
         if (key.key == "Enter" || key.keyCode == "13") {
             user_login();
         }
     });
 
-    $("#login_pw").keydown(function (key) {
+    // $("#login_pw")
+    document.getElementById('login_pw').addEventListener('keydown', (key) => {
         if (key.key == "Enter" || key.keyCode == "13") {
             user_login();
         }

@@ -63,7 +63,7 @@ exports.youtubeFileRead = function (filelist, cb) {
 
 
 // 시간 변경 함수를 위한 File List 함수 재생성 (동일 함수 변경해서 사용해도 되지만, 지금은 안정성을 위해 새로 생성)
-exports.youtubeFileListHourChange = function (cb) {
+exports.youtubeFileListHourChange = (cb) => {
     fs.readdir('./static/res/chart_data/Youtube')
     .then((filelist) => {
         const lastFile = filelist.length - 1;
@@ -109,7 +109,7 @@ exports.youtubeFileListHourChange = function (cb) {
 
 
 // json 파일 데이터 읽어오는 함수
-exports.youtubeFileReadHourChange = function (filelist, fileHour, cb) {
+exports.youtubeFileReadHourChange = (filelist, fileHour, cb) => {
     // console.log('fileHour', fileHour);
     const date = new Date();
     // const fileName = './static/chart_data/Youtube/youtubeCharHour-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2) + '.json';

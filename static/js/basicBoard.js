@@ -31,7 +31,7 @@
                 // 페이지 번호 변수
                 let j = data.length-btnId*viewCount+viewCount;
                     
-                for(let i=data.length-btnId*viewCount+9; i >= lastdata; i--) {
+                for(let i=data.length-btnId*viewCount+viewCount-1; i >= lastdata; i--) {
                     temp += `<tr>
                         <td>${j}</td>
                         <td><a href="/board/read?number=${data[i].number}">${data[i].title}</a></td>

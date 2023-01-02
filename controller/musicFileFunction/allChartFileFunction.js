@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 
-exports.melon_All_File = function (cb) {
+exports.melon_All_File = (cb) => {
     fs.readdir('./static/res/chart_data/Melon')
     .then((filelist) => {
         const lastFile = filelist.length - 1;
@@ -55,7 +55,7 @@ exports.melon_All_File = function (cb) {
 }
 
 // 멜론 일간 함수
-exports.melon_ALL_Day_File = function (cb) {
+exports.melon_ALL_Day_File = (cb) => {
     fs.readdir('./static/res/chart_data/MelonDay')
     .then((filelist) => {
         const lastFile = filelist.length - 1;
@@ -113,7 +113,7 @@ exports.melon_ALL_Day_File = function (cb) {
 
 
 // 지니 실시간 차트 - 1
-exports.genie_All_File = function (cb) {
+exports.genie_All_File = (cb) => {
     fs.readdir('./static/res/chart_data/Genie')
     .then((filelist) => {
         const lastFile = filelist.length - 1;
@@ -167,7 +167,7 @@ exports.genie_All_File = function (cb) {
 
 
 //  지니 뮤직비디오 차트 - 1
-exports.genieMovie_All_File = function (cb) {
+exports.genieMovie_All_File = (cb) => {
     fs.readdir('./static/res/chart_data/GenieMovie')
     .then((filelist) => {
         const lastFile = filelist.length - 1;
@@ -222,7 +222,7 @@ exports.genieMovie_All_File = function (cb) {
 
 
 // 유튜브 top - 100
-exports.youtube_All_File = function (cb) {
+exports.youtube_All_File = (cb) => {
     fs.readdir('./static/res/chart_data/Youtube')
     .then((filelist) => {
         const lastFile = filelist.length - 1;

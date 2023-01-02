@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', event => {
     let viewCount = 10;
 
     // 스크립트 데이터로 테이블 출력하는 함수
-    function tableDataMelon (data, viewCount, btnId) {
+    tableDataMelon = (data, viewCount, btnId) => {
         const melonTable = document.querySelectorAll('tbody')[0];
         let temp = '';
         
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
     tableDataMelon(ejsDataMelon, viewCount, 1);
 
     // 페이지 버튼 출력을 위한 1차 작업 함수
-    function pageAlgoMelon (total, bottomSize, listSize, cursor){
+    pageAlgoMelon = (total, bottomSize, listSize, cursor) => {
         // total = 총 갯수
         // bottomSize = 하단 버튼 개수
         // listSize = 화면에서 보여줄 크기
@@ -103,7 +103,7 @@ window.addEventListener('DOMContentLoaded', event => {
     let infoMelon = pageAlgoMelon(ejsDataMelon.length, 3, viewCount, 1);
 
     // 페이지 버튼 출력 함수
-    function pageBtnMelon(infoMelon) {
+    pageBtnMelon = (infoMelon) => {
         const tfoot = document.querySelectorAll('tfoot')[0];
         let temp ='';
 

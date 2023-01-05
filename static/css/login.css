@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgba(92, 23, 146, 0.2) 50%, rgba(92, 23, 146, 0.4) 100%);
+    height: 100vh;
+}
+
+@media (max-width : 700px) {
+    body {
+        font-size: 12px;
+        background: rgb(0, 0, 0);
+    }
+}
+
+/* 로그인 바디 */
+.outline_line.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 500px;
+    height: 675px;
+    border-radius: 60px;
+    background: linear-gradient(130deg, rgba(28, 225, 255, 0.7) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
+    overflow: hidden;
+}
+
+@media (max-width : 700px) {
+    .outline_line.login {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        background: linear-gradient(130deg, rgba(72,230,255,0.7) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
+    }
+}
+
+
+/* 배경이미지 돌리는 법 */
+.outline_line::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 28%;
+    left: -8%;
+    z-index: -3;
+    background: url(../res/image/bg_overay.png) 0 0 repeat;    
+    background-size: 65%;
+    opacity: 0.7;
+    overflow: hidden;
+}
+
+@media (max-width : 500px) {
+    .outline_line::before {
+        /* width: 100%;
+        height: 100%;
+        top: 40%;
+        left: 100%;
+        background-size: 200%; */
+    }
+}
+
+/* 로그인 폼 */
+.center {
+    width: 350px;
+}
+
+/* 로그인 글자 */
+.center h1 {
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    padding: 0 0 20px 0;
+}
+
+/* 아이디, 페스워드 */
+form .txt_field {
+    position: relative;
+    margin: 30px 0;
+    font-size: 35px;
+    color: #ffffff;
+
+}
+
+/* 인풋창 */
+.txt_field input {
+    width: 100%;
+    height: 64px;
+    padding-left: 20px;
+    font-size: 18px;
+    background-color: rgba(186, 186, 186, 0.3);
+    border-radius: 45px;
+    border: none;
+}
+
+/* 인풋창 placeholder */
+.txt_field input::placeholder {
+    color: #dadada;
+    text-indent: 25px;
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form button {
+    color: white;
+    width: 100%;
+    height: 64px;
+}
+
+/* 로그인 버튼 */
+#login_bt {
+    border: 1px;
+    background: #FE2983;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 45px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 회원가입 버튼 */
+#singup_bt {
+    width: 100%;
+    height: 64px;
+    border: 3px solid #FE2983;
+    background-color: rgba(186, 186, 186, 0);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+#singup_bt a {
+    text-decoration-line: none;
+    color: white;
+}
+
+.form {
+    padding-bottom: 30px;
+}
+
+.form-check {
+    color: white;
+}

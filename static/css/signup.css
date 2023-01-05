@@ -1,0 +1,173 @@
+html, body, .row {
+    margin: 0px;
+    height: 100%;
+}
+
+.row > div:nth-child(1) {
+    margin: auto;
+    background: linear-gradient(130deg, rgba(72,230,255,0.6) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
+    border-radius: 60px;
+    padding: 5% 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    background: black;
+    background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgba(92, 23, 146, 0.2) 50%, rgba(92, 23, 146, 0.4) 100%);
+}
+
+@media (max-width: 700px) {
+    .row > div:nth-child(1) {
+        width: 100%;
+        border-radius: 0px;
+        margin: 0px;
+    }
+}
+
+/* 배경이미지 돌리는 법 */
+@media (min-width : 700px) {
+    #outline_line::before {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        z-index: -2;
+        background-image: url(../res/image/bg_overay.png);
+        background-position: 30% 95%;
+        background-blend-mode: overlay;
+        opacity: 0.5;
+        top: -23%;
+        left: -25%;
+    }
+}
+
+#title {
+    text-align: center;
+    color: white;
+}
+
+#signup_info {
+    width: 70%;
+    margin: auto;
+}
+
+form .txt_field {
+    position: relative;
+    margin: 3% 0;
+}
+
+/* 인풋창 */
+.txt_field input {
+    /* width: 400px; */
+    width: 100%;
+    height: 56px;
+    padding-left: 40px;
+    font-size: 18px;
+    background-color: rgba(186, 186, 186, 0.3);
+    border-radius: 45px;
+    border: none;
+}
+
+
+/* 인풋창 placeholder */
+.txt_field input::placeholder {
+    color: #dadada;
+}
+
+/* 아이디 중복확인 버튼 */
+#check_id {
+    width: 120px;
+    height: 35px;
+    border: 1px;
+    border-radius: 5px;
+    background: #FE2983;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+}
+
+#id_check_sucess, #name_check_sucess,
+#pw_check_sucess, #mail_check_sucess, #agree_check_sucess {
+    text-align: center;
+    font-size: 13px;
+}
+
+#id_check_sucess > p {
+    margin: 0px;
+}
+
+.txt_field > span:nth-child(2) {
+    display: inline-block;
+}
+
+/* 회원가입 버튼 */
+#singup_bt2 {
+    /* width: 400px; */
+    width: 100%;
+    height: 64px;
+    background-color: #FE2983;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 45px;
+    cursor: pointer;
+    color: white;
+}
+
+.form {
+    padding-bottom: 20px;
+}
+
+/* 개인 정보 수집 동의 */
+.form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.form-check label {
+    margin-left: 10px;
+}
+
+.mb-3 {
+    padding : 0 0rem;
+}
+
+
+.modal-body > p {
+    white-space: pre-line;
+}
+
+@media (max-width : 380px) {
+    #check_id {
+        width: 80px;
+        height: 30px;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+
+    .txt_field input {
+        width: 100%;
+        height: 48px;
+        padding-left: 30px;
+        font-size: 15px;
+    }
+
+    #singup_bt2 {
+        height: 45px;
+        width: 100%;
+    }
+
+    .form-check {
+        font-size: 13px;
+    }
+}
+
+@media (max-width : 400px) {
+    .mb-3 {
+        padding : 0 1rem;
+    }
+}

@@ -24,7 +24,29 @@ window.addEventListener('DOMContentLoaded', event => {
     video.load();
 
 
+    // Nav 버튼 관련
+    function toggleNav(){
+        if(document.body.clientWidth < 991) {
+            $("#layoutSidenav #fullpage").on('click', ()=>{
+                if( $("body").hasClass("sb-sidenav-toggled") ) {
+                    $("#sidebarToggle").click();
+                }
+            })
+        }
+    }
+    $(window).ready(()=>{
+        toggleNav();
+    })
+    $(window).resize(()=>{
+        toggleNav();
+    })
 
+    // AOS 애니메이션 기본 설정
+    AOS.init({
+        duration: 1000
+    });
+
+    
     // ***********멜론************
     // 차트 모아보기에서는 기본 설정 값 10 설정
     let viewCount = 10;

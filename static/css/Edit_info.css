@@ -1,0 +1,210 @@
+body {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgba(92, 23, 146, 0.2) 50%, rgba(92, 23, 146, 0.4) 100%);
+    height: 100vh;
+}
+
+@media (max-width : 700px) {
+    body {
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0, 0, 0);
+    }
+}
+
+/* 홈 버튼 */
+.home {
+    position: absolute;
+    margin-top: 550px;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+
+@media (max-width : 700px) {
+    .home {
+        width: 70px;
+        font-size: 9px;
+        z-index: 5;
+        margin-top: -680px;
+    }
+}
+
+.home button {
+    margin-top: 200px;
+    width: 130px;
+    z-index: 5;
+}
+
+@media (max-width : 700px) {
+    .home button {
+        margin-top: 1750%;
+        width: 70px;
+        font-size: 10px;
+        z-index: 6;
+    }
+}
+
+/* 머지 */
+@media (width : 700px) {
+    .home button {
+        margin-top: 2200%;
+        width: 70px;
+        font-size: 10px;
+        z-index: 6;
+    }
+}
+
+/* 회원 정보 수정 바디 */
+/* 웹 크기 */
+@media (min-width : 700px) {
+    .outline_line.Edit_info {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 900px;
+        border-radius: 60px;
+        background: linear-gradient(130deg, rgba(72,230,255,0.6) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
+        overflow: hidden;
+    }
+}
+
+@media (max-width : 700px) {
+    .outline_line.Edit_info {
+        background: linear-gradient(130deg, rgba(72,230,255,0.7) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
+        width: 100%;
+        height: 100%;
+        background-position: 50% 500%;
+        border-radius: 0px;
+        margin: 0 0;
+    }
+}
+
+@media (min-width : 700px) {
+    .outline_line::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    z-index: -2;
+    background-image: url(../res/image/bg_overay.png);
+    background-position: 30% 100%;
+    background-blend-mode: overlay;
+    opacity: 0.4;
+}
+}
+
+/* 회원 수정 폼 */
+.center {
+    min-width: 100%;
+    max-width: 400%;
+}
+
+
+.center h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+@media(max-width : 380px) {
+    .center h1 {
+        font-size: 18px;
+        margin-top: 30%;
+    }
+}
+
+form .txt_field {
+    position: relative;
+    margin: 5% 5%;
+}
+
+/* 인풋창 */
+.txt_field input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    padding-left: 35px;
+    font-size: 15px;
+    background-color: rgba(186, 186, 186, 0.3);
+    border-radius: 45px;
+    border: none;
+}
+
+/* 인풋창 placeholder */
+.txt_field input::placeholder {
+    color: #dadada;
+}
+
+/* 수정 버튼 */
+#Edit_btn {
+    width: 100%;
+    height: 48px;
+    margin-left: 0%;
+    background-color: #FE2983;
+    border: none;
+    font-size: 18px;
+    border-radius: 45px;
+    cursor: pointer;
+    color:white;
+    margin-bottom: 20px;
+}
+
+/* 회원 탈퇴 버튼 */
+#secession_btn {
+    width: 100%;
+    height: 48px;
+    margin-left: 0%;
+    margin-top: 5px;
+    border: none;
+    box-shadow: 0 0 0 3px #FE2983 inset;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18px;
+    border-radius: 45px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    color:white;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 1.7rem 2rem;
+    margin: 5% 5%;
+    line-height: 0;
+}
+
+.mb-3 {
+    padding: 0 3rem;
+    z-index: 2;
+}
+
+@media(max-width : 700px) {
+    .mb-3 {
+        padding: 0 2rem;
+
+    }
+}
+
+#name_check_sucess, #pw_check_sucess {
+    text-align: center;
+    font-size: 13px;
+}
+

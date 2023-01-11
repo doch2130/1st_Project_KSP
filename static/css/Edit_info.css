@@ -10,18 +10,6 @@ body {
     height: 100vh;
 }
 
-@media (max-width : 700px) {
-    body {
-        font-size: 12px;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(0, 0, 0);
-    }
-}
-
 /* 홈 버튼 */
 .home {
     position: absolute;
@@ -29,7 +17,6 @@ body {
     opacity: 0.9;
     z-index: 1;
 }
-
 
 @media (max-width : 700px) {
     .home {

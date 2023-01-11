@@ -1,10 +1,8 @@
 const { Board } = require("../model/indexBoard");
 const CuserFunction = require('./Cuser');
-const fs =require("fs").promises;
 
 exports.index = (req,res) => {
     let result = {id : req.session.user};
-    // res.render("list", {data: result });
 
     Board.findAll({
         order: [["number", "ASC"]],
@@ -19,26 +17,17 @@ exports.index = (req,res) => {
             });
         } else {
             result["isLogin"] = false;
-            // res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+            result['user_img'] = 'd_img.png';
             res.render("basicBoard", {data: result2, result });
         }
-
-        // res.render("basicBoard", {data: result2, result });
     })
     
 }
-//첨에 res.render("list", {data: result });라고 적었는데 오류나서 Board.findOne으로 적었는데 또 오류나서 Board.findAll쓰니까 해결됨..
-
+// 첨에 res.render("list", {data: result });라고 적었는데
+// 오류나서 Board.findOne으로 적었는데 또 오류나서 Board.findAll쓰니까 해결됨..
 
 exports.write = (req,res) => {
     let result = {id : req.session.user};
-
-    // 세션 체크용
-    if(req.session.user) {
-        result["isLogin"] = true;
-    } else {
-        result["isLogin"] = false;
-    }
 
     // 세션 체크
     if(req.session.user) {
@@ -49,16 +38,13 @@ exports.write = (req,res) => {
         });
     } else {
         result["isLogin"] = false;
-        // res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+        result['user_img'] = 'd_img.png';
         res.render("writeBoard", {result});
     }
-
-    // res.render("writeBoard", {result});
 }
 
 exports.write_data = (req, res) => {
-    console.log( req.file );
-
+    // console.log( req.file );
     let data = {
        title: req.body.title,
        id: req.session.user,
@@ -78,6 +64,7 @@ exports.write_data = (req, res) => {
        res.send(String(result));
    })
 }
+
 exports.read = (req,res) => {
     let result = {id : req.session.user};
 
@@ -100,7 +87,7 @@ exports.read = (req,res) => {
             });
         } else {
             result["isLogin"] = false;
-            // res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+            result['user_img'] = 'd_img.png';
             res.render("readBoard", {data: result3, result });
         }
     });
@@ -111,14 +98,14 @@ exports.delete = (req, res) => {
         where: { number: req.body.number }
     })
    .then((result)=>{
-         console.log(result);
+        //  console.log(result);
          res.send(true);
    })
 }
 
 //리드보드에서 업데이트보드로 /user/update?number=<%=data.number%>에서 ?뒤에있는 부분 넘겨주는 방법임.
 exports.update_number = (req,res) => {
-    console.log( req.query.number );
+    // console.log( req.query.number );
     let result = {id : req.session.user};
     Board.findOne({
         where : { 
@@ -127,38 +114,28 @@ exports.update_number = (req,res) => {
         } 
     })
     .then((result4) => {
-        // if(req.session.user) {
-        //     result["isLogin"] = true;
-        // } else {
-        //     result["isLogin"] = false;
-        // }
-        // console.log(result)
-        // res.render("updateBoard", {data: result4, result });
-        //업데이트보드에 데이터를 결과로 뿌려준다
-
-
         // 세션 체크
         if(req.session.user) {
             result["isLogin"] = true;
             CuserFunction.user_profile_img(req.session.user, (userProfile) => {
                 result['user_img'] = userProfile.user_img;
+                result4.content = result4.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
                 res.render("updateBoard", {data: result4, result });
             });
         } else {
             result["isLogin"] = false;
+            result['user_img'] = 'd_img.png';
             res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-            // res.render("updateBoard", {data: result4, result });
         }
     })
 }
 
 exports.update = (req, res) => {
-    console.log( "user+_update");
-    console.log('test', req.file);
+    // console.log( "user+_update");
+    // console.log('test', req.file);
     let data = {
         title: req.body.title,
         id : req.body.id,
-        // content : req.body.content
         // 내용 업데이트 할 때도 엔터 키로 인한 에러 안생기게 <br />로 변경 후 데이터베이스 저장
         content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>')
     }
@@ -168,25 +145,9 @@ exports.update = (req, res) => {
         where: {number: req.body.number}
     })
     .then((result)=>{
-        console.log(result);
-        // res.send({path: req.file.path}); 이건 파일 이미지를 보여줄때 사용하는 방법 
-        // res.send({result: result, path: req.file.path}); send로 두개보내는법
+        // console.log(result);
         res.send(result);
         //업데이트보드에서 수정버튼누르고나서 진행될 동작들~~~
         //데이터가 타이틀,아이디,컨텐츠,넘버 총 4갠데 ejs upate함수에서 data에 넘버 빼먹어서 오류났었음 
     })
 }
-
-
-
-
-
-// 파일 있으면 코드 실행
-// if(req.file) {
-//     User.update({
-//         user_img : req.file.filename
-//     },
-//     { where :  { id : `${req.session.user}` } }
-//     );
-//     res.send({ path : req.file.filename });
-// }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en, ko">
+<head>
+    <%- include('./common/Head_CDN') %>
+    <%- include('./data_conversion/All_Chart_Data_Function') %>
+    <%- include('./data_conversion/melonDayChart_Data') %>
+    <%- include('./data_conversion/genieMovieChart_Data') %>
+    <%- include('./data_conversion/youtubeMovieChart_Data') %>
+    <script type="text/javascript" src="/static/js/allChartPage.js"></script>
+    <!-- <script type="text/javascript" src="/static/js/allChartPage-2.js"></script> -->
+    <link href="/static/css/allChartPage.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <%- include('allChartContentGraph') %>
+</head>
+<body class="sb-nav-fixed">
+    <section>
+        <!-- topNavbar -->
+        <%- include('./common/topNavbar') %>
+    </section>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <!-- sideNavbar -->
+            <%- include('./common/sideNavbar') %>
+        </div>
+
+        <div id="layoutSidenav_content">
+            <!-- 본문 데이터 -->
+            <%- include('allChartContent') %>
+        </div>
+    </div>
+
+    <!-- 로그인, 로그아웃 버튼 보여주기 & 로그아웃 기능 -->
+    <%- include('./common/topLoginBtn.ejs') %>
+
+</body>
+</html>

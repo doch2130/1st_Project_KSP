@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en, ko">
+<head>
+    <%- include('./common/Head_CDN') %>
+    <%- include('./data_conversion/All_Chart_Data_Function') %>
+    <!-- full page 라이브러리 -->
+    <script type="text/javascript" src="/static/js/jquery.fullpage.js"></script>
+    <link rel="stylesheet" href="static/css/jquery.fullpage.css">
+    <!-- index 페이지 js, css -->
+    <script type="text/javascript" src="/static/js/index.js"></script>
+    <link href="/static/css/index.css" rel="stylesheet" />
+</head>
+
+<body class="sb-nav-fixed">
+    <section>
+        <!-- topNavbar -->
+        <%- include('./common/topNavbar') %>
+    </section>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <!-- sideNavbar -->
+            <%- include('./common/sideNavbar') %>
+        </div>
+
+        <div id="layoutSidenav_content">
+            <!-- 본문 데이터 -->
+            <%- include('indexContent') %>
+        </div>
+    </div>
+
+    <!-- 로그인, 로그아웃 버튼 보여주기 & 로그아웃 기능 -->
+    <%- include('./common/topLoginBtn.ejs') %>
+</body>
+</html>

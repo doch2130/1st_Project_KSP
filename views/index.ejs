@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en, ko">
-
 <head>
-    <%- include('Head_CDN') %>
-    <%- include('All_Chart_Data_Function') %>
+    <%- include('./common/Head_CDN') %>
+    <%- include('./data_conversion/All_Chart_Data_Function') %>
     <!-- full page 라이브러리 -->
     <script type="text/javascript" src="/static/js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="static/css/jquery.fullpage.css">
@@ -15,12 +14,12 @@
 <body class="sb-nav-fixed">
     <section>
         <!-- topNavbar -->
-        <%- include('topNavbar') %>
+        <%- include('./common/topNavbar') %>
     </section>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <!-- sideNavbar -->
-            <%- include('sideNavbar') %>
+            <%- include('./common/sideNavbar') %>
         </div>
 
         <div id="layoutSidenav_content">
@@ -30,6 +29,6 @@
     </div>
 
     <!-- 로그인, 로그아웃 버튼 보여주기 & 로그아웃 기능 -->
-    <%- include('topLoginBtn.ejs') %>
+    <%- include('./common/topLoginBtn.ejs') %>
 </body>
 </html>

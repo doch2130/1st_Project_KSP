@@ -52,7 +52,7 @@ function idValidity() {
         $('#id_check_sucess').html('<p style="color:red;"> 대소문자, 한글, 숫자, 3글자 이상 10글자 이하 </p>');
         return false;
     };
-    $('#id_check_sucess').html('');
+    // $('#id_check_sucess').html('');
 
     axios({
         method: 'post',
@@ -62,9 +62,9 @@ function idValidity() {
         .then((result) => {
             // console.log('아이디 중복 result : ', result);
             if (result.data) {
-                $('#id_check_sucess').html('<p style="color:red;"> 중복된 아이디 입니다.');
+                $('#id_check_sucess').html('<p style="color:red;"> 중복된 아이디 입니다.</p>');
             } else {
-                $('#id_check_sucess').html('<p style="color:blue;">사용 가능한 아이디 입니다.');
+                $('#id_check_sucess').html('<p style="color:blue;">사용 가능한 아이디 입니다.</p>');
                 validity["id"] = true;
             }
         });
@@ -77,7 +77,7 @@ function nickValidity(e) {
         $('#name_check_sucess').html('<p style="color:red;"> 대소문자, 숫자, 2글자 이상 10글자 이하 </p>');
         return false;
     }
-    $('#name_check_sucess').html('');
+    $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
 
     axios({
         method: 'post',
@@ -100,20 +100,20 @@ function pwValidity(e) {
         $('#pw_check_sucess').html('<p style="color:red;"> 최소 5 자, 최소 하나의 문자, 숫자, 특수 문자 사용 </p>');
         return false;
     };
-    $('#pw_check_sucess').html('');
+    $('#pw_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
     validity["pw"] = true;
 };
 
 //비밀번호 재검사 rePw
 function rePwValidity(e) {
-    $('#pw_check_sucess').html('');
+    // $('#pw_check_sucess').html('');
 
     const form = document.getElementById('signup_info');
     if (form.pw.value == form.rePw.value) {
-        $('#pw_check_sucess').html('<p style="color:blue;">');
+        $('#pw_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
         validity["rePw"] = true;
     } else {
-        $('#pw_check_sucess').html('<p style="color:red;"> 비밀번호가 일치 하지 않습니다.');
+        $('#pw_check_sucess').html('<p style="color:red;"> 비밀번호가 일치 하지 않습니다.</p>');
     }
 }
 
@@ -124,7 +124,7 @@ function mailValidity(e){
         return false;
     };
 
-    $('#mail_check_sucess').html('');
+    $('#mail_check_sucess').html('<p style="color:blue; visibility: hidden;"> 맞습니다.</p>');
 
     axios({
         method: 'post',
@@ -133,9 +133,9 @@ function mailValidity(e){
     })
         .then((result) => {
             if (result.data) {
-                $('#mail_check_sucess').html('<p style="color:red;"> 중복된 이메일 입니다.');
+                $('#mail_check_sucess').html('<p style="color:red;"> 중복된 이메일 입니다.</p>');
             } else {
-                $('#mail_check_sucess').html('<p style="color:blue;">사용 가능한 이메일 입니다.');
+                $('#mail_check_sucess').html('<p style="color:blue;">사용 가능한 이메일 입니다.</p>');
                 validity["e_mail"] = true;
             };
         });
@@ -150,7 +150,7 @@ function agree_check() {
         validity["agree"] = true;
     } else {
         check_modal.hide();
-        $('#agree_check_sucess').html('<p style="color:red;"> 개인정보 동의 부탁드립니다.');
+        $('#agree_check_sucess').html('<p style="color:red;"> 개인정보 동의 부탁드립니다.</p>');
         validity["agree"] = false;
     };
 };

@@ -7,7 +7,7 @@ html, body, .row {
     margin: auto;
     background: linear-gradient(130deg, rgba(72,230,255,0.6) 0%, rgba(83, 172, 255, 0.7) 15%, rgba(171, 125, 255, 0.7) 50%, rgba(205, 118, 255, 0.7) 70%, rgba(255,118,230,0.7) 90%, rgba(255,144,181,0.7) 100%);
     border-radius: 60px;
-    padding: 5% 0rem;
+    padding: 10% 0rem;
     position: relative;
     overflow: hidden;
 }
@@ -15,6 +15,19 @@ html, body, .row {
 body {
     background: black;
     background-image: linear-gradient(to bottom, rgba(98, 23, 146, 0) 0%, rgba(92, 23, 146, 0.2) 50%, rgba(92, 23, 146, 0.4) 100%);
+}
+
+@media (min-width: 1400px) {
+    .row > div:nth-child(1) {
+        padding: 6% 0rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .row > div:nth-child(1) {
+        min-width: 570px !important;
+        max-width: 570px !important;
+    }
 }
 
 @media (max-width: 700px) {

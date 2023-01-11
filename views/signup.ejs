@@ -23,11 +23,11 @@
                     </div>
                     <div class="txt_field mb-3">
                         <button type="button" id="check_id" onclick="idValidity()">중복 체크</button>
-                        <span class="txt_field" id="id_check_sucess"></span>
+                        <span class="txt_field" id="id_check_sucess"><p style="color:red; visibility: hidden;"> 대소문자, 숫자, 2글자 이상 10글자 이하 </p></span>
                     </div>
                     <div class="txt_field mb-3" >
                         <input type="text" class="form-control" id="check_input_name" name="name" oninput="nickValidity(this)" placeholder="닉네임을 입력해주세요" title="대소문자, 숫자, 2글자 이상 10글자 이하" pattern="^([a-zA-Z0-9가-힣]{2,10})$" required>
-                        <div class="txt_field" id="name_check_sucess"></div>
+                        <div class="txt_field" id="name_check_sucess"><p style="color:red; visibility: hidden;"> 대소문자, 숫자, 2글자 이상 10글자 이하 </p></div>
                     </div>
                     <div class="txt_field mb-3">
                         <input type="password" class="form-control" name="pw" oninput="pwValidity(this)" placeholder="비밀번호를 입력해주세요" title="최소 5 자, 최소 하나의 문자, 하나의 숫자 및 하나의 특수 문자" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@!%*#?&])[A-Za-z\d@!%*#?&]{5,}$" required>
@@ -35,18 +35,20 @@
                     <div class="txt_field mb-3">
                         <input type="password" class="form-control" name="rePw" placeholder="비밀번호를 확인해주세요" oninput="rePwValidity(this)" title="비밀번호가 일치하지 않습니다." pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@!%*#?&])[A-Za-z\d@!%*#?&]{5,}$" required>
                     </div>
-                    <div class="txt_field mb-3" id="pw_check_sucess"></div>
+                    <div class="txt_field mb-3" id="pw_check_sucess">
+                        <p style="color:red; visibility: hidden;"> 최소 5 자, 최소 하나의 문자, 숫자, 특수 문자 사용 </p>
+                    </div>
                     <div class="txt_field mb-3">
                         <input type="email" class="form-control" name="e_mail" id="check_input_mail" oninput="mailValidity(this)" placeholder="이메일을 입력해주세요" title="이메일 양식에 맞게 입력해주세요" required>
                     </div>
-                    <div class="txt_field mb-3" id="mail_check_sucess"></div>
+                    <div class="txt_field mb-3" id="mail_check_sucess"><p style="color:red; visibility: hidden;"> 형식에 맞지 않습니다.</p></div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="chk" id="agreeValidity" onclick="agree_check()">
                         <label class="form-check-label" for="flexCheckDefault2">
                             개인 정보 수집 이용 동의
                         </label>
                     </div>
-                    <div class="txt_field " id="agree_check_sucess"></div>
+                    <div class="txt_field " id="agree_check_sucess"><p style="color:red; visibility: hidden;"> 개인정보 동의 부탁드립니다.</p></div>
                     <button type="button" class="txt_field mb-3" id="singup_bt2" onclick="register()">회원가입</button>
                 </form>
             </div>

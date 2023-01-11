@@ -40,12 +40,6 @@ window.addEventListener('DOMContentLoaded', event => {
     $(window).resize(()=>{
         toggleNav();
     })
-
-    // AOS 애니메이션 기본 설정
-    AOS.init({
-        duration: 1000
-    });
-
     
     // ***********멜론************
     // 차트 모아보기에서는 기본 설정 값 10 설정

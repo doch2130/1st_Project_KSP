@@ -44,17 +44,17 @@ exports.main = (req, res) => {
                                             res.render("index", {result});
                                         }
                                     } else {
-                                        res.status(500).render('500');
+                                        res.status(500).render('error/500');
                                     }
                                 });
                             });
                         } else {
-                            res.status(500).render('500');
+                            res.status(500).render('error/500');
                         }
                     });
                 });
             } else {
-                res.status(500).render('500');
+                res.status(500).render('error/500');
             }
         });
     });

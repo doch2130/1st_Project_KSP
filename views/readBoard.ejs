@@ -49,7 +49,7 @@
                             <% if ( data.filename != null ) { %>
                                     <% if ( data.filename.includes(".png") || data.filename.includes(".jpg")) { %>
                                 <div class="img" style="width: 50%;">
-                                    <img src="/static/board/<%=data.filename%>" width="70%" />
+                                    <img src="/static/res/board/<%=data.filename%>" width="70%" />
                                 </div>
                                     <% } %>
                             <% } %>
@@ -59,7 +59,7 @@
                                 div class=img 태그를 보여줘라! -->
 
                             <% if ( data.filename != null ) { %>
-                                <a href="/static/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
+                                <a href="/static/res/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
                             <% } %>
                             <!-- 만약에, data의 파일이름이 null이 아니면,
                                 data의 파일을 보여주는 페이지를 열리게 하는 링크 -->

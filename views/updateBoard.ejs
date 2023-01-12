@@ -40,7 +40,7 @@
                                     <textarea name="content" placeholder="내용 입력"><%=data.content%></textarea>
                                     <% if ( data.filename != null ) { %>
                                         <% if ( data.filename.includes(".png") || data.filename.includes(".jpg")) { %>
-                                        <img src="/static/board/<%=data.filename%>" width="50%" style="margin-bottom:100px;">
+                                        <img src="/static/res/board/<%=data.filename%>" width="50%" style="margin-bottom:100px;">
                                         <% } %>
                                     <% } %>
                                     <!-- 만약에 data의 파일이름이 null이 아니고,
@@ -48,7 +48,7 @@
                                         div class=img 태그를 보여줘라! -->
 
                                     <% if ( data.filename != null ) { %>
-                                        <a href="/static/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
+                                        <a href="/static/res/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
                                     <% } %>
                                     <!-- 만약에, data의 파일이름이 null이 아니면,
                                         data의 파일을 보여주는 페이지를 열리게 하는 링크 -->

@@ -9,7 +9,6 @@ const controllerManager = require("../controller/Cmanager");
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs')
 
 // 메인 페이지 및 세션 체크
 router.get("/", controllerMain.main);
@@ -86,6 +85,7 @@ router.delete("/board/delete", controllerBoard.delete);
 
 
 // 차트 모아보기 페이지
+// router.get("/allChart", controllerChart.allChart);
 router.get("/allChart", controllerChart.allChart);
 // 유튜브 차트 페이지
 // 유튜브 - top 100

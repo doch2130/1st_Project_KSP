@@ -95,7 +95,7 @@ exports.crawling_schedule = () => {
             }
         });
     });
-}
+};
 
 
 // 멜론 크롤링 - top 100
@@ -107,7 +107,7 @@ exports.melonCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};
 
 // 멜론 크롤링 - 일간
 exports.melonDayCrawlingPage = (req, res) => {
@@ -118,7 +118,7 @@ exports.melonDayCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};
 
 // 지니 크롤링 - top 100
 exports.genieCrawlingPage = (req, res) => {
@@ -129,7 +129,7 @@ exports.genieCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};
 
 // 지니 크롤링 - 뮤직비디오
 exports.genieMovieCrawlingPage = (req, res) => {
@@ -140,7 +140,7 @@ exports.genieMovieCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};
 
 
 
@@ -154,7 +154,7 @@ exports.youtubeCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};
 
 
 // 유튜브 크롤링 - 뮤직비디오
@@ -166,4 +166,4 @@ exports.youtubeMovieCrawlingPage = (req, res) => {
             res.send(false);
         }
     });
-}
+};

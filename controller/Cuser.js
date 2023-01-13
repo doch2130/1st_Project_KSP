@@ -1,11 +1,10 @@
 const { User, LikeSing, Board } = require('../model/index');
 const fs = require('fs');
-const path = require('path');
 
 //로그인 페이지
 exports.login_main = (req, res) => {
     res.render('login');
-}
+};
 
 //로그인 기능
 exports.user_login = (req, res) => {
@@ -14,14 +13,11 @@ exports.user_login = (req, res) => {
         limit : 1
     }) 
     .then((result)=>{   
-        console.log(result);
         if( result.length > 0 ){
             req.session.user = req.body.id;
-            console.log( '세션 : ', req.session);
             res.send(true);
         }
         else {
-            console.log('로그인 실패');
             res.send(false);
         } 
     });
@@ -34,7 +30,6 @@ exports.register = (req, res) => {
 
 //아이디 중복 체크
 exports.check_id = async(req, res) => {
-    console.log('중복체크 테스트, 아이디');
     let result = await User.findOne({
         where : { id : req.body.id }
     });
@@ -48,19 +43,20 @@ exports.check_id = async(req, res) => {
 
 //닉네임 중복 체크
 exports.check_name = async(req, res) => {
-    console.log('중복체크 테스트, 닉네임');
-    console.log(req.body);
     let result = await User.findOne({
         where : { name : req.body.name }
     });
 
-    if ( result != null ) res.send(true);
-    else res.send(false);
+    if ( result != null ) {
+        res.send(true);
+    }
+    else {
+        res.send(false);
+    }
 };
 
 //이메일 중복 체크
 exports.check_mail = async(req, res) => {
-    console.log('중복체크 테스트, 이메일');
     let result = await User.findOne({
         where : { e_mail : req.body.e_mail },
     });
@@ -80,8 +76,9 @@ exports.post_signup = (req,res) => {
         pw : req.body.pw,
         e_mail : req.body.e_mail
     };
+
     User.create(data)
-    .then((result)=>{
+    .then(()=>{
         res.send(true);
     });
 };
@@ -102,18 +99,16 @@ exports.Edit_info = async (req, res) => {
     if(result) {
         res.render('Edit_info', { data : result });
     } else {
-        // res.send('false');
         res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
     }
-}
+};
 
 //회원정보 수정
 exports.Edit_info_update = async (req,res) => {
-    console.log(req.body);
     let result = await User.update(req.body,
     { where : { id : `${req.session.user}` }
     });
-    console.log(result);
+
     res.send({ data : result });
 };
 
@@ -123,7 +118,6 @@ exports.user_delete = async (req, res) => {
     let result = await User.findOne({
         where : { id : `${req.session.user}`}
     });
-    // console.log(result.user_img);
 
     // 프로필 이미지가 있는 user 이면 프로필 이미지도 삭제
     if(result.user_img) {
@@ -132,7 +126,6 @@ exports.user_delete = async (req, res) => {
         });
     }
 
-    // console.log('회원탈퇴 : ', req.session.user );
     await User.destroy(
     { where : { id : `${req.session.user}` }}
     );
@@ -155,7 +148,6 @@ exports.mypage = async (req, res) => {
         let result2 = await User.findOne({
             where : { id : `${req.session.user}`}
         });
-        // console.log(result2.user_img);
 
         // 프로필 이미지 파일이 없으면 기본 이미지 설정
         result['user_img'] = result2.user_img;
@@ -170,11 +162,7 @@ exports.mypage = async (req, res) => {
             },
             order: [['no', 'DESC']]
         }).then((rows) => {
-            // console.log(rows);
-            // console.log(rows[0].album_img);
-
             if(rows.length < 4) {
-                // console.log('4개이하');
                 for(let i = 0; i < 4; i++) {
                     if(rows[i] === undefined) {
                         let likeData = {
@@ -183,25 +171,15 @@ exports.mypage = async (req, res) => {
                             singer : '정보 없음',
                             album_img : '/static/res/image/empty_list.jpg'
                         };
-
                         rows.push(likeData);
-                        console.log('test', rows);
                     }
                 }
 
-
-                result["likesing"] = rows;
-                // console.log(result.likesing[0].title);
-                // res.render('mypage', { data : result2, result});
-            
+                result["likesing"] = rows;            
             } else {
                 // 좋아요 4개 이상인 경우
                 result["likesing"] = rows;
-                // console.log(result.likesing[0].title);
-                // res.render('mypage', { data : result2, result});
-
-            }            
-
+            }
         }).then(() => {
             Board.findAll({
                 where: {
@@ -222,10 +200,9 @@ exports.mypage = async (req, res) => {
                                 hit : '정보 없음'
                             };
                             rows.push(boardData);
-                            console.log('boardData : ', boardData);
                         }
                     }
-        
+                    
                     result["Board"] = rows;
                     res.render('mypage', { data : result2, result});
                 }
@@ -238,14 +215,12 @@ exports.mypage = async (req, res) => {
     } else {
         result["isLogin"] = false;
         res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-    }
-  
+    } 
 };
 
 
 //마이페이지 업로드 기능
 exports.upload_file = (req, res) => {
-    console.log("마이페이지 업로드 : ", req.file );
     if(req.file) {
         User.update({
             user_img : req.file.filename
@@ -271,5 +246,4 @@ exports.user_profile_img = (userSession, cb) => {
         }
         cb(rows);
     });
-}
-
+};

@@ -5,47 +5,44 @@ const genieFileFunction = require('./musicFileFunction/genieFileFunction');
 const ClikeSingFunction = require('./ClikeSing');
 const CgraphFunction = require('./Cgraph');
 const CuserFunction = require('./Cuser');
-const melonFileFunction2 = require('./musicFileFunction/melonFileFunction2');
 
 // 차트 모아보기 - async + await로 작성하기
 exports.allChart = async (req, res) => {
     let result = {id : req.session.user};
 
+    let melondata = await allChartFileFunction.melon_All_File();
+    result["melondata"] = {data: melondata};
+
+    let melonDaydata = await allChartFileFunction.melon_ALL_Day_File();
+    result["melonDaydata"] = {data: melonDaydata};
+
+    let geniedata = await allChartFileFunction.genie_All_File();
+    result["geniedata"] = {data: geniedata};
+
+    let genieMoviedata = await allChartFileFunction.genieMovie_All_File();
+    result["genieMoviedata"] = {data: genieMoviedata};
+
+    let youtubedata = await allChartFileFunction.youtube_All_File();
+    result["youtubedata"] = {data: youtubedata};
+
+    let youtubeMoviedata = await allChartFileFunction.youtube_All_File();
+    result["youtubeMoviedata"] = {data: youtubeMoviedata};
+
+    let filedata = await CgraphFunction.comparative_graph();
+    result["graph"] = filedata;
+
+    // 데이터 없는 경우 error 페이지 출력
+    if (!(melondata && melonDaydata && geniedata && genieMoviedata && youtubedata && youtubeMoviedata && filedata)) {
+        res.status(500).render('error/500');
+    }
+
     // 세션 체크
     if(req.session.user) {
         result["isLogin"] = true;
-
-        let melondata = await allChartFileFunction.melon_All_File();
-        result["melondata"] = {data: melondata};
-
-        let melonDaydata = await allChartFileFunction.melon_ALL_Day_File();
-        result["melonDaydata"] = {data: melonDaydata};
-
-        let geniedata = await allChartFileFunction.genie_All_File();
-        result["geniedata"] = {data: geniedata};
-
-        let genieMoviedata = await allChartFileFunction.genieMovie_All_File();
-        result["genieMoviedata"] = {data: genieMoviedata};
-
-        let youtubedata = await allChartFileFunction.youtube_All_File();
-        result["youtubedata"] = {data: youtubedata};
-
-        let youtubeMoviedata = await allChartFileFunction.youtube_All_File();
-        result["youtubeMoviedata"] = {data: youtubeMoviedata};
-
-        let filedata = await CgraphFunction.comparative_graph();
-        result["graph"] = filedata;
-
-        // 데이터 없는 경우 error 페이지 출력
-        if (!(melondata && melonDaydata && geniedata && genieMoviedata && youtubedata && youtubeMoviedata && filedata)) {
-            res.status(500).render('error/500');
-        }
-
         CuserFunction.user_profile_img(req.session.user, (userProfile) => {
             result['user_img'] = userProfile.user_img;
             res.render("allChart", {result});
         });
-
     } else {
         result["isLogin"] = false;
         res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
@@ -201,93 +198,151 @@ exports.youtubeMovieChartType = (req, res) => {
 }
 
 
-// 멜론 실시간 차트 - async + await
-exports.melonRealChartMain = async (req, res) => {
+// 멜론 실시간 차트
+exports.melonRealChartMain = (req, res) => {
     let result = {id : req.session.user};
 
-    // 세션 체크
-    if(req.session.user) {
-        result["isLogin"] = true;
+    melonFileFunction.melonFileList((filelist) => {
+        melonFileFunction.melonFileRead(filelist, (data) => {
+            // console.log(data);
+            
+            if(data) {
+                // 파일에서 읽어온 데이터를 전달
+                result['youtubedata'] = {data: ''};
+                result['geniedata'] = {data: ''};
+                result['melondata'] = {data: data, filelist: filelist, fileHour: req.params.num};
 
-        let [melonData, filelist] = await melonFileFunction.melonFile(req.params.num);
-        if(melonData) {
-            result['youtubedata'] = {data: ''};
-            result['geniedata'] = {data: ''};
-            result['melondata'] = {data: melonData, filelist: filelist, fileHour: req.params.num};
+                // 세션 체크
+                if(req.session.user) {
+                    result["isLogin"] = true;
+                    ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
+                        result['likeSing'] = {data: rows};
+                        CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                            result['user_img'] = userProfile.user_img;
+                            res.render("melonRealChart", {result});
+                        });
+                    });
+                } else {
+                    result["isLogin"] = false;
+                    res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+                }
 
-            ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
-                result['likeSing'] = {data: rows};
-                CuserFunction.user_profile_img(req.session.user, (userProfile) => {
-                    result['user_img'] = userProfile.user_img;
-                    res.render("melonRealChart", {result});
-                });
-            });
-        } else {
-            res.status(500).render('error/500');
-        }
-    } else {
-        result["isLogin"] = false;
-        res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-    }
+            } else {
+                res.status(500).render('error/500');
+            }
+        });
+    });
 }
 
-// 멜론 실시간 차트 - 시간변경 - async + await
-exports.melonRealChartMainType = async (req, res) => {
+// 멜론 실시간 차트 - 2 - 시간변경
+exports.melonRealChartMainType = (req, res) => {
+    let result = {id : req.session.user};
+    // console.log('num: ', req.params.num);
+    melonFileFunction.melonFileListHourChange((filelist) => {
+        // console.log(filelist[1].slice(28, -5));
+        // console.log(filelist[0]);
+        melonFileFunction.melonFileReadHourChange(filelist, req.params.num, (data) => {
+            // console.log(data);
+            if(data) {
+                // 파일에서 읽어온 데이터를 전달
+                result['youtubedata'] = {data: ''};
+                result['geniedata'] = {data: ''};
+                result['melondata'] = {data: data, filelist: filelist, fileHour: req.params.num};
+
+                // 세션 체크
+                if(req.session.user) {
+                    result["isLogin"] = true;
+                    ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
+                        result['likeSing'] = {data: rows};
+                        CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                            result['user_img'] = userProfile.user_img;
+                            res.send({result});
+                        });
+                    });
+                } else {
+                    result["isLogin"] = false;
+                    res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+                }
+
+            } else {
+                res.status(500).render('error/500');
+            }
+        });
+    });
+}
+
+
+// 멜론 일간 차트
+
+exports.melonDayChartMain = (req, res) => {
     let result = {id : req.session.user};
 
-    // 세션 체크
-    if(req.session.user) {
-        result["isLogin"] = true;
+    melonFileFunction.melonDayFileList((filelist) => {
+        melonFileFunction.melonDayFileRead(filelist, (data) => {
+            // console.log(data);
+            
+            if(data) {
+                // 파일에서 읽어온 데이터를 전달
+                result['melonDaydata'] = {data: data, filelist: filelist, fileHour: req.params.num};
 
-        let [melonData, filelist] = await melonFileFunction.melonFile(req.params.num);
-        if(melonData) {
-            result['youtubedata'] = {data: ''};
-            result['geniedata'] = {data: ''};
-            result['melondata'] = {data: melonData, filelist: filelist, fileHour: req.params.num};
+                // 세션 체크
+                if(req.session.user) {
+                    result["isLogin"] = true;
+                    ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
+                        result['likeSing'] = {data: rows};
+                        CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                            result['user_img'] = userProfile.user_img;
+                            res.render("melonDayChart", {result});
+                        });
+                    });
+                } else {
+                    result["isLogin"] = false;
+                    res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+                }
 
-            ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
-                result['likeSing'] = {data: rows};
-                CuserFunction.user_profile_img(req.session.user, (userProfile) => {
-                    result['user_img'] = userProfile.user_img;
-                    res.send({result});
-                });
-            });
-        } else {
-            res.status(500).render('error/500');
-        }
-    } else {
-        result["isLogin"] = false;
-        res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-    }
-};
+            } else {
+                res.status(500).render('error/500');
+            }
+        });
+    });
+}
 
-// 멜론 일간 차트 - async + await
-exports.melonDayChartMain = async (req, res) => {
+
+// 멜론 일간 차트 - 2 - 시간변경
+exports.melonDayChartMainType = (req, res) => {
     let result = {id : req.session.user};
+    // console.log('num: ', req.params.num);
+    melonFileFunction.melonDayFileListHourChange((filelist) => {
 
-    // 세션 체크
-    if(req.session.user) {
-        result["isLogin"] = true;
+        melonFileFunction.melonDayFileReadHourChange(filelist, req.params.num, (data) => {
+            // console.log(data);
+            if(data) {
+                // 파일에서 읽어온 데이터를 전달
+                result['melonDaydata'] = {data: data, filelist: filelist, fileHour: req.params.num};
 
-        let [melonDayData, filelist] = await melonFileFunction.melonDayFile();
-        if(melonDayData) {
-            result['melonDaydata'] = {data: melonDayData, filelist: filelist, fileHour: req.params.num};
+                // 세션 체크
+                if(req.session.user) {
+                    result["isLogin"] = true;
+                    ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
+                        result['likeSing'] = {data: rows};
+                        CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                            result['user_img'] = userProfile.user_img;
+                            res.send({result});
+                        });
+                    });
+                } else {
+                    result["isLogin"] = false;
+                    res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+                }
 
-            ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
-                result['likeSing'] = {data: rows};
-                CuserFunction.user_profile_img(req.session.user, (userProfile) => {
-                    result['user_img'] = userProfile.user_img;
-                    res.render("melonDayChart", {result});
-                });
-            });
-        } else {
-            res.status(500).render('error/500');
-        }
-    } else {
-        result["isLogin"] = false;
-        res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-    }
-};
+            } else {
+                res.status(500).render('error/500');
+            }
+        });
+    });
+}
+
+
 
 
 

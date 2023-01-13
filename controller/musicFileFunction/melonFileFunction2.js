@@ -83,7 +83,7 @@ exports.melonFile = (fileHour) => {
             throw err;
         });
     });
-};
+}
 
 
 // 멜론 일간 함수
@@ -130,7 +130,7 @@ exports.melonDayFile = () => {
                 // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                 response = JSON.parse(response);
                 // console.log(response.data);
-                resolve([response.data, filelist]);
+                resolve(response.data);
             })
             .catch((err) => {
                 // res.send('에러 발생');
@@ -141,4 +141,6 @@ exports.melonDayFile = () => {
             throw err;
         });
     });
-};
+}
+    
+

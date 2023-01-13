@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>멜론 실시간 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>멜론 실시간 데이터 수집에 성공 하였습니다.</span>"
             } else {
                 // alert('멜론 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>멜론 실시간 데이터 수집에 실패하였습니다.</span>"
@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>멜론 일간 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>멜론 일간 데이터 수집에 성공하였습니다.</span>"
             } else {
                 // alert('멜론 일간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>멜론 일간 데이터 수집에 실패하였습니다.</span>"
@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>지니 실시간 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>지니 실시간 데이터 수집에 성공하였습니다.</span>"
             } else {
                 // alert('지니 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>지니 실시간 데이터 수집에 실패하였습니다</span>"
@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>지니 뮤직 비디오 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>지니 뮤직 비디오 데이터 수집에 성공하였습니다.</span>"
             } else {
                 // alert('지니 뮤직 비디오 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>지니 뮤직 비디오 데이터 수집에 실패하였습니다.</span>"
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>유튜브 실시간 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>유튜브 실시간 데이터 수집에 성공하였습니다.</span>"
             } else {
                 // alert('유튜브 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>유튜브 실시간 데이터 수집에 실패하였습니다.</span>"
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', event => {
             // const crawling_text = document.getElementById('crawling_text');
             if(response.data) {
                 // alert('유튜브 뮤직 비디오 데이터 수집에 성공하였습니다.');
-                crawling_text.innerHTML = "<span>유튜브 뮤직 비디오 데이터 수집에 <span style='color' blue;'>성공</span>하였습니다.</span>"
+                crawling_text.innerHTML = "<span style='color' blue;'>유튜브 뮤직 비디오 데이터 수집에 성공하였습니다.</span>"
             } else {
                 // alert('유튜브 뮤직 비디오데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>유튜브 뮤직 비디오데이터 수집에 실패하였습니다.</span>"

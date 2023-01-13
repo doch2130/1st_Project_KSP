@@ -1,6 +1,16 @@
 {
 	"data": [
 		{
+			"title": "Hype boy",
+			"rank": "3",
+			"rankVariance": "유지",
+			"albumImg": "//image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/842/800/82842800_1659340238924_1_140x140.JPG/dims/resize/Q_80,0",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 1st EP 'New Jeans'",
+			"detailLink": "https://www.genie.co.kr/detail/songInfo?xgnm=97582507",
+			"totalNumPlay": "38,524,520"
+		},
+		{
 			"title": "Ditto",
 			"rank": "1",
 			"rankVariance": "유지",
@@ -19,16 +29,6 @@
 			"albumTitle": "NewJeans 'OMG'",
 			"detailLink": "https://www.genie.co.kr/detail/songInfo?xgnm=99792734",
 			"totalNumPlay": "3,880,405"
-		},
-		{
-			"title": "Hype boy",
-			"rank": "3",
-			"rankVariance": "유지",
-			"albumImg": "//image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/842/800/82842800_1659340238924_1_140x140.JPG/dims/resize/Q_80,0",
-			"singer": "NewJeans",
-			"albumTitle": "NewJeans 1st EP 'New Jeans'",
-			"detailLink": "https://www.genie.co.kr/detail/songInfo?xgnm=97582507",
-			"totalNumPlay": "38,524,520"
 		},
 		{
 			"title": "사건의 지평선",

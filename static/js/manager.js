@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', event => {
                     <p id="crawling_text"></p>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="home()">HOME</button>
+                    <button type="button" class="btn btn-primary" onclick="home()" >HOME</button>
                 </div>`;
 
                 main.innerHTML = temp;
@@ -42,6 +42,11 @@ window.addEventListener('DOMContentLoaded', event => {
     crawling_melon = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>멜론 실시간 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/melon',
@@ -54,11 +59,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 // alert('멜론 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>멜론 실시간 데이터 수집에 실패하였습니다.</span>"
             }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
+            }
         });
     }
     crawling_melonDay = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>멜론 일간 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/melonday',
@@ -71,11 +85,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 // alert('멜론 일간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>멜론 일간 데이터 수집에 실패하였습니다.</span>"
             }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
+            }
         });
     }
     crawling_genie = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>지니 실시간 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/genie',
@@ -88,11 +111,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 // alert('지니 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>지니 실시간 데이터 수집에 실패하였습니다</span>"
             }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
+            }
         });
     }
     crawling_genieMovie = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>지니 뮤직 비디오 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/genieMovie',
@@ -105,11 +137,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 // alert('지니 뮤직 비디오 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>지니 뮤직 비디오 데이터 수집에 실패하였습니다.</span>"
             }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
+            }
         });
     }
     crawling_youtube = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>유튜브 실시간 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/youtube',
@@ -122,11 +163,20 @@ window.addEventListener('DOMContentLoaded', event => {
                 // alert('유튜브 실시간 데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>유튜브 실시간 데이터 수집에 실패하였습니다.</span>"
             }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
+            }
         });
     }
     crawling_youtubeMovie = () => {
         const crawling_text = document.getElementById('crawling_text');
         crawling_text.innerHTML = "<span>유튜브 뮤직 비디오 데이터 수집 진행 중입니다.</span>"
+
+        const mangerBtn = document.querySelectorAll('button');
+        for (let i=0; i < mangerBtn.length; i++) {
+            mangerBtn[i].setAttribute('disabled', true);
+        }
         axios({
             method: 'post',
             url: '/crawling/youtubeMovie',
@@ -138,6 +188,10 @@ window.addEventListener('DOMContentLoaded', event => {
             } else {
                 // alert('유튜브 뮤직 비디오데이터 수집에 실패하였습니다.');
                 crawling_text.innerHTML = "<span style='color: red;'>유튜브 뮤직 비디오데이터 수집에 실패하였습니다.</span>"
+            }
+
+            for (let i=0; i < mangerBtn.length; i++) {
+                mangerBtn[i].removeAttribute('disabled');
             }
         });
     }

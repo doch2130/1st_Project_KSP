@@ -2,16 +2,6 @@
 	"data": [
 		{
 			"title": "OMG",
-			"rank": "3",
-			"lastWeekRank": "--",
-			"albumImg": "https://i.ytimg.com/vi/sVTy_wmn5SU/mqdefault.jpg",
-			"singer": "NewJeans",
-			"chartDuration": "1주",
-			"views": "733K",
-			"link": "https://www.youtube.com/watch?v=sVTy_wmn5SU"
-		},
-		{
-			"title": "OMG",
 			"rank": "1",
 			"lastWeekRank": "--",
 			"albumImg": "https://i.ytimg.com/vi/_ZAgIHmHLdc/mqdefault.jpg",
@@ -29,6 +19,16 @@
 			"chartDuration": "1주",
 			"views": "2.07M",
 			"link": "https://www.youtube.com/watch?v=Km71Rr9K-Bw"
+		},
+		{
+			"title": "OMG",
+			"rank": "3",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/sVTy_wmn5SU/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "1주",
+			"views": "733K",
+			"link": "https://www.youtube.com/watch?v=sVTy_wmn5SU"
 		},
 		{
 			"title": "OMG",
@@ -935,7 +935,7 @@
 			"rank": "94",
 			"lastWeekRank": "지난주 #93",
 			"albumImg": "https://i.ytimg.com/vi/H08YWE4CIFQ/mqdefault.jpg",
-			"singer": "なとり / natori",
+			"singer": "Natori",
 			"chartDuration": "9주",
 			"views": "61.3K",
 			"link": "https://www.youtube.com/watch?v=H08YWE4CIFQ"

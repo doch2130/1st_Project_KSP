@@ -1,16 +1,6 @@
 {
 	"data": [
 		{
-			"title": "Event Horizon (사건의 지평선)",
-			"rank": "3",
-			"lastWeekRank": "지난주 #2",
-			"albumImg": "https://i.ytimg.com/vi/j1uXcHwLhHM/mqdefault.jpg",
-			"singer": "윤하",
-			"chartDuration": "38주",
-			"views": "4.39M",
-			"link": "https://www.youtube.com/watch?v=j1uXcHwLhHM"
-		},
-		{
 			"title": "Ditto",
 			"rank": "1",
 			"lastWeekRank": "지난주 #1",
@@ -29,6 +19,16 @@
 			"chartDuration": "1주",
 			"views": "6.85M",
 			"link": "https://www.youtube.com/watch?v=_ZAgIHmHLdc"
+		},
+		{
+			"title": "Event Horizon (사건의 지평선)",
+			"rank": "3",
+			"lastWeekRank": "지난주 #2",
+			"albumImg": "https://i.ytimg.com/vi/j1uXcHwLhHM/mqdefault.jpg",
+			"singer": "윤하",
+			"chartDuration": "38주",
+			"views": "4.39M",
+			"link": "https://www.youtube.com/watch?v=j1uXcHwLhHM"
 		},
 		{
 			"title": "Hype Boy",

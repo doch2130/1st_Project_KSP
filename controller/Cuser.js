@@ -1,6 +1,6 @@
-const { User } = require('../model/indexUser');
-const { LikeSing } = require('../model/indexLikeSing');
-const { Board } = require("../model/indexBoard");
+const { User, LikeSing, Board } = require('../model/index');
+const fs = require('fs');
+const path = require('path');
 
 //로그인 페이지
 exports.login_main = (req, res) => {
@@ -119,15 +119,22 @@ exports.Edit_info_update = async (req,res) => {
 
 //회원 탈퇴
 exports.user_delete = async (req, res) => {
-    console.log('회원탈퇴 : ', req.session.user );
-    let result = await User.destroy(
+    // 탈퇴 전에 프로필 이미지 있는지 체크
+    let result = await User.findOne({
+        where : { id : `${req.session.user}`}
+    });
+    // console.log(result.user_img);
+
+    // 프로필 이미지가 있는 user 이면 프로필 이미지도 삭제
+    if(result.user_img) {
+        fs.unlink('./static/res/profile_img/' + result.user_img, err => {
+            if (err) throw err;
+        });
+    }
+
+    // console.log('회원탈퇴 : ', req.session.user );
+    await User.destroy(
     { where : { id : `${req.session.user}` }}
-    );
-    await LikeSing.destroy(
-        { where : { user_id : `${req.session.user}` }}
-    );
-    await Board.destroy(
-        { where : { id : `${req.session.user}` }}
     );
 
     req.session.destroy(function (err){

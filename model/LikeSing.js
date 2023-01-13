@@ -33,4 +33,9 @@ const LikeSing = (Sequelize, DataTypes) => {
     )
 }
 
+LikeSing.associate = models => {
+    // LikeSing 안에 "user_id라는 컬럼 이름"으로 Uses모델에 있는 "id값"을 새로운 컬럼으로 추가한다.
+    LikeSing.belongsTo(models.User, {foreignKey: "user_id", sourceKey: 'id'});
+};
+
 module.exports = LikeSing;

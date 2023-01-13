@@ -1,5 +1,5 @@
 const Board = ( Sequelize, DataTypes)=>{  
-    return Sequelize.define(    
+    return Sequelize.define(
         "board_list",
         {
             number: { 
@@ -39,8 +39,12 @@ const Board = ( Sequelize, DataTypes)=>{
             tableName: "board_list",  
             freezeTableName: true,
             timestamps: false 
-        }
+        },
   )
 }
+Board.associate = models => {
+    // Board 안에 "user_id라는 컬럼 이름"으로 Uses모델에 있는 "id값"을 새로운 컬럼으로 추가한다.
+    Board.belongsTo(models.User, {foreignKey: "user_id", sourceKey: 'id'});
+};
 
 module.exports = Board;

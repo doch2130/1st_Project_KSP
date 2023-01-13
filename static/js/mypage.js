@@ -20,8 +20,8 @@ window.addEventListener('DOMContentLoaded', event => {
         // 이미지경로 + path(req.file.filename)
         .then((reuslt) => {
             // console.log(reuslt);
-            document.getElementById('profile_img').src = "static/profile_img/" + reuslt.path;
-            document.getElementById('profile_img_mypage').src = "static/profile_img/" + reuslt.path;
+            document.getElementById('profile_img').src = "/static/res/profile_img/" + reuslt.path;
+            document.getElementById('profile_img_mypage').src = "/static/res/profile_img/" + reuslt.path;
         });
       });        
      });

@@ -1,6 +1,4 @@
-const { User } = require('../model/indexUser');
-// const { LikeSing } = require('../model/indexLikeSing');
-// const { Board } = require("../model/indexBoard");
+const { User } = require('../model/index');
 
 //로그인 페이지
 exports.manager = (req, res) => {

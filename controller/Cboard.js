@@ -1,4 +1,4 @@
-const { Board } = require("../model/indexBoard");
+const { Board } = require('../model/index');
 const CuserFunction = require('./Cuser');
 
 exports.index = (req,res) => {

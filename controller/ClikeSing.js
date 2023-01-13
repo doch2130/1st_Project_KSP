@@ -1,5 +1,4 @@
-const { LikeSing } = require('../model/indexLikeSing');
-const { User } = require('../model/indexUser');
+const { LikeSing } = require('../model/index');
 
 exports.LikeSingSearch = (userSession, cb) => {
     if(userSession === undefined) {

@@ -32,4 +32,12 @@ const User = (Sequelize, DataTypes) => {
     )
 }
 
+User.associate = models => {
+    // Users안에 있는 "id값"을 "user_id라는 컬럼 이름"으로 LikeSing 새로운 컬럼으로 추가한다.
+    User.hasOne(models.LikeSing, {foreignKey: "user_id", sourceKey: 'id'});
+
+    // Users안에 있는 "id값"을 "user_id라는 컬럼 이름"으로 Board 새로운 컬럼으로 추가한다.
+    User.hasOne(models.Board, {foreignKey: "user_id", sourceKey: 'id'});
+};
+
 module.exports = User;

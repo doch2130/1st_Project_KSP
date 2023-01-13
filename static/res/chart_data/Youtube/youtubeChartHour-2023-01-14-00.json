@@ -1,0 +1,1004 @@
+{
+	"data": [
+		{
+			"title": "Ditto",
+			"rank": "1",
+			"lastWeekRank": "지난주 #1",
+			"albumImg": "https://i.ytimg.com/vi/Km71Rr9K-Bw/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "3주",
+			"views": "11.5M",
+			"link": "https://www.youtube.com/watch?v=Km71Rr9K-Bw"
+		},
+		{
+			"title": "OMG",
+			"rank": "2",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/_ZAgIHmHLdc/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "1주",
+			"views": "6.85M",
+			"link": "https://www.youtube.com/watch?v=_ZAgIHmHLdc"
+		},
+		{
+			"title": "Event Horizon (사건의 지평선)",
+			"rank": "3",
+			"lastWeekRank": "지난주 #2",
+			"albumImg": "https://i.ytimg.com/vi/j1uXcHwLhHM/mqdefault.jpg",
+			"singer": "윤하",
+			"chartDuration": "38주",
+			"views": "4.39M",
+			"link": "https://www.youtube.com/watch?v=j1uXcHwLhHM"
+		},
+		{
+			"title": "Hype Boy",
+			"rank": "4",
+			"lastWeekRank": "지난주 #3",
+			"albumImg": "https://i.ytimg.com/vi/11cta61wi0g/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "24주",
+			"views": "4.1M",
+			"link": "https://www.youtube.com/watch?v=11cta61wi0g"
+		},
+		{
+			"title": "ANTIFRAGILE",
+			"rank": "5",
+			"lastWeekRank": "지난주 #4",
+			"albumImg": "https://i.ytimg.com/vi/pyf8cbqyfPs/mqdefault.jpg",
+			"singer": "르세라핌",
+			"chartDuration": "12주",
+			"views": "2.92M",
+			"link": "https://www.youtube.com/watch?v=pyf8cbqyfPs"
+		},
+		{
+			"title": "Attention",
+			"rank": "6",
+			"lastWeekRank": "지난주 #5",
+			"albumImg": "https://i.ytimg.com/vi/js1CtxSY38I/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "24주",
+			"views": "2.51M",
+			"link": "https://www.youtube.com/watch?v=js1CtxSY38I"
+		},
+		{
+			"title": "After LIKE",
+			"rank": "7",
+			"lastWeekRank": "지난주 #7",
+			"albumImg": "https://i.ytimg.com/vi/F0B7HDiY-10/mqdefault.jpg",
+			"singer": "IVE (아이브)",
+			"chartDuration": "20주",
+			"views": "2.34M",
+			"link": "https://www.youtube.com/watch?v=F0B7HDiY-10"
+		},
+		{
+			"title": "Nxde",
+			"rank": "8",
+			"lastWeekRank": "지난주 #8",
+			"albumImg": "https://i.ytimg.com/vi/fCO7f0SmrDc/mqdefault.jpg",
+			"singer": "(여자)아이들",
+			"chartDuration": "12주",
+			"views": "2.3M",
+			"link": "https://www.youtube.com/watch?v=fCO7f0SmrDc"
+		},
+		{
+			"title": "KICK BACK",
+			"rank": "9",
+			"lastWeekRank": "지난주 #9",
+			"albumImg": "https://i.ytimg.com/vi/M2cckDmNLMI/mqdefault.jpg",
+			"singer": "Kenshi Yonezu(켄시 요네즈/米津 玄師)",
+			"chartDuration": "12주",
+			"views": "2.23M",
+			"link": "https://www.youtube.com/watch?v=M2cckDmNLMI"
+		},
+		{
+			"title": "Candy",
+			"rank": "10",
+			"lastWeekRank": "지난주 #6",
+			"albumImg": "https://i.ytimg.com/vi/zuoSn3ObMz4/mqdefault.jpg",
+			"singer": "NCT DREAM",
+			"chartDuration": "3주",
+			"views": "1.96M",
+			"link": "https://www.youtube.com/watch?v=zuoSn3ObMz4"
+		},
+		{
+			"title": "LOVE DIVE",
+			"rank": "11",
+			"lastWeekRank": "지난주 #10",
+			"albumImg": "https://i.ytimg.com/vi/Y8JFxS1HlDo/mqdefault.jpg",
+			"singer": "IVE (아이브)",
+			"chartDuration": "40주",
+			"views": "1.85M",
+			"link": "https://www.youtube.com/watch?v=Y8JFxS1HlDo"
+		},
+		{
+			"title": "오르트구름 (Live)",
+			"rank": "12",
+			"lastWeekRank": "지난주 #13",
+			"albumImg": "https://i.ytimg.com/vi/58IEh6YkuzQ/mqdefault.jpg",
+			"singer": "윤하",
+			"chartDuration": "27주",
+			"views": "1.62M",
+			"link": "https://www.youtube.com/watch?v=58IEh6YkuzQ"
+		},
+		{
+			"title": "WHEN I MOVE",
+			"rank": "13",
+			"lastWeekRank": "지난주 #11",
+			"albumImg": "https://i.ytimg.com/vi/XwcK-twSXB4/mqdefault.jpg",
+			"singer": "카라(KARA)",
+			"chartDuration": "6주",
+			"views": "1.4M",
+			"link": "https://www.youtube.com/watch?v=XwcK-twSXB4"
+		},
+		{
+			"title": "Pink Venom",
+			"rank": "14",
+			"lastWeekRank": "지난주 #14",
+			"albumImg": "https://i.ytimg.com/vi/gQlMMD8auMs/mqdefault.jpg",
+			"singer": "BLACKPINK",
+			"chartDuration": "20주",
+			"views": "1.32M",
+			"link": "https://www.youtube.com/watch?v=gQlMMD8auMs"
+		},
+		{
+			"title": "NOT SORRY (feat. pH-1)",
+			"rank": "15",
+			"lastWeekRank": "지난주 #12",
+			"albumImg": "https://i.ytimg.com/vi/mMrefw3xMEM/mqdefault.jpg",
+			"singer": "이영지",
+			"chartDuration": "3주",
+			"views": "1.32M",
+			"link": "https://www.youtube.com/watch?v=mMrefw3xMEM"
+		},
+		{
+			"title": "자격지심 (feat. 지코(ZICO))",
+			"rank": "16",
+			"lastWeekRank": "지난주 #20",
+			"albumImg": "https://i.ytimg.com/vi/bsT_OK4DdrM/mqdefault.jpg",
+			"singer": "BEO (비오)",
+			"chartDuration": "14주",
+			"views": "1.17M",
+			"link": "https://www.youtube.com/watch?v=bsT_OK4DdrM"
+		},
+		{
+			"title": "Shut Down",
+			"rank": "17",
+			"lastWeekRank": "지난주 #18",
+			"albumImg": "https://i.ytimg.com/vi/POe9SOEKotk/mqdefault.jpg",
+			"singer": "BLACKPINK",
+			"chartDuration": "16주",
+			"views": "1.1M",
+			"link": "https://www.youtube.com/watch?v=POe9SOEKotk"
+		},
+		{
+			"title": "Cookie",
+			"rank": "18",
+			"lastWeekRank": "지난주 #21",
+			"albumImg": "https://i.ytimg.com/vi/VOmIplFAGeg/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "23주",
+			"views": "1.07M",
+			"link": "https://www.youtube.com/watch?v=VOmIplFAGeg"
+		},
+		{
+			"title": "FEARLESS (Japanese Version)",
+			"rank": "19",
+			"lastWeekRank": "지난주 #24",
+			"albumImg": "https://i.ytimg.com/vi/4vbDFu0PUew/mqdefault.jpg",
+			"singer": "르세라핌",
+			"chartDuration": "36주",
+			"views": "1.06M",
+			"link": "https://www.youtube.com/watch?v=4vbDFu0PUew"
+		},
+		{
+			"title": "TOMBOY",
+			"rank": "20",
+			"lastWeekRank": "지난주 #23",
+			"albumImg": "https://i.ytimg.com/vi/Jh4QFaPmdss/mqdefault.jpg",
+			"singer": "(여자)아이들",
+			"chartDuration": "43주",
+			"views": "1.06M",
+			"link": "https://www.youtube.com/watch?v=Jh4QFaPmdss"
+		},
+		{
+			"title": "London Boy",
+			"rank": "21",
+			"lastWeekRank": "지난주 #17",
+			"albumImg": "https://i.ytimg.com/vi/TMfvkhkALbU/mqdefault.jpg",
+			"singer": "임영웅",
+			"chartDuration": "8주",
+			"views": "1.05M",
+			"link": "https://www.youtube.com/watch?v=TMfvkhkALbU"
+		},
+		{
+			"title": "모놀로그",
+			"rank": "22",
+			"lastWeekRank": "지난주 #25",
+			"albumImg": "https://i.ytimg.com/vi/IeDb7OrnGNE/mqdefault.jpg",
+			"singer": "테이",
+			"chartDuration": "16주",
+			"views": "1.05M",
+			"link": "https://www.youtube.com/watch?v=IeDb7OrnGNE"
+		},
+		{
+			"title": "Dreamers (feat. Fahad Al Kubaisi)",
+			"rank": "23",
+			"lastWeekRank": "지난주 #15",
+			"albumImg": "https://i.ytimg.com/vi/IwzkfMmNMpM/mqdefault.jpg",
+			"singer": "정국",
+			"chartDuration": "7주",
+			"views": "1.03M",
+			"link": "https://www.youtube.com/watch?v=IwzkfMmNMpM"
+		},
+		{
+			"title": "左右盲",
+			"rank": "24",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/1IlTeOMCNJU/mqdefault.jpg",
+			"singer": "Yorushika(ヨルシカ)",
+			"chartDuration": "1주",
+			"views": "1M",
+			"link": "https://www.youtube.com/watch?v=1IlTeOMCNJU"
+		},
+		{
+			"title": "Cheshire",
+			"rank": "25",
+			"lastWeekRank": "지난주 #16",
+			"albumImg": "https://i.ytimg.com/vi/zugAhfd2r0g/mqdefault.jpg",
+			"singer": "ITZY",
+			"chartDuration": "6주",
+			"views": "1M",
+			"link": "https://www.youtube.com/watch?v=zugAhfd2r0g"
+		},
+		{
+			"title": "Polaroid",
+			"rank": "26",
+			"lastWeekRank": "지난주 #22",
+			"albumImg": "https://i.ytimg.com/vi/I82pbW2y_cc/mqdefault.jpg",
+			"singer": "임영웅",
+			"chartDuration": "8주",
+			"views": "954K",
+			"link": "https://www.youtube.com/watch?v=I82pbW2y_cc"
+		},
+		{
+			"title": "可愛くてごめん (feat. capi)",
+			"rank": "27",
+			"lastWeekRank": "지난주 #19",
+			"albumImg": "https://i.ytimg.com/vi/K4xLi8IF1FM/mqdefault.jpg",
+			"singer": "HoneyWorks",
+			"chartDuration": "7주",
+			"views": "902K",
+			"link": "https://www.youtube.com/watch?v=K4xLi8IF1FM"
+		},
+		{
+			"title": "도깨비불 Illusion",
+			"rank": "28",
+			"lastWeekRank": "지난주 #32",
+			"albumImg": "https://i.ytimg.com/vi/vJFeoVNu3Vo/mqdefault.jpg",
+			"singer": "aespa",
+			"chartDuration": "23주",
+			"views": "875K",
+			"link": "https://www.youtube.com/watch?v=vJFeoVNu3Vo"
+		},
+		{
+			"title": "Unholy",
+			"rank": "29",
+			"lastWeekRank": "지난주 #26",
+			"albumImg": "https://i.ytimg.com/vi/Uq9gPaIzbe8/mqdefault.jpg",
+			"singer": "킴 페트라스 and Sam Smith(샘 스미스)",
+			"chartDuration": "13주",
+			"views": "859K",
+			"link": "https://www.youtube.com/watch?v=Uq9gPaIzbe8"
+		},
+		{
+			"title": "Bloody Mary",
+			"rank": "30",
+			"lastWeekRank": "지난주 #45",
+			"albumImg": "https://i.ytimg.com/vi/VFwmKL5OL-Q/mqdefault.jpg",
+			"singer": "Lady Gaga",
+			"chartDuration": "3주",
+			"views": "831K",
+			"link": "https://www.youtube.com/watch?v=VFwmKL5OL-Q"
+		},
+		{
+			"title": "I Don’t Think That I Like Her",
+			"rank": "31",
+			"lastWeekRank": "지난주 #35",
+			"albumImg": "https://i.ytimg.com/vi/9voN0gkdlS4/mqdefault.jpg",
+			"singer": "Charlie Puth",
+			"chartDuration": "16주",
+			"views": "782K",
+			"link": "https://www.youtube.com/watch?v=9voN0gkdlS4"
+		},
+		{
+			"title": "The Drum",
+			"rank": "32",
+			"lastWeekRank": "지난주 #38",
+			"albumImg": "https://i.ytimg.com/vi/TicGJQqrq2M/mqdefault.jpg",
+			"singer": "Alan Walker",
+			"chartDuration": "9주",
+			"views": "760K",
+			"link": "https://www.youtube.com/watch?v=TicGJQqrq2M"
+		},
+		{
+			"title": "PPAK (feat. 팔로알토(Paloalto) and 저스디스)",
+			"rank": "33",
+			"lastWeekRank": "지난주 #36",
+			"albumImg": "https://i.ytimg.com/vi/E9-8T3bz870/mqdefault.jpg",
+			"singer": "던말릭",
+			"chartDuration": "2주",
+			"views": "750K",
+			"link": "https://www.youtube.com/watch?v=E9-8T3bz870"
+		},
+		{
+			"title": "Impurities",
+			"rank": "34",
+			"lastWeekRank": "지난주 #33",
+			"albumImg": "https://i.ytimg.com/vi/Ccz123Jlflc/mqdefault.jpg",
+			"singer": "르세라핌",
+			"chartDuration": "8주",
+			"views": "750K",
+			"link": "https://www.youtube.com/watch?v=Ccz123Jlflc"
+		},
+		{
+			"title": "BLUE CHECK (feat. 박재범 and 제시(Jessi))",
+			"rank": "35",
+			"lastWeekRank": "지난주 #27",
+			"albumImg": "https://i.ytimg.com/vi/g6EKbho4YnA/mqdefault.jpg",
+			"singer": "토이고 (toigo)",
+			"chartDuration": "2주",
+			"views": "714K",
+			"link": "https://www.youtube.com/watch?v=g6EKbho4YnA"
+		},
+		{
+			"title": "Stamp On It",
+			"rank": "36",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/tUCT82t1Y8Q/mqdefault.jpg",
+			"singer": "GOT the beat",
+			"chartDuration": "1주",
+			"views": "695K",
+			"link": "https://www.youtube.com/watch?v=tUCT82t1Y8Q"
+		},
+		{
+			"title": "Dangerously",
+			"rank": "37",
+			"lastWeekRank": "지난주 #44",
+			"albumImg": "https://i.ytimg.com/vi/TBXQu8ORnBQ/mqdefault.jpg",
+			"singer": "Charlie Puth",
+			"chartDuration": "24주",
+			"views": "690K",
+			"link": "https://www.youtube.com/watch?v=TBXQu8ORnBQ"
+		},
+		{
+			"title": "Girls",
+			"rank": "38",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/dYRITmpFbJ4/mqdefault.jpg",
+			"singer": "aespa",
+			"chartDuration": "21주",
+			"views": "675K",
+			"link": "https://www.youtube.com/watch?v=dYRITmpFbJ4"
+		},
+		{
+			"title": "잘가요 (Goodbye)",
+			"rank": "39",
+			"lastWeekRank": "지난주 #39",
+			"albumImg": "https://i.ytimg.com/vi/RDglYy-uI8o/mqdefault.jpg",
+			"singer": "주호",
+			"chartDuration": "4주",
+			"views": "672K",
+			"link": "https://www.youtube.com/watch?v=RDglYy-uI8o"
+		},
+		{
+			"title": "새삥 (feat. 호미들)",
+			"rank": "40",
+			"lastWeekRank": "지난주 #43",
+			"albumImg": "https://i.ytimg.com/vi/azaZt7eccnc/mqdefault.jpg",
+			"singer": "지코(ZICO)",
+			"chartDuration": "18주",
+			"views": "668K",
+			"link": "https://www.youtube.com/watch?v=azaZt7eccnc"
+		},
+		{
+			"title": "Made You Look",
+			"rank": "41",
+			"lastWeekRank": "지난주 #41",
+			"albumImg": "https://i.ytimg.com/vi/gPCCYMeXin0/mqdefault.jpg",
+			"singer": "메건 트레이너",
+			"chartDuration": "7주",
+			"views": "641K",
+			"link": "https://www.youtube.com/watch?v=gPCCYMeXin0"
+		},
+		{
+			"title": "STEP",
+			"rank": "42",
+			"lastWeekRank": "지난주 #49",
+			"albumImg": "https://i.ytimg.com/vi/zYoYoBtLqOY/mqdefault.jpg",
+			"singer": "카라(KARA)",
+			"chartDuration": "9주",
+			"views": "626K",
+			"link": "https://www.youtube.com/watch?v=zYoYoBtLqOY"
+		},
+		{
+			"title": "Candy",
+			"rank": "43",
+			"lastWeekRank": "지난주 #46",
+			"albumImg": "https://i.ytimg.com/vi/3NUaXU1d-NY/mqdefault.jpg",
+			"singer": "H.O.T.",
+			"chartDuration": "7주",
+			"views": "609K",
+			"link": "https://www.youtube.com/watch?v=3NUaXU1d-NY"
+		},
+		{
+			"title": "정이라고 하자 (feat. 10CM)",
+			"rank": "44",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/OlXr5YD-MWA/mqdefault.jpg",
+			"singer": "서동현",
+			"chartDuration": "34주",
+			"views": "590K",
+			"link": "https://www.youtube.com/watch?v=OlXr5YD-MWA"
+		},
+		{
+			"title": "Gradation (그라데이션)",
+			"rank": "45",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/VQZXXciZb_c/mqdefault.jpg",
+			"singer": "10CM",
+			"chartDuration": "25주",
+			"views": "588K",
+			"link": "https://www.youtube.com/watch?v=VQZXXciZb_c"
+		},
+		{
+			"title": "INVU",
+			"rank": "46",
+			"lastWeekRank": "지난주 #66",
+			"albumImg": "https://i.ytimg.com/vi/AbZH7XWDW_k/mqdefault.jpg",
+			"singer": "태연",
+			"chartDuration": "34주",
+			"views": "576K",
+			"link": "https://www.youtube.com/watch?v=AbZH7XWDW_k"
+		},
+		{
+			"title": "Just 10 centimeters",
+			"rank": "47",
+			"lastWeekRank": "지난주 #53",
+			"albumImg": "https://i.ytimg.com/vi/YF4zktyi4YY/mqdefault.jpg",
+			"singer": "--, 서동현 and TOIL",
+			"chartDuration": "15주",
+			"views": "569K",
+			"link": "https://www.youtube.com/watch?v=YF4zktyi4YY"
+		},
+		{
+			"title": "Ugly duckling (feat. 선우정아 and BOBBY)",
+			"rank": "48",
+			"lastWeekRank": "지난주 #54",
+			"albumImg": "https://i.ytimg.com/vi/TlfBW_tDp8E/mqdefault.jpg",
+			"singer": "허성현 (Huh)",
+			"chartDuration": "2주",
+			"views": "564K",
+			"link": "https://www.youtube.com/watch?v=TlfBW_tDp8E"
+		},
+		{
+			"title": "COMPASS (feat. 언에듀케이티드 키드(UNEDUCATED KID) and 수퍼비)",
+			"rank": "49",
+			"lastWeekRank": "지난주 #30",
+			"albumImg": "https://i.ytimg.com/vi/5xeZr2Xyq6I/mqdefault.jpg",
+			"singer": "KHAN",
+			"chartDuration": "3주",
+			"views": "559K",
+			"link": "https://www.youtube.com/watch?v=5xeZr2Xyq6I"
+		},
+		{
+			"title": "눈이 오잖아 (feat. 헤이즈(Heize))",
+			"rank": "50",
+			"lastWeekRank": "지난주 #31",
+			"albumImg": "https://i.ytimg.com/vi/YGsBe3H7QGs/mqdefault.jpg",
+			"singer": "이무진",
+			"chartDuration": "26주",
+			"views": "559K",
+			"link": "https://www.youtube.com/watch?v=YGsBe3H7QGs"
+		},
+		{
+			"title": "첫사랑",
+			"rank": "51",
+			"lastWeekRank": "지난주 #52",
+			"albumImg": "https://i.ytimg.com/vi/5lQrf60gxNI/mqdefault.jpg",
+			"singer": "Baek A 백아",
+			"chartDuration": "10주",
+			"views": "555K",
+			"link": "https://www.youtube.com/watch?v=5lQrf60gxNI"
+		},
+		{
+			"title": "Rush Hour (feat. 제이홉)",
+			"rank": "52",
+			"lastWeekRank": "지난주 #51",
+			"albumImg": "https://i.ytimg.com/vi/PS0qkO5qty0/mqdefault.jpg",
+			"singer": "Crush",
+			"chartDuration": "15주",
+			"views": "544K",
+			"link": "https://www.youtube.com/watch?v=PS0qkO5qty0"
+		},
+		{
+			"title": "Beautiful Christmas",
+			"rank": "53",
+			"lastWeekRank": "지난주 #40",
+			"albumImg": "https://i.ytimg.com/vi/iTgcp1oDk2M/mqdefault.jpg",
+			"singer": "Red Velvet and aespa",
+			"chartDuration": "4주",
+			"views": "542K",
+			"link": "https://www.youtube.com/watch?v=iTgcp1oDk2M"
+		},
+		{
+			"title": "Im Not The Only One",
+			"rank": "54",
+			"lastWeekRank": "지난주 #50",
+			"albumImg": "https://i.ytimg.com/vi/nCkpzqqog4k/mqdefault.jpg",
+			"singer": "Sam Smith(샘 스미스)",
+			"chartDuration": "14주",
+			"views": "542K",
+			"link": "https://www.youtube.com/watch?v=nCkpzqqog4k"
+		},
+		{
+			"title": "SMILEY",
+			"rank": "55",
+			"lastWeekRank": "지난주 #62",
+			"albumImg": "https://i.ytimg.com/vi/y9kkXTucnLU/mqdefault.jpg",
+			"singer": "YENA (최예나)",
+			"chartDuration": "38주",
+			"views": "514K",
+			"link": "https://www.youtube.com/watch?v=y9kkXTucnLU"
+		},
+		{
+			"title": "死ぬのがいいわ",
+			"rank": "56",
+			"lastWeekRank": "지난주 #48",
+			"albumImg": "https://i.ytimg.com/vi/3zh9Wb1KuW8/mqdefault.jpg",
+			"singer": "후지이 카제",
+			"chartDuration": "12주",
+			"views": "512K",
+			"link": "https://www.youtube.com/watch?v=3zh9Wb1KuW8"
+		},
+		{
+			"title": "Love, Maybe",
+			"rank": "57",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/0e7uplpFJdE/mqdefault.jpg",
+			"singer": "멜로망스(MeloMance)",
+			"chartDuration": "39주",
+			"views": "502K",
+			"link": "https://www.youtube.com/watch?v=0e7uplpFJdE"
+		},
+		{
+			"title": "Say I Love You",
+			"rank": "58",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/C0wHFZ_B4sg/mqdefault.jpg",
+			"singer": "Woody Boy",
+			"chartDuration": "1주",
+			"views": "497K",
+			"link": "https://www.youtube.com/watch?v=C0wHFZ_B4sg"
+		},
+		{
+			"title": "봄여름가을겨울 (Still Life)",
+			"rank": "59",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/eN5mG_yMDiM/mqdefault.jpg",
+			"singer": "BIGBANG",
+			"chartDuration": "27주",
+			"views": "495K",
+			"link": "https://www.youtube.com/watch?v=eN5mG_yMDiM"
+		},
+		{
+			"title": "아픈 나를",
+			"rank": "60",
+			"lastWeekRank": "지난주 #73",
+			"albumImg": "https://i.ytimg.com/vi/IGoM4EuOVM0/mqdefault.jpg",
+			"singer": "성시경",
+			"chartDuration": "2주",
+			"views": "491K",
+			"link": "https://www.youtube.com/watch?v=IGoM4EuOVM0"
+		},
+		{
+			"title": "We Higher",
+			"rank": "61",
+			"lastWeekRank": "지난주 #47",
+			"albumImg": "https://i.ytimg.com/vi/NMd7u0TEWHU/mqdefault.jpg",
+			"singer": "그루비룸, lIlBOI, 블라세 (Blase), 노윤하, Polodared, 칠린호미 and Fleeky Bang",
+			"chartDuration": "5주",
+			"views": "490K",
+			"link": "https://www.youtube.com/watch?v=NMd7u0TEWHU"
+		},
+		{
+			"title": "Crazy",
+			"rank": "62",
+			"lastWeekRank": "지난주 #72",
+			"albumImg": "https://i.ytimg.com/vi/-N4jf6rtyuw/mqdefault.jpg",
+			"singer": "날스 바클리",
+			"chartDuration": "5주",
+			"views": "487K",
+			"link": "https://www.youtube.com/watch?v=-N4jf6rtyuw"
+		},
+		{
+			"title": "떠나보낼 준비해 둘걸 그랬어",
+			"rank": "63",
+			"lastWeekRank": "지난주 #61",
+			"albumImg": "https://i.ytimg.com/vi/R427bHaESSA/mqdefault.jpg",
+			"singer": "임한별",
+			"chartDuration": "11주",
+			"views": "487K",
+			"link": "https://www.youtube.com/watch?v=R427bHaESSA"
+		},
+		{
+			"title": "That That (feat. SUGA)",
+			"rank": "64",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/8dJyRm2jJ-U/mqdefault.jpg",
+			"singer": "싸이(PSY)",
+			"chartDuration": "31주",
+			"views": "483K",
+			"link": "https://www.youtube.com/watch?v=8dJyRm2jJ-U"
+		},
+		{
+			"title": "Talk that Talk",
+			"rank": "65",
+			"lastWeekRank": "지난주 #57",
+			"albumImg": "https://i.ytimg.com/vi/k6jqx9kZgPM/mqdefault.jpg",
+			"singer": "TWICE(트와이스)",
+			"chartDuration": "19주",
+			"views": "473K",
+			"link": "https://www.youtube.com/watch?v=k6jqx9kZgPM"
+		},
+		{
+			"title": "When I Was Your Man",
+			"rank": "66",
+			"lastWeekRank": "지난주 #59",
+			"albumImg": "https://i.ytimg.com/vi/ekzHIouo8Q4/mqdefault.jpg",
+			"singer": "브루노 마스",
+			"chartDuration": "11주",
+			"views": "469K",
+			"link": "https://www.youtube.com/watch?v=ekzHIouo8Q4"
+		},
+		{
+			"title": "한 페이지가 될 수 있게",
+			"rank": "67",
+			"lastWeekRank": "지난주 #71",
+			"albumImg": "https://i.ytimg.com/vi/vnS_jn2uibs/mqdefault.jpg",
+			"singer": "DAY6(데이식스)",
+			"chartDuration": "18주",
+			"views": "467K",
+			"link": "https://www.youtube.com/watch?v=vnS_jn2uibs"
+		},
+		{
+			"title": "Cinderella",
+			"rank": "68",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/s_7b9TkqLWM/mqdefault.jpg",
+			"singer": "서리",
+			"chartDuration": "1주",
+			"views": "465K",
+			"link": "https://www.youtube.com/watch?v=s_7b9TkqLWM"
+		},
+		{
+			"title": "When I Get Old",
+			"rank": "69",
+			"lastWeekRank": "지난주 #55",
+			"albumImg": "https://i.ytimg.com/vi/Ua3aNDJE_Cg/mqdefault.jpg",
+			"singer": "크리스토퍼 and 청하",
+			"chartDuration": "10주",
+			"views": "457K",
+			"link": "https://www.youtube.com/watch?v=Ua3aNDJE_Cg"
+		},
+		{
+			"title": "Hurt",
+			"rank": "70",
+			"lastWeekRank": "지난주 #58",
+			"albumImg": "https://i.ytimg.com/vi/tVIXY14aJms/mqdefault.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "16주",
+			"views": "448K",
+			"link": "https://www.youtube.com/watch?v=tVIXY14aJms"
+		},
+		{
+			"title": "Feel My Rhythm",
+			"rank": "71",
+			"lastWeekRank": "지난주 #78",
+			"albumImg": "https://i.ytimg.com/vi/R9At2ICm4LQ/mqdefault.jpg",
+			"singer": "Red Velvet",
+			"chartDuration": "28주",
+			"views": "448K",
+			"link": "https://www.youtube.com/watch?v=R9At2ICm4LQ"
+		},
+		{
+			"title": "dawn call from you",
+			"rank": "72",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/olyK5IcIOaY/mqdefault.jpg",
+			"singer": "한동근",
+			"chartDuration": "21주",
+			"views": "440K",
+			"link": "https://www.youtube.com/watch?v=olyK5IcIOaY"
+		},
+		{
+			"title": "Confession (Ditto X Chuu (LOONA))",
+			"rank": "73",
+			"lastWeekRank": "지난주 #68",
+			"albumImg": "https://i.ytimg.com/vi/Flu8jHjwBx0/mqdefault.jpg",
+			"singer": "츄(Chuu)",
+			"chartDuration": "10주",
+			"views": "428K",
+			"link": "https://www.youtube.com/watch?v=Flu8jHjwBx0"
+		},
+		{
+			"title": "희재",
+			"rank": "74",
+			"lastWeekRank": "지난주 #87",
+			"albumImg": "https://i.ytimg.com/vi/nD1p_H3qo_A/mqdefault.jpg",
+			"singer": "성시경",
+			"chartDuration": "17주",
+			"views": "425K",
+			"link": "https://www.youtube.com/watch?v=nD1p_H3qo_A"
+		},
+		{
+			"title": "Big world",
+			"rank": "75",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/6Kb0_IkO3P4/mqdefault.jpg",
+			"singer": "백예린",
+			"chartDuration": "1주",
+			"views": "419K",
+			"link": "https://www.youtube.com/watch?v=6Kb0_IkO3P4"
+		},
+		{
+			"title": "Step Back (Live)",
+			"rank": "76",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/uBY1AoiF5Vo/mqdefault.jpg",
+			"singer": "GOT the beat",
+			"chartDuration": "29주",
+			"views": "414K",
+			"link": "https://www.youtube.com/watch?v=uBY1AoiF5Vo"
+		},
+		{
+			"title": "DICE",
+			"rank": "77",
+			"lastWeekRank": "지난주 #67",
+			"albumImg": "https://i.ytimg.com/vi/p1bjnyDqI9k/mqdefault.jpg",
+			"singer": "엔믹스",
+			"chartDuration": "16주",
+			"views": "399K",
+			"link": "https://www.youtube.com/watch?v=p1bjnyDqI9k"
+		},
+		{
+			"title": "O.O",
+			"rank": "78",
+			"lastWeekRank": "지난주 #97",
+			"albumImg": "https://i.ytimg.com/vi/3GWscde8rM8/mqdefault.jpg",
+			"singer": "엔믹스",
+			"chartDuration": "22주",
+			"views": "378K",
+			"link": "https://www.youtube.com/watch?v=3GWscde8rM8"
+		},
+		{
+			"title": "WITCH (Prod. by Slom) (feat. 박재범 and So!YoON! (황소윤))",
+			"rank": "79",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/BmDoEJGvuk0/mqdefault.jpg",
+			"singer": "이영지",
+			"chartDuration": "1주",
+			"views": "375K",
+			"link": "https://www.youtube.com/watch?v=BmDoEJGvuk0"
+		},
+		{
+			"title": "Ah puh",
+			"rank": "80",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/7n9D8ZeOQv0/mqdefault.jpg",
+			"singer": "아이유(IU)",
+			"chartDuration": "29주",
+			"views": "361K",
+			"link": "https://www.youtube.com/watch?v=7n9D8ZeOQv0"
+		},
+		{
+			"title": "벌써 일년",
+			"rank": "81",
+			"lastWeekRank": "지난주 #96",
+			"albumImg": "https://i.ytimg.com/vi/gdj6a0hv0Uk/mqdefault.jpg",
+			"singer": "브라운 아이즈",
+			"chartDuration": "20주",
+			"views": "359K",
+			"link": "https://www.youtube.com/watch?v=gdj6a0hv0Uk"
+		},
+		{
+			"title": "Birthday",
+			"rank": "82",
+			"lastWeekRank": "지난주 #63",
+			"albumImg": "https://i.ytimg.com/vi/Ut1OzEVUiM4/mqdefault.jpg",
+			"singer": "Red Velvet",
+			"chartDuration": "6주",
+			"views": "345K",
+			"link": "https://www.youtube.com/watch?v=Ut1OzEVUiM4"
+		},
+		{
+			"title": "Full Bloom",
+			"rank": "83",
+			"lastWeekRank": "지난주 #92",
+			"albumImg": "https://i.ytimg.com/vi/-m_Kow1fDMo/mqdefault.jpg",
+			"singer": "안예은",
+			"chartDuration": "7주",
+			"views": "341K",
+			"link": "https://www.youtube.com/watch?v=-m_Kow1fDMo"
+		},
+		{
+			"title": "스티커 사진",
+			"rank": "84",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/MJM4JlNq5nM/mqdefault.jpg",
+			"singer": "21학번",
+			"chartDuration": "20주",
+			"views": "340K",
+			"link": "https://www.youtube.com/watch?v=MJM4JlNq5nM"
+		},
+		{
+			"title": "GHOST TOWN",
+			"rank": "85",
+			"lastWeekRank": "지난주 #93",
+			"albumImg": "https://i.ytimg.com/vi/prYbXj3zPfs/mqdefault.jpg",
+			"singer": "Benson Boone",
+			"chartDuration": "20주",
+			"views": "328K",
+			"link": "https://www.youtube.com/watch?v=prYbXj3zPfs"
+		},
+		{
+			"title": "뱃놀이",
+			"rank": "86",
+			"lastWeekRank": "지난주 #88",
+			"albumImg": "https://i.ytimg.com/vi/HpgGJyEE_20/mqdefault.jpg",
+			"singer": "Jeong Dong Won",
+			"chartDuration": "5주",
+			"views": "326K",
+			"link": "https://www.youtube.com/watch?v=HpgGJyEE_20"
+		},
+		{
+			"title": "BIBI Vengeance",
+			"rank": "87",
+			"lastWeekRank": "지난주 #83",
+			"albumImg": "https://i.ytimg.com/vi/QfIY1r0_tRI/mqdefault.jpg",
+			"singer": "비비(BIBI)",
+			"chartDuration": "7주",
+			"views": "325K",
+			"link": "https://www.youtube.com/watch?v=QfIY1r0_tRI"
+		},
+		{
+			"title": "Underwater",
+			"rank": "88",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/ny1YiHlX_iE/mqdefault.jpg",
+			"singer": "권은비",
+			"chartDuration": "2주",
+			"views": "325K",
+			"link": "https://www.youtube.com/watch?v=ny1YiHlX_iE"
+		},
+		{
+			"title": "You and I",
+			"rank": "89",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/64VZUNTmGQM/mqdefault.jpg",
+			"singer": "박봄 (Park Bom)",
+			"chartDuration": "10주",
+			"views": "325K",
+			"link": "https://www.youtube.com/watch?v=64VZUNTmGQM"
+		},
+		{
+			"title": "MONEY",
+			"rank": "90",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/dNCWe_6HAM8/mqdefault.jpg",
+			"singer": "LISA",
+			"chartDuration": "28주",
+			"views": "323K",
+			"link": "https://www.youtube.com/watch?v=dNCWe_6HAM8"
+		},
+		{
+			"title": "新時代",
+			"rank": "91",
+			"lastWeekRank": "지난주 #86",
+			"albumImg": "https://i.ytimg.com/vi/1FliVTcX8bQ/mqdefault.jpg",
+			"singer": "Ado",
+			"chartDuration": "5주",
+			"views": "323K",
+			"link": "https://www.youtube.com/watch?v=1FliVTcX8bQ"
+		},
+		{
+			"title": "흩어지지 않게",
+			"rank": "92",
+			"lastWeekRank": "지난주 #85",
+			"albumImg": "https://i.ytimg.com/vi/MzKOG1vwj2Y/mqdefault.jpg",
+			"singer": "M.C the MAX",
+			"chartDuration": "5주",
+			"views": "308K",
+			"link": "https://www.youtube.com/watch?v=MzKOG1vwj2Y"
+		},
+		{
+			"title": "HALAZIA",
+			"rank": "93",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/SszP3hlQ55Y/mqdefault.jpg",
+			"singer": "에이티즈",
+			"chartDuration": "1주",
+			"views": "307K",
+			"link": "https://www.youtube.com/watch?v=SszP3hlQ55Y"
+		},
+		{
+			"title": "Officially Missing You",
+			"rank": "94",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/dJRkhdWsu_M/mqdefault.jpg",
+			"singer": "긱스 (Geeks)",
+			"chartDuration": "8주",
+			"views": "307K",
+			"link": "https://www.youtube.com/watch?v=dJRkhdWsu_M"
+		},
+		{
+			"title": "A bientot",
+			"rank": "95",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/zLFypmn42NE/mqdefault.jpg",
+			"singer": "임영웅",
+			"chartDuration": "16주",
+			"views": "306K",
+			"link": "https://www.youtube.com/watch?v=zLFypmn42NE"
+		},
+		{
+			"title": "달려라 방탄 (Live)",
+			"rank": "96",
+			"lastWeekRank": "지난주 #89",
+			"albumImg": "https://i.ytimg.com/vi/Cb70gcTVvYI/mqdefault.jpg",
+			"singer": "BTS(방탄소년단)",
+			"chartDuration": "12주",
+			"views": "305K",
+			"link": "https://www.youtube.com/watch?v=Cb70gcTVvYI"
+		},
+		{
+			"title": "이러면 안 될 거 아는데 너 앞에만 서면 나락 (feat. 10CM)",
+			"rank": "97",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/KgOfyyaOkEs/mqdefault.jpg",
+			"singer": "딘딘",
+			"chartDuration": "21주",
+			"views": "298K",
+			"link": "https://www.youtube.com/watch?v=KgOfyyaOkEs"
+		},
+		{
+			"title": "사랑해 진짜",
+			"rank": "98",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/CbhiBN5wpCc/mqdefault.jpg",
+			"singer": "임영웅",
+			"chartDuration": "8주",
+			"views": "296K",
+			"link": "https://www.youtube.com/watch?v=CbhiBN5wpCc"
+		},
+		{
+			"title": "LOVE me",
+			"rank": "99",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/tsaOFqIP9dM/mqdefault.jpg",
+			"singer": "BEO (비오)",
+			"chartDuration": "25주",
+			"views": "296K",
+			"link": "https://www.youtube.com/watch?v=tsaOFqIP9dM"
+		},
+		{
+			"title": "I′m Sorry",
+			"rank": "100",
+			"lastWeekRank": "--",
+			"albumImg": "https://i.ytimg.com/vi/1wZUlOUjEvg/mqdefault.jpg",
+			"singer": "에일리(AILEE)",
+			"chartDuration": "1주",
+			"views": "290K",
+			"link": "https://www.youtube.com/watch?v=1wZUlOUjEvg"
+		}
+	]
+}

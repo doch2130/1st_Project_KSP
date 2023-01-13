@@ -3,6 +3,7 @@
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
+const fetch = require('node-fetch');
 
 // 실시간 크롤링
 exports.melonCrawlingFunction = (cb) => {
@@ -50,7 +51,7 @@ exports.melonCrawlingFunction = (cb) => {
 
             // 모든 리스트를 순환한다. await 함수를 이용해서 종료가 끝나야 다음 함수가 실행되게 설정한다.
             // await를 설정하지 않으면 데이터가 저장되기 전에 파일 저장함수가 먼저 실행되서 빈 값이 들어간다.
-            await lists.each((index, list) => {
+            await lists.each(async (index, list) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 const rank = $(list).find("td:nth-child(2) > div > span.rank").text();
                 let rankVariance = $(list).find("td:nth-child(3) > div > span").attr('title');
@@ -97,11 +98,29 @@ exports.melonCrawlingFunction = (cb) => {
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
                 data.data.push(obj);
+
+                // 이미지 저장
+                const albumImgData = await fetch(albumImg);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                // console.log(buffer);
+                
+                const uint8array = new Uint8Array(albumImgBuffer);
+                // console.log(uint8array);
+                if(i === 1) {
+                    await fs.writeFile(`./static/res/chart_image/Melon/${index}.jpg`, uint8array, (err) => {
+                        if (err) throw err;
+                        console.log('Img Download Success');
+                    });
+                } else {
+                    await fs.writeFile(`./static/res/chart_image/Melon/${index+50}.jpg`, uint8array, (err) => {
+                        if (err) throw err;
+                        console.log('Img Download Success');
+                    });
+                }
             });
             // 브라우저를 종료한다.
             browser.close();
         }
-
 
         // 파일 저장
         // 날짜 객체 설정
@@ -122,7 +141,6 @@ exports.melonCrawlingFunction = (cb) => {
             throw err;
         });
         
-
     })();
 }
 
@@ -173,7 +191,7 @@ exports.melonDayCrawlingFunction = (cb) => {
 
             // 모든 리스트를 순환한다. await 함수를 이용해서 종료가 끝나야 다음 함수가 실행되게 설정한다.
             // await를 설정하지 않으면 데이터가 저장되기 전에 파일 저장함수가 먼저 실행되서 빈 값이 들어간다.
-            await lists.each((index, list) => {
+            await lists.each(async (index, list) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 const rank = $(list).find("td:nth-child(2) > div > span.rank").text();
                 let rankVariance = $(list).find("td:nth-child(3) > div > span").attr('title');
@@ -219,11 +237,30 @@ exports.melonDayCrawlingFunction = (cb) => {
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
                 data.data.push(obj);
+
+                // 이미지 저장
+                const albumImgData = await fetch(albumImg);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                // console.log(buffer);
+                
+                const uint8array = new Uint8Array(albumImgBuffer);
+                // console.log(uint8array);
+                if(i === 1) {
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${index}.jpg`, uint8array, (err) => {
+                        if (err) throw err;
+                        console.log('Img Download Success');
+                    });
+                } else {
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${index+50}.jpg`, uint8array, (err) => {
+                        if (err) throw err;
+                        console.log('Img Download Success');
+                    });
+                }
+                
             });
             // 브라우저를 종료한다.
             browser.close();
         }
-
 
         // 파일 저장
         // 날짜 객체 설정
@@ -244,6 +281,5 @@ exports.melonDayCrawlingFunction = (cb) => {
             throw err;
         });
         
-
     })();
 }

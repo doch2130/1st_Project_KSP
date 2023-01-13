@@ -7,10 +7,6 @@
     <link href="/static/css/Edit_info.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- 목록탭 -->
-    <div class="home" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-light" onclick="location.href='/'">Home</button>
-    </div>
     <div class="outline_line Edit_info">
         <div class="center">
             <h1>회원 정보 수정</h1>
@@ -23,7 +19,9 @@
                 <!--닉네임 조회 -->
                 <div class="txt_field mb-3">
                     <input type="text" class="form-control" id="check_input_name" name="name" oninput="nickValidity(this)" placeholder="닉네임을 입력해주세요" title="대소문자, 숫자, 2글자 이상 10글자 이하" pattern="^([a-zA-Z0-9가-힣]{2,10})$" value="<%=data.name%>">
-                    <div class="txt_field" id="name_check_sucess"></div>
+                    <div class="txt_field" id="name_check_sucess">
+                        <p style="color:red; visibility: hidden;">대소문자, 숫자, 2글자 이상 10글자 이하</p>
+                    </div>
                 </div>
 
                 <div class="txt_field mb-3">
@@ -33,7 +31,9 @@
                 <div class="txt_field mb-3">
                     <input type="password" class="form-control" name="rePw" placeholder="비밀번호를 확인해주세요" oninput="rePwValidity(this)" title="비밀번호가 일치하지 않습니다." pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@!%*#?&])[A-Za-z\d@!%*#?&]{5,}$">
                 </div>
-                <div class="txt_field" id="pw_check_sucess"></div>
+                <div class="txt_field" id="pw_check_sucess">
+                    <p style="color:red; visibility: hidden;">최소 5 글자, 최소 하나의 문자, 숫자, 특수 문자 사용</p>
+                </div>
 
                 <!-- 회원 이메일 조회 -->
                 <div class="txt_field mb-3">
@@ -46,6 +46,9 @@
                     <button type="button" class="form-control" id="secession_btn" onclick="delete_info()">탈퇴</button>
                 </div>
             </form>
+            <div class="home">
+                <button type="button" class="btn btn-outline-light" onclick="location.href='/'">Home</button>
+            </div>
         </div>
     </div>
 </body>

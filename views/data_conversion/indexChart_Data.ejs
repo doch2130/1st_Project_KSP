@@ -3,7 +3,7 @@ youtubeDataMove = () => {
     let temp = [];
     let obj = {};
     let title, rank, lastWeekRank, albumImg, singer, chartDuration, views, link;
-    '<% for(let i = 0; i < result.youtubedata.data.length; i++) { %>'
+    '<% for(let i = 0; i < 10; i++) { %>'
         title = '<%= result.youtubedata.data[i].title %>';
         rank = '<%= result.youtubedata.data[i].rank %>';
         lastWeekRank = '<%= result.youtubedata.data[i].lastWeekRank %>';
@@ -35,7 +35,7 @@ melonDataMove = () => {
     let temp = [];
     let obj = {};
     let title, rank, rankVariance, albumImg, singer, albumTitle, likeCount;
-    '<% for(let i = 0; i < result.melondata.data.length; i++) { %>'
+    '<% for(let i = 0; i < 10; i++) { %>'
         title = '<%= result.melondata.data[i].title %>';
         rank = '<%= result.melondata.data[i].rank %>';
         rankVariance = '<%= result.melondata.data[i].rankVariance %>';
@@ -65,7 +65,7 @@ genieDataMove = () => {
     let temp = [];
     let obj = {};
     let title, rank, rankVariance, albumImg, singer, albumTitle, likeCount;
-    '<% for(let i = 0; i < result.geniedata.data.length; i++) { %>'
+    '<% for(let i = 0; i < 10; i++) { %>'
         title = '<%= result.geniedata.data[i].title %>';
         rank = '<%= result.geniedata.data[i].rank %>';
         rankVariance = '<%= result.geniedata.data[i].rankVariance %>';

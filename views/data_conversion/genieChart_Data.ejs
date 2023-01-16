@@ -1,0 +1,36 @@
+<script type="text/javascript">
+genieDataMove = () => {
+    let temp = [];
+    let obj = {};
+    let title, rank, rankVariance, albumImg, singer, albumTitle, likeCount;
+    '<% for(let i = 0; i < result.geniedata.data.length; i++) { %>'
+        title = '<%= result.geniedata.data[i].title %>';
+        rank = '<%= result.geniedata.data[i].rank %>';
+        rankVariance = '<%= result.geniedata.data[i].rankVariance %>';
+        // albumImg = '<%= result.geniedata.data[i].albumImg %>';
+        albumImg = '/static/res/chart_image/Genie/<%= result.geniedata.data[i].albumImgFile %>';
+        singer = '<%= result.geniedata.data[i].singer %>';
+        albumTitle = '<%= result.geniedata.data[i].albumTitle %>';
+        totalNumPlay = '<%= result.geniedata.data[i].totalNumPlay %>';
+
+        obj = {
+            "title": title,
+            "rank": rank,
+            "rankVariance": rankVariance,
+            "albumImg": albumImg,
+            "singer": singer,
+            "albumTitle": albumTitle,
+            "totalNumPlay": totalNumPlay
+        }
+        temp.push(obj);
+    '<% } %>'
+
+    // console.log(temp);
+    return temp;
+}
+
+// ******처음 출력을 위한 초기 실행 함수******
+// 1번 실행해서 데이터 저장
+// tableData에서 사용하기 위한 변수
+let ejsDataGenie = genieDataMove();
+</script>

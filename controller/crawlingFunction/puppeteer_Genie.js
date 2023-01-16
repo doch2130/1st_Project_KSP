@@ -14,6 +14,8 @@ exports.genieCrawlingFunction = (cb) => {
 
     // 날짜 객체 설정
     let date = new Date();
+    // 이미지 파일 저장 변수
+    let fileFormat;
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
@@ -61,7 +63,7 @@ exports.genieCrawlingFunction = (cb) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 let rank = $(list).find("td.number").text();
                 let rankVariance = $(list).find("td.number > span > span > span").text();
-                let albumImg = $(list).find("td:nth-child(3) > a > img").attr('src');
+                let albumImgSrc = $(list).find("td:nth-child(3) > a > img").attr('src');
                 // title의 경우 더미 값이 추가 되지만 rank랑은 조금 다르게 가져와진다. trim 함수로 띄어쓰기를 제거하여 원하는 값만 가져온다.
                 let title = $(list).find("td.info > a.title.ellipsis").text().trim();
                 let singer = $(list).find("td.info > a.artist.ellipsis").text();
@@ -76,7 +78,7 @@ exports.genieCrawlingFunction = (cb) => {
                 rank = rank.slice(0, rankEnd);
 
                 // 이미지 다운로드를 위해 albumImg의 주소 앞에 https:를 붙여서 저장해준다.
-                albumImg = "https:" + albumImg;
+                albumImgSrc = "https:" + albumImgSrc;
 
                 // onclick 속성으로 가져올 시 다른 데이터가 같이 가져와진다.
                 // slice로 자르기 위해서 start, end 위치를 확인하고 그에 맞게 값을 가져오는 설정을 1번 더 작업해준다.
@@ -99,12 +101,21 @@ exports.genieCrawlingFunction = (cb) => {
                 singer = singer.replaceAll("&", "and");
                 rankVariance = rankVariance.replace("new", "NEW");
 
+                // 이미지 파일 이름 설정
+                // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+                if(i === 1) {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+                } else {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
+                }
+
                 // 데이터 저장 변수 설정 및 데이터 저장
                 let obj = {
                     title: title,
                     rank: rank,
                     rankVariance: rankVariance,
-                    albumImg: albumImg,
+                    albumImgSrc: albumImgSrc,
+                    albumImgFile: fileFormat,
                     singer: singer,
                     albumTitle: albumTitle,
                     detailLink: detailLink,
@@ -113,22 +124,22 @@ exports.genieCrawlingFunction = (cb) => {
                 data.data.push(obj);
 
                 // 이미지 저장
-                const albumImgData = await fetch(albumImg);
+                const albumImgData = await fetch(albumImgSrc);
                 const albumImgBuffer = await albumImgData.arrayBuffer();
                 // console.log(buffer);
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
-                let fileFormat;
+                // let fileFormat;
                 if(i === 1) {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -203,6 +214,8 @@ exports.genieMovieCrawlingFunction = (cb) => {
 
     // 날짜 객체 설정
     let date = new Date();
+    // 이미지 파일 저장 변수
+    let fileFormat;
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
@@ -250,7 +263,7 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 let rank = $(list).find("td.number").text();
                 let rankVariance = $(list).find("td.number > span > span > span").text();
-                let albumImg = $(list).find("td:nth-child(2) > a > img").attr('src');
+                let albumImgSrc = $(list).find("td:nth-child(2) > a > img").attr('src');
                 // title의 경우 더미 값이 추가 되지만 rank랑은 조금 다르게 가져와진다. trim 함수로 띄어쓰기를 제거하여 원하는 값만 가져온다.
                 let title = $(list).find("td.info > a.title.ellipsis").attr('title');
                 let singer = $(list).find("td.info > a.artist.ellipsis").text();
@@ -265,7 +278,7 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 rank = rank.slice(0, rankEnd);
 
                 // 이미지 다운로드를 위해 albumImg의 주소 앞에 https:를 붙여서 저장해준다.
-                albumImg = "https:" + albumImg;
+                albumImgSrc = "https:" + albumImgSrc;
 
                 // onclick 속성으로 가져올 시 다른 데이터가 같이 가져와진다.
                 // slice로 자르기 위해서 start, end 위치를 확인하고 그에 맞게 값을 가져오는 설정을 1번 더 작업해준다.
@@ -288,12 +301,21 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 singer = singer.replaceAll("&", "and");
                 rankVariance = rankVariance.replace("new", "NEW");
 
+                // 이미지 파일 이름 설정
+                // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+                if(i === 1) {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+                } else {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
+                }
+
                 // 데이터 저장 변수 설정 및 데이터 저장
                 let obj = {
                     title: title,
                     rank: rank,
                     rankVariance: rankVariance,
-                    albumImg: albumImg,
+                    albumImgSrc: albumImgSrc,
+                    albumImgFile: fileFormat,
                     singer: singer,
                     albumTitle: albumTitle,
                     detailLink: detailLink,
@@ -302,22 +324,22 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 data.data.push(obj);
 
                 // 이미지 저장
-                const albumImgData = await fetch(albumImg);
+                const albumImgData = await fetch(albumImgSrc);
                 const albumImgBuffer = await albumImgData.arrayBuffer();
                 // console.log(buffer);
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
-                let fileFormat;
+                // let fileFormat;
                 if(i === 1) {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });

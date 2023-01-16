@@ -7,7 +7,8 @@ youtubeDataMove = () => {
         title = '<%= result.youtubedata.data[i].title %>';
         rank = '<%= result.youtubedata.data[i].rank %>';
         lastWeekRank = '<%= result.youtubedata.data[i].lastWeekRank %>';
-        albumImg = '<%= result.youtubedata.data[i].albumImg %>';
+        // albumImg = '<%= result.youtubedata.data[i].albumImg %>';
+        albumImg = '/static/res/chart_image/Youtube/<%= result.youtubedata.data[i].albumImgFile %>';
         singer = '<%= result.youtubedata.data[i].singer %>';
         chartDuration = '<%= result.youtubedata.data[i].chartDuration %>';
         views = '<%= result.youtubedata.data[i].views %>';
@@ -38,7 +39,8 @@ melonDataMove = () => {
         title = '<%= result.melondata.data[i].title %>';
         rank = '<%= result.melondata.data[i].rank %>';
         rankVariance = '<%= result.melondata.data[i].rankVariance %>';
-        albumImg = '<%= result.melondata.data[i].albumImg %>';
+        // albumImg = '<%= result.melondata.data[i].albumImg %>';
+        albumImg = '/static/res/chart_image/Melon/<%= result.melondata.data[i].albumImgFile %>';
         singer = '<%= result.melondata.data[i].singer %>';
         albumTitle = '<%= result.melondata.data[i].albumTitle %>';
         likeCount = '<%= result.melondata.data[i].likeCount %>';
@@ -67,7 +69,8 @@ genieDataMove = () => {
         title = '<%= result.geniedata.data[i].title %>';
         rank = '<%= result.geniedata.data[i].rank %>';
         rankVariance = '<%= result.geniedata.data[i].rankVariance %>';
-        albumImg = '<%= result.geniedata.data[i].albumImg %>';
+        // albumImg = '<%= result.geniedata.data[i].albumImg %>';
+        albumImg = '/static/res/chart_image/Genie/<%= result.geniedata.data[i].albumImgFile %>';
         singer = '<%= result.geniedata.data[i].singer %>';
         albumTitle = '<%= result.geniedata.data[i].albumTitle %>';
         totalNumPlay = '<%= result.geniedata.data[i].totalNumPlay %>';

@@ -49,7 +49,7 @@ exports.youtubeCrawlingFunction = (cb) => {
             // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
             const rank = $(list).find("div.index-cell.style-scope.ytmc-chart-table > div.current-rank.style-scope.ytmc-chart-table > div.rank.style-scope.ytmc-chart-table").text();
             const lastWeekRank = $(list).find("div.index-cell.style-scope.ytmc-chart-table > div.previous-rank.style-scope.ytmc-chart-table > span").text();
-            const albumImg = $(list).find("div.thumbnail-cell.style-scope.ytmc-chart-table > img").attr('src');
+            const albumImgSrc = $(list).find("div.thumbnail-cell.style-scope.ytmc-chart-table > img").attr('src');
             let title = $(list).find("div.title-cell.style-scope.ytmc-chart-table > div.entity-title.style-scope.ytmc-chart-table > ytmc-ellipsis-text > div > span").text();
             let singer = $(list).find("div.title-cell.style-scope.ytmc-chart-table > div.entity-subtitle.style-scope.ytmc-chart-table > ytmc-artists-list > div > span").text();
             const chartDuration = $(list).find("div.chart-period-cell.style-scope.ytmc-chart-table > div > span").text();
@@ -75,12 +75,17 @@ exports.youtubeCrawlingFunction = (cb) => {
             singer = singer.replaceAll("'", "");
             singer = singer.replaceAll("&", "and");
 
+            // 이미지 파일 이름 설정
+            // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+
             // 데이터 저장 변수 설정 및 데이터 저장
             let obj = {
                 title: title,
                 rank: rank,
                 lastWeekRank: lastWeekRank,
-                albumImg: albumImg,
+                albumImgSrc: albumImgSrc,
+                albumImgFile: fileFormat,
                 singer: singer,
                 chartDuration: chartDuration,
                 views: views,
@@ -90,15 +95,15 @@ exports.youtubeCrawlingFunction = (cb) => {
             data.data.push(obj);
 
             // 이미지 저장
-            const albumImgData = await fetch(albumImg);
+            const albumImgData = await fetch(albumImgSrc);
             const albumImgBuffer = await albumImgData.arrayBuffer();
             // console.log(buffer);
             
             const uint8array = new Uint8Array(albumImgBuffer);
             // console.log(uint8array);
-            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+            // const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
             
-            await fs.writeFile(`./static/res/chart_image/Youtube/${fileFormat}.jpg`, uint8array, (err) => {
+            await fs.writeFile(`./static/res/chart_image/Youtube/${fileFormat}`, uint8array, (err) => {
                 if (err) throw err;
                 console.log('Img Download Success');
             });
@@ -174,7 +179,7 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
             // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
             const rank = $(list).find("div.index-cell.style-scope.ytmc-chart-table > div.current-rank.style-scope.ytmc-chart-table > div.rank.style-scope.ytmc-chart-table").text();
             const lastWeekRank = $(list).find("div.index-cell.style-scope.ytmc-chart-table > div.previous-rank.style-scope.ytmc-chart-table > span").text();
-            const albumImg = $(list).find("div.thumbnail-cell.style-scope.ytmc-chart-table > img").attr('src');
+            const albumImgSrc = $(list).find("div.thumbnail-cell.style-scope.ytmc-chart-table > img").attr('src');
             let title = $(list).find("div.title-cell.style-scope.ytmc-chart-table > div.entity-title.style-scope.ytmc-chart-table > ytmc-ellipsis-text > div > span").text();
             let singer = $(list).find("div.title-cell.style-scope.ytmc-chart-table > div.entity-subtitle.style-scope.ytmc-chart-table > ytmc-artists-list > div > span").text();
             const chartDuration = $(list).find("div.chart-period-cell.style-scope.ytmc-chart-table > div > span").text();
@@ -200,13 +205,17 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
             singer = singer.replaceAll("'", "");
             singer = singer.replaceAll("&", "and");
 
+            // 이미지 파일 이름 설정
+            // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
 
             // 데이터 저장 변수 설정 및 데이터 저장
             let obj = {
                 title: title,
                 rank: rank,
                 lastWeekRank: lastWeekRank,
-                albumImg: albumImg,
+                albumImgSrc: albumImgSrc,
+                albumImgFile: fileFormat,
                 singer: singer,
                 chartDuration: chartDuration,
                 views: views,
@@ -216,15 +225,15 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
             data.data.push(obj);
 
             // 이미지 저장
-            const albumImgData = await fetch(albumImg);
+            const albumImgData = await fetch(albumImgSrc);
             const albumImgBuffer = await albumImgData.arrayBuffer();
             // console.log(buffer);
             
             const uint8array = new Uint8Array(albumImgBuffer);
             // console.log(uint8array);
-            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+            // const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
 
-            await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${fileFormat}.jpg`, uint8array, (err) => {
+            await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${fileFormat}`, uint8array, (err) => {
                 if (err) throw err;
                 console.log('Img Download Success');
             });

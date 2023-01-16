@@ -18,6 +18,8 @@ exports.melonCrawlingFunction = (cb) => {
 
         // 날짜 객체 설정
         let date = new Date();
+        // 이미지 파일 저장 변수
+        let fileFormat;
 
         // 50개 먼저 긁어온 후 나머지 50개를 긁어온다.
         // 1~50, 51~100 클래스명이 다르다.
@@ -58,7 +60,7 @@ exports.melonCrawlingFunction = (cb) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 const rank = $(list).find("td:nth-child(2) > div > span.rank").text();
                 let rankVariance = $(list).find("td:nth-child(3) > div > span").attr('title');
-                const albumImg = $(list).find("td:nth-child(4) > div > a > img").attr('src');
+                const albumImgSrc = $(list).find("td:nth-child(4) > div > a > img").attr('src');
                 let title = $(list).find("td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a").text();
                 let singer = $(list).find("td:nth-child(6) > div > div > div.ellipsis.rank02 > a").text();
                 const albumTitle = $(list).find("td:nth-child(7) > div > div > div > a").text();
@@ -89,12 +91,21 @@ exports.melonCrawlingFunction = (cb) => {
                 singer = singer.replaceAll("&", "and");
 
 
+                // 이미지 파일 이름 설정
+                // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+                if(i === 1) {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+                } else {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
+                }
+
                 // 데이터 저장 변수 설정 및 데이터 저장
                 let obj = {
                     title: title,
                     rank: rank,
                     rankVariance: rankVariance,
-                    albumImg: albumImg,
+                    albumImgSrc: albumImgSrc,
+                    albumImgFile: fileFormat,
                     singer: singer,
                     albumTitle: albumTitle,
                     likeCount: likeCount
@@ -103,22 +114,22 @@ exports.melonCrawlingFunction = (cb) => {
                 data.data.push(obj);
 
                 // 이미지 저장
-                const albumImgData = await fetch(albumImg);
+                const albumImgData = await fetch(albumImgSrc);
                 const albumImgBuffer = await albumImgData.arrayBuffer();
                 // console.log(buffer);
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
-                let fileFormat;
+                
                 if(i === 1) {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
+                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -162,6 +173,8 @@ exports.melonDayCrawlingFunction = (cb) => {
 
         // 날짜 객체 설정
         let date = new Date();
+        // 이미지 파일 저장 변수
+        let fileFormat;
 
         // 50개 먼저 긁어온 후 나머지 50개를 긁어온다.
         // 1~50, 51~100 클래스명이 다르다.
@@ -202,7 +215,7 @@ exports.melonDayCrawlingFunction = (cb) => {
                 // 각 리스트의 하위 노드중 호텔 이름에 해당하는 요소를 Selector로 가져와 텍스트값을 가져온다.
                 const rank = $(list).find("td:nth-child(2) > div > span.rank").text();
                 let rankVariance = $(list).find("td:nth-child(3) > div > span").attr('title');
-                const albumImg = $(list).find("td:nth-child(4) > div > a > img").attr('src');
+                const albumImgSrc = $(list).find("td:nth-child(4) > div > a > img").attr('src');
                 let title = $(list).find("td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a").text();
                 let singer = $(list).find("td:nth-child(6) > div > div > div.ellipsis.rank02 > a").text();
                 const albumTitle = $(list).find("td:nth-child(7) > div > div > div > a").text();
@@ -232,12 +245,21 @@ exports.melonDayCrawlingFunction = (cb) => {
                 singer = singer.replaceAll("'", "");
                 singer = singer.replaceAll("&", "and");
 
+                // 이미지 파일 이름 설정
+                // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+                if(i === 1) {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
+                } else {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
+                }
+
                 // 데이터 저장 변수 설정 및 데이터 저장
                 let obj = {
                     title: title,
                     rank: rank,
                     rankVariance: rankVariance,
-                    albumImg: albumImg,
+                    albumImgSrc: albumImgSrc,
+                    albumImgFile: fileFormat,
                     singer: singer,
                     albumTitle: albumTitle,
                     likeCount: likeCount
@@ -246,22 +268,22 @@ exports.melonDayCrawlingFunction = (cb) => {
                 data.data.push(obj);
 
                 // 이미지 저장
-                const albumImgData = await fetch(albumImg);
+                const albumImgData = await fetch(albumImgSrc);
                 const albumImgBuffer = await albumImgData.arrayBuffer();
                 // console.log(buffer);
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
-                let fileFormat;
+                // let fileFormat;
                 if(i === 1) {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}.jpg`, uint8array, (err) => {
+                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });

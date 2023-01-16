@@ -220,16 +220,17 @@ exports.mypage = async (req, res) => {
 
 
 //마이페이지 업로드 기능
-exports.upload_file = (req, res) => {
-    if(req.file) {
-        User.update({
-            user_img : req.file.filename
-        },
-        { where :  { id : `${req.session.user}` } }
-        );
-        res.send({ path : req.file.filename });
-    }
-};
+// exports.upload_file = (req, res) => {
+//     if(req.file) {
+//         User.update({
+//             user_img : req.file.filename
+//         },
+//         { where :  { id : `${req.session.user}` } }
+//         );
+//         // res.send({ path : req.file.filename });
+//         res.send({ path : req.file.filename, err : false });
+//     }
+// };
 
 exports.user_profile_img = (userSession, cb) => {
     // 유저 name 체크
@@ -243,4 +244,62 @@ exports.user_profile_img = (userSession, cb) => {
         }
         cb(rows);
     });
+};
+
+
+// 마이 페이지 업로드 설정
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'static/res/profile_img/');
+     },
+    filename: (req, file, cb) => {
+        file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
+        const ext = path.extname(file.originalname);
+        cb(null, req.session.user + ext);
+     }
+})
+
+const fileFilter = (req, file, cb) => {
+    const fileSize = parseInt(req.headers["content-length"])
+     // mime type 체크하여 원하는 타입만 필터링
+    // console.log('사이즈 ', fileSize);
+    // console.log(file.mimetype);
+    if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' ) {
+        if (fileSize <= 3500000) {
+        // if (fileSize <= 1048576) {
+            cb(null, true);
+        } else {
+            cb({msg: '3MB 이하 파일만 업로드 가능합니다.'}, false);
+        }
+    } else {
+        cb({msg: 'jpg, jpeg, png 파일만 업로드 가능합니다.'}, false);
+    }
+}
+
+const upload = multer({ storage: storage, fileFilter: fileFilter, limits: { fileSize: 3500000 } }).single("img");
+// const upload = multer({ storage: storage, fileFilter: fileFilter }).single("img");
+
+//마이페이지 업로드 기능
+exports.upload_file = (req, res) => {
+    upload(req, res, (err) => {
+        // console.log(req.file);
+        // console.log('err msg: ', err.msg);
+        if (err) {
+            res.send({ path: undefined , flag: true, err });
+        }
+        else {
+
+            if(req.file) {
+                User.update({
+                    user_img : req.file.filename
+                },
+                { where :  { id : `${req.session.user}` } }
+                );
+                res.send({ path: req.file.filename, flag: false, err: false });
+            }
+        }
+    })
 };

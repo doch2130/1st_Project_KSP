@@ -18,10 +18,18 @@ window.addEventListener('DOMContentLoaded', event => {
         // 무조건 data로 받는다.
         .then((a) => { return a.data ; })
         // 이미지경로 + path(req.file.filename)
-        .then((reuslt) => {
-            // console.log(reuslt);
-            document.getElementById('profile_img').src = "/static/res/profile_img/" + reuslt.path;
-            document.getElementById('profile_img_mypage').src = "/static/res/profile_img/" + reuslt.path;
+        .then((result) => {
+            // console.log('result ', result);
+            // 프로필 변경 연속 실행 시 중복 실행 발생되므로
+            // 새로고침 실행
+            if(result.flag) {
+                alert(result.err.msg);
+                document.location.href = '/mypage';
+            } else {
+                document.location.href = '/mypage';
+                // document.getElementById('profile_img').src = "/static/res/profile_img/" + result.path;
+                // document.getElementById('profile_img_mypage').src = "/static/res/profile_img/" + result.path;
+            }
         });
       });        
      });

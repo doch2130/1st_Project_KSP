@@ -66,7 +66,8 @@ const upload_board = multer({
 });
 
 // 마이 페이지 파일 업로드
-router.post('/upload_file', upload.single('img'), controllerUser.upload_file);
+// router.post('/upload_file', upload.single('img'), controllerUser.upload_file);
+router.post('/upload_file', controllerUser.upload_file);
 
 // 마이 페이지 좋아요 삭제
 router.post("/mypage/likeSingDelete", controllerLikeSing.Mypage_LikeSingDelete);

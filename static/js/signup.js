@@ -76,22 +76,25 @@ function nickValidity(e) {
     if (!e.checkValidity()) {
         $('#name_check_sucess').html('<p style="color:red;"> 대소문자, 숫자, 2글자 이상 10글자 이하 </p>');
         return false;
+    } else {
+        $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
+        validity["name"] = true;
     }
-    $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
+    // $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
 
-    axios({
-        method: 'post',
-        url: '/check_name',
-        data: { name: e.value }
-    })
-        .then((result) => {
-            if (result.data) {
-                // $('#name_check_sucess').html('<p style="color:red;"> 중복된 닉네임 입니다.');
-            } else {
-                $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
-                validity["name"] = true;
-            }
-        });
+    // axios({
+    //     method: 'post',
+    //     url: '/check_name',
+    //     data: { name: e.value }
+    // })
+    // .then((result) => {
+    //     if (result.data) {
+    //         // $('#name_check_sucess').html('<p style="color:red;"> 중복된 닉네임 입니다.');
+    //     } else {
+    //         $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
+    //         validity["name"] = true;
+    //     }
+    // });
 }
 
 //비밀번호 유효성 검사 pw

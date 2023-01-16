@@ -551,3 +551,8 @@ table>tfoot>tr>td>ul>li {
     -webkit-animation-delay: 0s;
     /* Safari 和 Chrome */
 }
+
+.containerChart {
+    margin-right: 0px;
+    margin-left: 0px;
+}

@@ -93,20 +93,6 @@ exports.youtubeCrawlingFunction = (cb) => {
             }
             // json 데이터에 저장한 데이터 1개씩 저장
             data.data.push(obj);
-
-            // 이미지 저장
-            const albumImgData = await fetch(albumImgSrc);
-            const albumImgBuffer = await albumImgData.arrayBuffer();
-            // console.log(buffer);
-            
-            const uint8array = new Uint8Array(albumImgBuffer);
-            // console.log(uint8array);
-            // const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-            
-            await fs.writeFile(`./static/res/chart_image/Youtube/${fileFormat}`, uint8array, (err) => {
-                if (err) throw err;
-                console.log('Img Download Success');
-            });
         });
         // 브라우저를 종료한다.
         browser.close();
@@ -123,11 +109,15 @@ exports.youtubeCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('Youtube Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
+
+        const check = await youtubeCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
 
     })();
 
@@ -223,20 +213,6 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
             }
             // json 데이터에 저장한 데이터 1개씩 저장
             data.data.push(obj);
-
-            // 이미지 저장
-            const albumImgData = await fetch(albumImgSrc);
-            const albumImgBuffer = await albumImgData.arrayBuffer();
-            // console.log(buffer);
-            
-            const uint8array = new Uint8Array(albumImgBuffer);
-            // console.log(uint8array);
-            // const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-
-            await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${fileFormat}`, uint8array, (err) => {
-                if (err) throw err;
-                console.log('Img Download Success');
-            });
         });
         // 브라우저를 종료한다.
         browser.close();
@@ -253,12 +229,60 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('YoutubeMovie Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
 
+        const check = await youtubeMovieCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
+
     })();
 
+}
+youtubeCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
+
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/Youtube/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
+}
+
+
+youtubeMovieCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
+
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
 }

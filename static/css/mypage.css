@@ -95,6 +95,14 @@
     padding: 0px;
 }
 
+#love_img {
+    max-width: 660px;
+}
+#love_img div:nth-child(1) {
+    max-width: 660px;
+    padding: 0px;
+}
+
 /* 게시판 */
 #borderDiv > div {
     height: 100%;
@@ -164,9 +172,9 @@
     .love_img {
         justify-content: center;
     }
-    #love_img > img {
-        width: 100px !important;
-        height: 100px !important;
+    #love_img > div > div > img {
+        /* width: 100px !important; */
+        /* height: 100px !important; */
     }
 
     #borderDiv {

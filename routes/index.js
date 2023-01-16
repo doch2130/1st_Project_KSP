@@ -22,7 +22,7 @@ router.post('/signup', controllerUser.post_signup);
 router.delete('/logout', controllerUser.user_logout);
 // 회원가입 중복 검사
 router.post('/check_id', controllerUser.check_id);
-router.post('/check_name', controllerUser.check_name);
+// router.post('/check_name', controllerUser.check_name);
 router.post('/check_mail', controllerUser.check_mail);
 // 개인정보 수정
 router.get('/Edit_info', controllerUser.Edit_info);

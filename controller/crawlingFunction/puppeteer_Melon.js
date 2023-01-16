@@ -92,8 +92,8 @@ exports.melonCrawlingFunction = (cb) => {
 
 
                 // 이미지 파일 이름 설정
-                // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
-                if(i === 1) {
+                // // JSON 파일에 같이 저장하기 위해 push 상단에서 설정
+                if(i == 1) {
                     fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
                 } else {
                     fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
@@ -112,28 +112,6 @@ exports.melonCrawlingFunction = (cb) => {
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
                 data.data.push(obj);
-
-                // 이미지 저장
-                const albumImgData = await fetch(albumImgSrc);
-                const albumImgBuffer = await albumImgData.arrayBuffer();
-                // console.log(buffer);
-                
-                const uint8array = new Uint8Array(albumImgBuffer);
-                // console.log(uint8array);
-                
-                if(i === 1) {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2) + '.jpg';
-                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                } else {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2) + '.jpg';
-                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                }
             });
             // 브라우저를 종료한다.
             browser.close();
@@ -150,11 +128,15 @@ exports.melonCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('Melon Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
+
+        const check = await melonCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
         
     })();
 }
@@ -265,30 +247,7 @@ exports.melonDayCrawlingFunction = (cb) => {
                     likeCount: likeCount
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
-                data.data.push(obj);
-
-                // 이미지 저장
-                const albumImgData = await fetch(albumImgSrc);
-                const albumImgBuffer = await albumImgData.arrayBuffer();
-                // console.log(buffer);
-                
-                const uint8array = new Uint8Array(albumImgBuffer);
-                // console.log(uint8array);
-                // let fileFormat;
-                if(i === 1) {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                } else {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                }
-                
+                data.data.push(obj);                
             });
             // 브라우저를 종료한다.
             browser.close();
@@ -305,11 +264,62 @@ exports.melonDayCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('MelonDay Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
+
+        const check = await melonDayCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
         
     })();
+}
+
+
+
+// 실시간 크롤링 - 이미지 파일
+melonCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
+
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/Melon/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
+}
+
+melonDayCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
+
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/MelonDay/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
 }

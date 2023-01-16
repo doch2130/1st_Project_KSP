@@ -122,28 +122,6 @@ exports.genieCrawlingFunction = (cb) => {
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
                 data.data.push(obj);
-
-                // 이미지 저장
-                const albumImgData = await fetch(albumImgSrc);
-                const albumImgBuffer = await albumImgData.arrayBuffer();
-                // console.log(buffer);
-                
-                const uint8array = new Uint8Array(albumImgBuffer);
-                // console.log(uint8array);
-                // let fileFormat;
-                if(i === 1) {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                } else {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                }
             });
             // 브라우저를 종료한다.
             browser.close();
@@ -194,11 +172,15 @@ exports.genieCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('Genie Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
+
+        const check = await genieCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
 
     })();
 }
@@ -322,28 +304,6 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 }
                 // json 데이터에 저장한 데이터 1개씩 저장
                 data.data.push(obj);
-
-                // 이미지 저장
-                const albumImgData = await fetch(albumImgSrc);
-                const albumImgBuffer = await albumImgData.arrayBuffer();
-                // console.log(buffer);
-                
-                const uint8array = new Uint8Array(albumImgBuffer);
-                // console.log(uint8array);
-                // let fileFormat;
-                if(i === 1) {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                } else {
-                    // fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}`, uint8array, (err) => {
-                        if (err) throw err;
-                        console.log('Img Download Success');
-                    });
-                }
             });
             // 브라우저를 종료한다.
             browser.close();
@@ -394,14 +354,60 @@ exports.genieMovieCrawlingFunction = (cb) => {
         await fs.writeFile(fileName, JSON.stringify(data, null, '\t'))
         .then(() => {
             console.log('GenieMovie Fs Write Success');
-            cb(true);
+            // cb(true);
         })
         .catch((err) => {
             throw err;
         });
 
+        const check = await genieMovieCrawling_ImgFileSave(fileName);
+        console.log(check);
+        cb(true);
+
     })();
 }
     
 
+genieCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
 
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/Genie/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
+}
+
+genieMovieCrawling_ImgFileSave = (fileName) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(fileName, 'utf8')
+        .then(async (response) => {
+            response = JSON.parse(response);
+
+            for await (let el of response.data) {
+                const albumImgData = await fetch(el.albumImgSrc);
+                const albumImgBuffer = await albumImgData.arrayBuffer();
+                const uint8array = new Uint8Array(albumImgBuffer);
+                await fs.writeFile(`./static/res/chart_image/GenieMovie/${el.albumImgFile}`, uint8array);
+            }
+        })
+        .then(() => {
+            resolve(true);
+        })
+        .catch((err) => {
+            throw err;
+        });
+    });
+}

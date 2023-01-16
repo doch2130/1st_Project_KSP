@@ -88,7 +88,7 @@ function nickValidity(e) {
             if (result.data) {
                 // $('#name_check_sucess').html('<p style="color:red;"> 중복된 닉네임 입니다.');
             } else {
-                $('#name_check_sucess').html('');
+                $('#name_check_sucess').html('<p style="color:blue; visibility: hidden;">일치합니다.</p>');
                 validity["name"] = true;
             }
         });

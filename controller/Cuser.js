@@ -42,18 +42,18 @@ exports.check_id = async(req, res) => {
 };
 
 //닉네임 중복 체크
-exports.check_name = async(req, res) => {
-    let result = await User.findOne({
-        where : { name : req.body.name }
-    });
+// exports.check_name = async(req, res) => {
+//     let result = await User.findOne({
+//         where : { name : req.body.name }
+//     });
 
-    if ( result != null ) {
-        res.send(true);
-    }
-    else {
-        res.send(false);
-    }
-};
+//     if ( result != null ) {
+//         res.send(true);
+//     }
+//     else {
+//         res.send(false);
+//     }
+// };
 
 //이메일 중복 체크
 exports.check_mail = async(req, res) => {

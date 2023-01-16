@@ -45,18 +45,20 @@ function nickValidity(e) {
         $('#name_check_sucess').html('<p style="color:red;">대소문자, 숫자, 2글자 이상 10글자 이하</p>');
         return false;
     } else {
-        axios({
-            method: 'post',
-            url: '/check_name',
-            data: { name: e.value }
-        })
-        .then((result) => {
-            if (result.data) {
-                $('#name_check_sucess').html('<p style="color:red;">중복된 닉네임입니다.</p>');
-            } else {
-                $('#name_check_sucess').html('<p style="color:blue;">사용 가능한 닉네임입니다.</p>');
-            }
-        });
+        $('#name_check_sucess').html('<p style="color:blue;">사용 가능한 닉네임입니다.</p>');
+        
+        // axios({
+        //     method: 'post',
+        //     url: '/check_name',
+        //     data: { name: e.value }
+        // })
+        // .then((result) => {
+        //     if (result.data) {
+        //         $('#name_check_sucess').html('<p style="color:red;">중복된 닉네임입니다.</p>');
+        //     } else {
+        //         $('#name_check_sucess').html('<p style="color:blue;">사용 가능한 닉네임입니다.</p>');
+        //     }
+        // });
     }
 }
 //비밀번호 유효성 검사 pw

@@ -231,9 +231,6 @@ exports.upload_file = (req, res) => {
     }
 };
 
-
-
-
 exports.user_profile_img = (userSession, cb) => {
     // 유저 name 체크
     User.findOne({

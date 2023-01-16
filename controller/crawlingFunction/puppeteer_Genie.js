@@ -12,6 +12,9 @@ exports.genieCrawlingFunction = (cb) => {
     // 2페이지 51 ~ 100
     const url2 = "https://www.genie.co.kr/chart/top200?pg=2";
 
+    // 날짜 객체 설정
+    let date = new Date();
+
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
         // json 데이터 저장 변수
@@ -116,13 +119,16 @@ exports.genieCrawlingFunction = (cb) => {
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
+                let fileFormat;
                 if(i === 1) {
-                    await fs.writeFile(`./static/res/chart_image/Genie/${index}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    await fs.writeFile(`./static/res/chart_image/Genie/${index+50}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Genie/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -167,8 +173,6 @@ exports.genieCrawlingFunction = (cb) => {
         console.log('2nd crawling Exit');
 
         // 파일 저장 함수
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 genieChartHour-년-월-일-시간
         let formatDate = 'genieChartHour' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 
@@ -196,6 +200,9 @@ exports.genieMovieCrawlingFunction = (cb) => {
     const url = "https://www.genie.co.kr/chart/musicVideo";
     // 2페이지 51 ~ 100
     const url2 = "https://www.genie.co.kr/chart/musicVideo?pg=2";
+
+    // 날짜 객체 설정
+    let date = new Date();
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
@@ -301,13 +308,16 @@ exports.genieMovieCrawlingFunction = (cb) => {
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
+                let fileFormat;
                 if(i === 1) {
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${index}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${index+50}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/GenieMovie/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -352,8 +362,6 @@ exports.genieMovieCrawlingFunction = (cb) => {
         console.log('2nd crawling Exit');
 
         // 파일 저장 함수
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 genieChartMovie-년-월-일-시간
         let formatDate = 'genieChartMovie' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 

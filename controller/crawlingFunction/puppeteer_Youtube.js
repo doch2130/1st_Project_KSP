@@ -9,6 +9,9 @@ exports.youtubeCrawlingFunction = (cb) => {
 
     const url = "https://charts.youtube.com/charts/TopSongs/kr?hl=ko";
 
+    // 날짜 객체 설정
+    let date = new Date();
+
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
         // json 데이터 저장 변수
@@ -93,7 +96,9 @@ exports.youtubeCrawlingFunction = (cb) => {
             
             const uint8array = new Uint8Array(albumImgBuffer);
             // console.log(uint8array);
-            await fs.writeFile(`./static/res/chart_image/Youtube/${index}.jpg`, uint8array, (err) => {
+            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+            
+            await fs.writeFile(`./static/res/chart_image/Youtube/${fileFormat}.jpg`, uint8array, (err) => {
                 if (err) throw err;
                 console.log('Img Download Success');
             });
@@ -103,8 +108,6 @@ exports.youtubeCrawlingFunction = (cb) => {
 
 
         // 파일 저장
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 youtubeChartHour-년-월-일-시간
         let formatDate = 'youtubeChartHour' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 
@@ -131,6 +134,9 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
 
     const url = "https://charts.youtube.com/charts/TopVideos/kr?hl=ko";
 
+    // 날짜 객체 설정
+    let date = new Date();
+
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
         // json 데이터 저장 변수
@@ -216,7 +222,9 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
             
             const uint8array = new Uint8Array(albumImgBuffer);
             // console.log(uint8array);
-            await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${index}.jpg`, uint8array, (err) => {
+            const fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+
+            await fs.writeFile(`./static/res/chart_image/YoutubeMovie/${fileFormat}.jpg`, uint8array, (err) => {
                 if (err) throw err;
                 console.log('Img Download Success');
             });
@@ -226,8 +234,6 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
 
 
         // 파일 저장
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 youtubeChartMovie-년-월-일-시간
         let formatDate = 'youtubeChartMovie' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 

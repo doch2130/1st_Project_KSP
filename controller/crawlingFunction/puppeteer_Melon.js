@@ -16,6 +16,9 @@ exports.melonCrawlingFunction = (cb) => {
         data.data = [];
         let lists = '';
 
+        // 날짜 객체 설정
+        let date = new Date();
+
         // 50개 먼저 긁어온 후 나머지 50개를 긁어온다.
         // 1~50, 51~100 클래스명이 다르다.
         for (let i = 1; i < 3; i++) {
@@ -106,13 +109,16 @@ exports.melonCrawlingFunction = (cb) => {
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
+                let fileFormat;
                 if(i === 1) {
-                    await fs.writeFile(`./static/res/chart_image/Melon/${index}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    await fs.writeFile(`./static/res/chart_image/Melon/${index+50}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/Melon/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -123,8 +129,6 @@ exports.melonCrawlingFunction = (cb) => {
         }
 
         // 파일 저장
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 melonChartHour-년-월-일-시간
         let formatDate = 'melonChartHour' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 
@@ -156,6 +160,9 @@ exports.melonDayCrawlingFunction = (cb) => {
         data.data = [];
         let lists = '';
 
+        // 날짜 객체 설정
+        let date = new Date();
+
         // 50개 먼저 긁어온 후 나머지 50개를 긁어온다.
         // 1~50, 51~100 클래스명이 다르다.
         for (let i = 1; i < 3; i++) {
@@ -245,13 +252,16 @@ exports.melonDayCrawlingFunction = (cb) => {
                 
                 const uint8array = new Uint8Array(albumImgBuffer);
                 // console.log(uint8array);
+                let fileFormat;
                 if(i === 1) {
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${index}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+index).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
                 } else {
-                    await fs.writeFile(`./static/res/chart_image/MelonDay/${index+50}.jpg`, uint8array, (err) => {
+                    fileFormat = ('00' + date.getHours()).slice(-2) + '-' + ('00'+(index+50)).slice(-2);
+                    await fs.writeFile(`./static/res/chart_image/MelonDay/${fileFormat}.jpg`, uint8array, (err) => {
                         if (err) throw err;
                         console.log('Img Download Success');
                     });
@@ -263,8 +273,6 @@ exports.melonDayCrawlingFunction = (cb) => {
         }
 
         // 파일 저장
-        // 날짜 객체 설정
-        let date = new Date();
         // 파일 이름 설정 melonChartDay-년-월-일-시간
         let formatDate = 'melonChartDay' + '-' + date.getFullYear() + '-' + ('00' + (date.getMonth()+1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2) + '-' + ('00' + date.getHours()).slice(-2);
 

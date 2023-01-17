@@ -1,4 +1,6 @@
 const { User, LikeSing, Board } = require('../model/index');
+const multer = require('multer');
+const path = require('path');
 const fs = require('fs');
 
 //로그인 페이지
@@ -218,20 +220,6 @@ exports.mypage = async (req, res) => {
     } 
 };
 
-
-//마이페이지 업로드 기능
-// exports.upload_file = (req, res) => {
-//     if(req.file) {
-//         User.update({
-//             user_img : req.file.filename
-//         },
-//         { where :  { id : `${req.session.user}` } }
-//         );
-//         // res.send({ path : req.file.filename });
-//         res.send({ path : req.file.filename, err : false });
-//     }
-// };
-
 exports.user_profile_img = (userSession, cb) => {
     // 유저 name 체크
     User.findOne({
@@ -246,11 +234,7 @@ exports.user_profile_img = (userSession, cb) => {
     });
 };
 
-
 // 마이 페이지 업로드 설정
-const multer = require('multer');
-const path = require('path');
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'static/res/profile_img/');
@@ -264,7 +248,6 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
     const fileSize = parseInt(req.headers["content-length"])
-     // mime type 체크하여 원하는 타입만 필터링
     // console.log('사이즈 ', fileSize);
     // console.log(file.mimetype);
     if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' ) {
@@ -303,3 +286,17 @@ exports.upload_file = (req, res) => {
         }
     })
 };
+
+
+//마이페이지 업로드 기능
+// exports.upload_file = (req, res) => {
+//     if(req.file) {
+//         User.update({
+//             user_img : req.file.filename
+//         },
+//         { where :  { id : `${req.session.user}` } }
+//         );
+//         // res.send({ path : req.file.filename });
+//         res.send({ path : req.file.filename, err : false });
+//     }
+// };

@@ -129,9 +129,12 @@ router.post("/crawling/geniemovie", controllerCrawling.genieMovieCrawlingPage);
 router.post("/crawling/youtube", controllerCrawling.youtubeCrawlingPage);
 router.post("/crawling/youtubemovie", controllerCrawling.youtubeMovieCrawlingPage);
 
-
+// 댓글 달기
 router.post("/board/comment/write", controllerBoard.commentWrite);
 router.post("/board/comment/delete", controllerBoard.commentDelete);
+router.post("/board/comment/update", controllerBoard.commentUpdate);
 
+// 대댓글 달기
+router.post("/board/comment/nestedcomment/write", controllerBoard.nestedCommentWrite);
 
 module.exports = router;

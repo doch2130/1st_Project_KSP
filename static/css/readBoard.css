@@ -166,11 +166,13 @@ div.reactions__container{
     }
 }
 
+/* 댓글 */
 #commentWrite, #commentView {
     color: white;
     margin-top: 1rem;
 }
 
+/* 댓글 작성 */
 #commentWrite > form {
     display: flex;
     justify-content: center;
@@ -187,6 +189,7 @@ div.reactions__container{
     margin-left: 10px;
 }
 
+/* 댓글 보기 */
 #commentView > div:nth-child(1) {
     display: flex;
 }
@@ -196,20 +199,22 @@ div.reactions__container{
     margin: auto;
 }
 
+/* 댓글 보기 리스트 */
 #commentViewList {
     margin: auto;
     margin-top: 1rem;
     width: 90%;
 }
 
-#commentViewList > div {
+#commentViewList > div > div {
     margin-bottom: 1rem;
 }
 
-#commentViewList > div > p {
+#commentViewList > div > div > p {
     margin: 0px;
 }
 
+/* 댓글 보기 리스트 - 버튼(수정, 삭제) */
 .dropdown-toggle-split {
     background-color: black !important;
     border: 0px;
@@ -236,4 +241,53 @@ div.reactions__container{
 .dropdown-menu > p:hover {
     background-color: white;
     color: black;
+}
+
+/* 댓글 보기 - 수정 */
+#commentWriteUpdateForm {
+    width: 80%;
+    text-align: right;
+}
+
+#commentWriteUpdateForm > textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 0.25rem;
+    height: 40px;
+}
+
+/* 대댓글 작성 버튼 */
+.nestedCommentBtn {
+    cursor: pointer;
+}
+
+.nestedCommentBtn:hover {
+    background-color: #777;
+    border-radius: 0.25rem;
+}
+
+.nestedCommentDiv {
+    text-align: right;
+    margin-top: 8px;
+}
+
+.nestedCommentDiv > form > textarea {
+    width: 100%;
+    border-radius: 0.25rem;
+    resize: none;
+}
+
+/* 대댓글 펼치기 */
+.collapse-btn {
+    font-size: x-small;
+    background-color: black;
+    border: 0px;
+    color: #065fd4;
+}
+
+.collapse-btn:hover,
+.collapse-btn:focus {
+    color: #065fd4;
+    border: 0px;
+    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 100%);
 }

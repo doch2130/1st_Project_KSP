@@ -2,6 +2,7 @@
 <html lang="en, ko">
 <head>
     <%- include('./common/Head_CDN') %>
+    <script type="text/javascript" src="/static/js/readBoard.js"></script>
     <link href="/static/css/readBoard.css" rel="stylesheet" />
 </head>
 <body class="sb-nav-fixed">
@@ -23,33 +24,33 @@
                     <div class="board_view_wrap">
                         <div class="board_view">
                             <div class="title">
-                                <%=data.title%>
+                                <%=result.Board.title%>
                             </div>
                             <div class="info">
                                 <dl>
                                     <dt>번호</dt>
-                                    <dd><%=data.number%></dd>
+                                    <dd><%=result.Board.number%></dd>
                                 </dl>
                                 <dl> 
                                     <dt>글쓴이</dt>
-                                    <dd><%=data.id%></dd>
+                                    <dd><%=result.Board.id%></dd>
                                 </dl>
                                 <dl>
                                     <dt>작성일</dt> 
-                                    <dd><%=data.date.toLocaleDateString()%></dd>
+                                    <dd><%=result.Board.date.toLocaleDateString()%></dd>
                                 </dl>
                                 <dl>
                                     <dt>조회</dt>
-                                    <dd><%=data.hit%></dd>
+                                    <dd><%=result.Board.hit%></dd>
                                 </dl>
                             </div>
                             <div class="cont">
-                                <pre style="font-size: 1.5rem; margin: 0px;"><%=data.content%></pre>
+                                <pre style="font-size: 1.5rem; margin: 0px;"><%=result.Board.content%></pre>
                                 <br />
-                            <% if ( data.filename != null ) { %>
-                                    <% if ( data.filename.includes(".png") || data.filename.includes(".jpg")) { %>
+                            <% if ( result.Board.filename != null ) { %>
+                                    <% if ( result.Board.filename.includes(".png") || result.Board.filename.includes(".jpg")) { %>
                                 <div class="img" style="width: 50%;">
-                                    <img src="/static/res/board/<%=data.filename%>" width="70%" />
+                                    <img src="/static/res/board/<%=result.Board.filename%>" width="70%" />
                                 </div>
                                     <% } %>
                             <% } %>
@@ -58,16 +59,16 @@
                                 date의 파일네임에 png가 들어있거나또는 data의 파일네임에 jpg가 들어있으면
                                 div class=img 태그를 보여줘라! -->
 
-                            <% if ( data.filename != null ) { %>
-                                <a href="/static/res/board/<%=data.filename%>" target="_blank"><%=data.filename%></a> 
+                            <% if ( result.Board.filename != null ) { %>
+                                <a href="/static/res/board/<%=result.Board.filename%>" target="_blank"><%=result.Board.filename%></a> 
                             <% } %>
                             <!-- 만약에, data의 파일이름이 null이 아니면,
                                 data의 파일을 보여주는 페이지를 열리게 하는 링크 -->
                         </div>
                         <div class="bt_wrap">
-                            <% if ( result.id == data.id && result.isLogin ) {  %>
-                                <button type="button" class="btn btn-outline-secondary" id="btn_correct" onclick="document.location.href='/board/update?number=<%=data.number%>'">수정</button>
-                                <button type="button" class="btn btn-outline-secondary" id="btn_delete" onclick="delete_Board();">삭제</button>
+                            <% if ( result.id == result.Board.id && result.isLogin ) {  %>
+                                <button type="button" class="btn btn-outline-secondary" id="btn_correct" onclick="document.location.href='/board/update?number=<%=result.Board.number%>'">수정</button>
+                                <button type="button" class="btn btn-outline-secondary" id="btn_delete" onclick="delete_Board('<%= result.Board.number %>', '<%= result.isLogin %>');">삭제</button>
                             <% } %>
                             <button type="button" class="btn btn-outline-secondary" id="btn_cancel" onclick="document.location.href='/board'">목록</button>
                         </div>
@@ -75,51 +76,81 @@
                     <!-- 댓글 작성 -->
                     <div id="commentWrite">
                         <form id="commentWriteForm">
-                            <textarea type="text" name="comment" placeholder="댓글을 입력해주세요."></textarea>
-                            <button id="commentWriteBtn" type="button" class="btn btn-outline-secondary" onclick="commentWrite()">작성</button>
+                            <textarea name="comment" placeholder="댓글을 입력해주세요."></textarea>
+                            <button id="commentWriteBtn" type="button" class="btn btn-outline-secondary" onclick="commentWrite('<%=result.Board.number%>', '<%=result.isLogin%>')">작성</button>
                         </form>
                     </div>
 
                     <!-- 댓글 보기 -->
                     <div id="commentView">
                         <div>
-                            <p>댓글 <%= result.comment.length %>개</p>
+                            <p>댓글 <%= result.comment.length + result.nestedComment.length %>개</p>
                         </div>
-                        <div id="commentViewList" class="row">
+                        <div id="commentViewList">
                             <% for (let i = 0; i < result.comment.length; i++) { %>
+                            <div class="row">
                                 <div class="col-11">
+                                    <p style="display: none"><%= result.comment[i].number %></p>
                                     <p><%= result.comment[i].id %></p>
                                     <p><%= result.comment[i].content %></p>
-                                    <p><%= result.comment[i].writetime.toLocaleDateString() %> <span>답글</span></p>
+                                    <p><%= result.comment[i].writetime.toLocaleDateString() %>
+                                        <% if (result.comment[i].updateflag) { %>
+                                        <span>(수정됨)</span>
+                                        <% } %>
+                                        <span class="nestedCommentBtn" onclick="nestedCommentBtn(this)">답글</span>
+                                    </p>
+                                    <div class="col-11" style="display: none;">
+                                        <div class="nestedCommentDiv">
+                                            <form>
+                                                <textarea name="comment"></textarea>
+                                                <br />
+                                                <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentWrite(this, '<%=result.Board.number%>', '<%=result.isLogin%>')">등록</button>
+                                                <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentCancel(this)">취소</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <% for (let j = 0; j < result.nestedComment.length; j++) { %>
+                                    <% if (result.comment[i].number === result.nestedComment[j].commentnumber) { %>
+                                        <button class="btn btn-secondary collapse-btn <%='collapse-btn'+i%>" type="button" data-bs-toggle="collapse" data-bs-target="<%='#collapseComment'+(i+10)%>" aria-expanded="false" aria-controls="collapseExample">
+                                            답글 1개
+                                        </button>
+                                        <div class="collapse col-11" style="margin-left: 1rem; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
+                                            <div class="card card-body" style="background-color: black; margin-top: 8px; padding: 0px;">
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].id %></p>
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].content %></p>
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].writetime.toLocaleDateString() %></p>
+                                            </div>
+                                        </div>
+                                    
+                                    <% } %>
+                                    <% } %>
                                 </div>
                                 <div class="col-1">
                                     <!-- Split dropstart button -->
                                     <div class="btn-group dropstart">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
+                                        <% if(result.id === result.comment[i].id) { %>
+                                            <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
+                                        <% } %>
                                         <ul class="dropdown-menu">
-                                        <!-- Dropdown menu links -->
-                                        <p onclick="commentEdit()">수정</p>
-                                        <p onclick="commentDelete(this, '<%= result.comment[i].number %>')">삭제</p>
+                                            <!-- Dropdown menu links -->
+                                            <p onclick="commentEdit(this, '<%= result.comment[i].content %>')">수정</p>
+                                            <p onclick="commentDelete(this, '<%= result.comment[i].number %>')">삭제</p>
                                         </ul>
                                     </div>
                                 </div>
-                            <% } %>
-                            <div class="col-11">
-                                <p>닉네임</p>
-                                <p>내용</p>
-                                <p>날짜</p>
-                            </div>
-                            <div class="col-1">
-                                <!-- Split dropstart button -->
-                                <div class="btn-group dropstart">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
-                                    <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                    <p onclick='commentEdit()'>수정</p>
-                                    <p onclick='commentDelete()'>삭제</p>
-                                    </ul>
+                                <div class="col-12" style="display: none;">
+                                    <div id="commentWriteUpdate">
+                                        <form id="commentWriteUpdateForm">
+                                            <textarea name="comment"></textarea>
+                                            <br />
+                                            <button type="button" class="btn btn-outline-secondary" onclick="commentEditUpdate(this, '<%= result.comment[i].number %>')">등록</button>
+                                            <button type="button" class="btn btn-outline-secondary" onclick="commentEditCancel(this)">취소</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -130,105 +161,5 @@
     <!-- 로그인, 로그아웃 버튼 보여주기 & 로그아웃 기능 -->
     <%- include('./common/topLoginBtn.ejs') %>
 
-    <script type="text/javascript">
-        function delete_Board() {
-            let user = {
-                number: "<%=data.number%>"
-            };
-            
-            if ( !"<%=result.isLogin%>" ) {
-                alert( "로그인 하십시오" ); 
-                document.location.href='/login';
-            }
-            let chooseMsg;
-            chooseMsg = confirm('댓글을 삭제하시겠습니까?');
-            if(chooseMsg) {
-                axios({
-                    method: 'delete',
-                    url: '/board/delete',
-                    data: user
-                })
-                .then((rep) => {
-                    return rep.data;
-                })
-                .then((data) => {
-                    if( data ) {
-                        alert( "글 삭제가 완료되었습니다." );
-                        document.location.href='/board';
-                    } else {
-                        alert( "알 수 없는 문제가 발생했습니다." );
-                    }
-                });
-            }
-        }
-
-        function commentWrite() {
-            if ("<%=result.isLogin%>" != "true") {
-                alert("로그인 후 작성이 가능합니다.");
-                document.location.href='/login';
-                return false;
-            }
-
-            const form = document.getElementById('commentWriteForm');
-            if(form.comment.value === '') {
-                alert('댓글을 입력해주세요.');
-                return false;
-            }
-
-            axios({
-                method: 'post',
-                url: '/board/comment/write',
-                data: {
-                    boardnumber: "<%=data.number%>",
-                    content: form.comment.value
-                }
-            })
-            .then((response) => {
-                // console.log(response);
-                const { id, content, writetime } = response.data;
-                const writetimeDate = new Date(writetime);
-
-                const commentViewList = document.getElementById('commentViewList');
-                const div = document.createElement('div');
-                const temp = `<p>${id}</p>
-                <p>${content}</p>
-                <p>${writetimeDate.toLocaleDateString()} <span>답글</span></p>`;
-
-                div.innerHTML = temp;
-                commentViewList.appendChild(div);
-            });
-        }
-
-        function commentEdit() {
-        }
-
-        function commentDelete(e, commentnumber) {
-            // console.log(commentnumber);
-            // console.log(e.parentElement.parentElement.parentElement);
-            // console.log(e.parentElement.parentElement.parentElement.previousElementSibling);
-
-            let chooseMsg;
-            chooseMsg = confirm('댓글을 삭제하시겠습니까?');
-
-            if(chooseMsg) {
-                const col11 = e.parentElement.parentElement.parentElement.previousElementSibling;
-                const col1 = e.parentElement.parentElement.parentElement;
-
-                axios({
-                    method: 'post',
-                    url: '/board/comment/delete',
-                    data: {
-                        commentnumber: commentnumber
-                    }
-                })
-                .then((response) => {
-                    col11.remove();
-                    col1.remove();
-                    alert('삭제하였습니다.');
-                });
-            }
-        }
-    </script>
-    
 </body>
 </html>

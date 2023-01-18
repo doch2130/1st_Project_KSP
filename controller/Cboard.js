@@ -1,7 +1,7 @@
-const { Board, BoardComment } = require('../model/index');
+const { Board, BoardComment, BoardNestedComment } = require('../model/index');
 const CuserFunction = require('./Cuser');
 
-exports.index = (req,res) => {
+exports.index = async (req,res) => {
     let result = {id : req.session.user};
 
     Board.findAll({
@@ -74,9 +74,10 @@ exports.read = (req,res) => {
             number: req.query.number
         } 
     })
-    .then((result3) => {
+    .then((resultBoard) => {
         // DB에 저장된 <br/> 태그를 출력할 때는 \r\n 으로 다시 변경하여 출력
-        result3.content = result3.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+        resultBoard.content = resultBoard.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+        result['Board'] = resultBoard;
 
         BoardComment.findAll({
             where: {
@@ -87,18 +88,35 @@ exports.read = (req,res) => {
         .then((resultComment) => {
             result['comment'] = resultComment;
 
-            // 세션 체크
-            if(req.session.user) {
-                result["isLogin"] = true;
-                CuserFunction.user_profile_img(req.session.user, (userProfile) => {
-                    result['user_img'] = userProfile.user_img;
-                    res.render("readBoard", {data: result3, result });
-                });
-            } else {
-                result["isLogin"] = false;
-                result['user_img'] = 'd_img.png';
-                res.render("readBoard", {data: result3, result });
-            }
+            BoardNestedComment.findAll({
+                where: {
+                    boardnumber: req.query.number
+                },
+                order: [["number", "DESC"]]
+            })
+            .then((resultNestedComment) => {
+                // console.log(resultNestedComment);
+                // console.log(resultNestedComment[0].content);
+                for (let i = 0; i < resultNestedComment.length; i++) {
+                    resultNestedComment[i].content = resultNestedComment[i].content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+                }
+                result['nestedComment'] = resultNestedComment;
+
+                // 세션 체크
+                if(req.session.user) {
+                    result["isLogin"] = true;
+                    CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                        result['user_img'] = userProfile.user_img;
+                        // res.render("readBoard", {data: result3, result });
+                        res.render("readBoard", { result });
+                    });
+                } else {
+                    result["isLogin"] = false;
+                    result['user_img'] = 'd_img.png';
+                    // res.render("readBoard", {data: result3, result });
+                    res.render("readBoard", { result });
+                }
+            });
         });
     });
 }
@@ -167,7 +185,7 @@ exports.update = (req, res) => {
 exports.commentWrite = (req, res) => {
     let data = {
         id: req.session.user,
-        boardnumber: req.body.boardnumber,
+        boardnumber: req.body.boardNumber,
         content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
         updateflag: '0'
     }
@@ -181,9 +199,39 @@ exports.commentWrite = (req, res) => {
 // 댓글 삭제
 exports.commentDelete = (req, res) => {
     BoardComment.destroy({
-        where: {number: req.body.commentnumber}
+        where: {number: req.body.commentNumber}
     })
     .then(() => {
         res.send(true);
+    });
+}
+
+// 댓글 수정
+exports.commentUpdate = (req, res) => {
+    let data = {
+        content: req.body.commentContent.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
+        updateflag: '1'
+    }
+
+    BoardComment.update(data, {
+        where: {number: req.body.commentNumber}
+    })
+    .then((result)=>{
+        res.send(result);
+    });
+}
+
+// 대댓글 작성
+exports.nestedCommentWrite = (req, res) => {
+    let data = {
+        id: req.session.user,
+        boardnumber: req.body.boardNumber,
+        commentnumber: req.body.commentNumber,
+        content: req.body.nestedComment.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
+        updateflag: '0'
+    }
+    BoardNestedComment.create(data)
+    .then((result) => {
+        res.send(result);
     });
 }

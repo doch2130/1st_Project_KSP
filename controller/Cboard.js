@@ -1,4 +1,4 @@
-const { Board } = require('../model/index');
+const { Board, BoardComment } = require('../model/index');
 const CuserFunction = require('./Cuser');
 
 exports.index = (req,res) => {
@@ -77,19 +77,29 @@ exports.read = (req,res) => {
     .then((result3) => {
         // DB에 저장된 <br/> 태그를 출력할 때는 \r\n 으로 다시 변경하여 출력
         result3.content = result3.content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
-        
-        // 세션 체크
-        if(req.session.user) {
-            result["isLogin"] = true;
-            CuserFunction.user_profile_img(req.session.user, (userProfile) => {
-                result['user_img'] = userProfile.user_img;
+
+        BoardComment.findAll({
+            where: {
+                boardnumber: req.query.number
+            },
+            order: [["number", "DESC"]]
+        })
+        .then((resultComment) => {
+            result['comment'] = resultComment;
+
+            // 세션 체크
+            if(req.session.user) {
+                result["isLogin"] = true;
+                CuserFunction.user_profile_img(req.session.user, (userProfile) => {
+                    result['user_img'] = userProfile.user_img;
+                    res.render("readBoard", {data: result3, result });
+                });
+            } else {
+                result["isLogin"] = false;
+                result['user_img'] = 'd_img.png';
                 res.render("readBoard", {data: result3, result });
-            });
-        } else {
-            result["isLogin"] = false;
-            result['user_img'] = 'd_img.png';
-            res.render("readBoard", {data: result3, result });
-        }
+            }
+        });
     });
 }
 
@@ -150,4 +160,30 @@ exports.update = (req, res) => {
         //업데이트보드에서 수정버튼누르고나서 진행될 동작들~~~
         //데이터가 타이틀,아이디,컨텐츠,넘버 총 4갠데 ejs upate함수에서 data에 넘버 빼먹어서 오류났었음 
     })
+}
+
+
+// 댓글 등록
+exports.commentWrite = (req, res) => {
+    let data = {
+        id: req.session.user,
+        boardnumber: req.body.boardnumber,
+        content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
+        updateflag: '0'
+    }
+
+    BoardComment.create(data)
+    .then((result) => {
+        res.send(result);
+    });
+}
+
+// 댓글 삭제
+exports.commentDelete = (req, res) => {
+    BoardComment.destroy({
+        where: {number: req.body.commentnumber}
+    })
+    .then(() => {
+        res.send(true);
+    });
 }

@@ -165,3 +165,75 @@ div.reactions__container{
         width: 66%;
     }
 }
+
+#commentWrite, #commentView {
+    color: white;
+    margin-top: 1rem;
+}
+
+#commentWrite > form {
+    display: flex;
+    justify-content: center;
+}
+
+#commentWrite > form > textarea {
+    height: 60px;
+    width: 80%;
+    resize: none;
+    border-radius: 0.25rem;
+}
+
+#commentWrite > form > button {
+    margin-left: 10px;
+}
+
+#commentView > div:nth-child(1) {
+    display: flex;
+}
+
+#commentView > div:nth-child(1) > p {
+    width: 90%;
+    margin: auto;
+}
+
+#commentViewList {
+    margin: auto;
+    margin-top: 1rem;
+    width: 90%;
+}
+
+#commentViewList > div {
+    margin-bottom: 1rem;
+}
+
+#commentViewList > div > p {
+    margin: 0px;
+}
+
+.dropdown-toggle-split {
+    background-color: black !important;
+    border: 0px;
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu {
+    min-width: 3rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-menu > p {
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu > p:last-child {
+    margin-bottom: 0px;
+}
+
+.dropdown-menu > p:hover {
+    background-color: white;
+    color: black;
+}

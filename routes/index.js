@@ -129,4 +129,9 @@ router.post("/crawling/geniemovie", controllerCrawling.genieMovieCrawlingPage);
 router.post("/crawling/youtube", controllerCrawling.youtubeCrawlingPage);
 router.post("/crawling/youtubemovie", controllerCrawling.youtubeMovieCrawlingPage);
 
+
+router.post("/board/comment/write", controllerBoard.commentWrite);
+router.post("/board/comment/delete", controllerBoard.commentDelete);
+
+
 module.exports = router;

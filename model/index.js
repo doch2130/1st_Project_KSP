@@ -17,5 +17,7 @@ db.Sequelize = Sequelize;
 db.User = require('./User')(sequelize, Sequelize);
 db.LikeSing = require('./LikeSing')(sequelize, Sequelize);
 db.Board = require("./Board")(sequelize, Sequelize);
+db.BoardComment = require('./BoardComment')(sequelize, Sequelize);
+db.BoardNestedComment = require('./BoardNestedComment')(sequelize, Sequelize);
 
 module.exports = db;

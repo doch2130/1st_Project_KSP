@@ -45,6 +45,10 @@ const Board = ( Sequelize, DataTypes)=>{
 Board.associate = models => {
     // Board 안에 "user_id라는 컬럼 이름"으로 Uses모델에 있는 "id값"을 새로운 컬럼으로 추가한다.
     Board.belongsTo(models.User, {foreignKey: "user_id", sourceKey: 'id'});
+
+    // Board 안에 있는 "number"을 "number라는 컬럼 이름"으로 BoardComment 새로운 컬럼으로 추가한다.
+    // Board.hasMany(models.BoardComment, {foreignKey: "boardnumber", sourceKey: 'number'});
+    Board.hasMany(models.BoardComment, {foreignKey: "boardnumber", sourceKey: 'number'});
 };
 
 module.exports = Board;

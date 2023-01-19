@@ -113,7 +113,7 @@ function commentWrite(boardNumber, status) {
             <p>${content}</p>
             <p>${writetimeDate.toLocaleDateString()}
             <span style="display: none">(수정됨)</span>
-            <span>답글</span>
+            <span class="nestedCommentBtn" onclick="nestedCommentBtn(this)">답글</span>
             </p>
             </div>
             <div class="col-1">

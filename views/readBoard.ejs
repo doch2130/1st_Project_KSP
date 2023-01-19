@@ -109,22 +109,8 @@
                                             </form>
                                         </div>
                                     </div>
-
-                                    <% for (let j = 0; j < result.nestedComment.length; j++) { %>
-                                    <% if (result.comment[i].number === result.nestedComment[j].commentnumber) { %>
-                                        <button class="btn btn-secondary collapse-btn <%='collapse-btn'+i%>" type="button" data-bs-toggle="collapse" data-bs-target="<%='#collapseComment'+(i+10)%>" aria-expanded="false" aria-controls="collapseExample">
-                                            답글 1개
-                                        </button>
-                                        <div class="collapse col-11" style="margin-left: 1rem; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
-                                            <div class="card card-body" style="background-color: black; margin-top: 8px; padding: 0px;">
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].id %></p>
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].content %></p>
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].writetime.toLocaleDateString() %></p>
-                                            </div>
-                                        </div>
+                                    <!-- 답글 버튼 및 리스트 *기존위치 -->
                                     
-                                    <% } %>
-                                    <% } %>
                                 </div>
                                 <div class="col-1">
                                     <!-- Split dropstart button -->
@@ -148,6 +134,31 @@
                                             <button type="button" class="btn btn-outline-secondary" onclick="commentEditCancel(this)">취소</button>
                                         </form>
                                     </div>
+                                </div>
+
+                                <!-- 답글 버튼 및 리스트 *변경 -->
+                                <div class="col-12">
+                                    <% for (let j = 0; j < result.nestedComment.length; j++) { %>
+                                    <% if (result.comment[i].number === result.nestedComment[j].commentnumber) { %>
+                                        <button class="btn btn-secondary collapse-btn <%='collapse-btn'+i%>" type="button" data-bs-toggle="collapse" data-bs-target="<%='#collapseComment'+(i+10)%>" aria-expanded="false" aria-controls="collapseExample">
+                                            답글 1개
+                                        </button>
+                                        <div class="row">
+                                        <div class="col-11 collapse" style="padding-left: 1rem; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
+                                            <div class="card card-body" style="background-color: black; padding: 0px;">
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].id %></p>
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].content %></p>
+                                                <p style="margin: 0px;"><%= result.nestedComment[j].writetime.toLocaleDateString() %></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-1 collapse" style="color: white; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
+                                            <% if(result.id === result.comment[i].id) { %>
+                                                <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
+                                            <% } %>
+                                        </div>
+                                        </div>
+                                    <% } %>
+                                    <% } %>
                                 </div>
                             </div>
                             <% } %>

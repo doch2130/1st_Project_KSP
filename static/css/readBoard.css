@@ -214,6 +214,12 @@ div.reactions__container{
     margin: 0px;
 }
 
+#commentViewList > div > div > pre {
+    margin: 0px;
+    font-size: 1rem;
+    font-family: 'KOTRA_GOTHIC';
+}
+
 /* 댓글 보기 리스트 - 버튼(수정, 삭제) */
 .dropdown-toggle-split {
     background-color: black !important;
@@ -290,4 +296,43 @@ div.reactions__container{
     color: #065fd4;
     border: 0px;
     box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 100%);
+}
+
+.row > div.collapse:nth-child(1) {
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.card-body {
+    background-color: black;
+    padding: 0px;
+}
+
+.card-body > p {
+    margin: 0px;
+}
+
+.card-body > pre {
+    margin: 0px;
+    font-size: 1rem;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.row > div.collapse:nth-child(2) {
+    color: white;
+    margin-top: 1rem;
+}
+
+
+.nestedCommentWriteUpdateForm {
+    width: 80%;
+    padding-left: 1rem;
+    text-align: right;
+}
+
+.nestedCommentWriteUpdateForm > textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 0.25rem;
+    height: 40px;
 }

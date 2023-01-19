@@ -136,5 +136,7 @@ router.post("/board/comment/update", controllerBoard.commentUpdate);
 
 // 대댓글 달기
 router.post("/board/comment/nestedcomment/write", controllerBoard.nestedCommentWrite);
+router.post("/board/comment/nestedcomment/delete", controllerBoard.nestedCommentDelete);
+router.post("/board/comment/nestedcomment/update", controllerBoard.nestedCommentUpdate);
 
 module.exports = router;

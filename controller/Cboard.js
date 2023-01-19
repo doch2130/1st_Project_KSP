@@ -86,6 +86,9 @@ exports.read = (req,res) => {
             order: [["number", "DESC"]]
         })
         .then((resultComment) => {
+            for (let i = 0; i < resultComment.length; i++) {
+                resultComment[i].content = resultComment[i].content.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+            }
             result['comment'] = resultComment;
 
             BoardNestedComment.findAll({
@@ -183,17 +186,28 @@ exports.update = (req, res) => {
 
 // 댓글 등록
 exports.commentWrite = (req, res) => {
+    let result = {id : req.session.user};
     let data = {
         id: req.session.user,
         boardnumber: req.body.boardNumber,
         content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
         updateflag: '0'
     }
+    BoardComment.findAll({
+        where: {
+            boardnumber: req.body.boardNumber
+        }
+    })
+    .then((rows) => {
+        result['commentList'] = rows;
 
-    BoardComment.create(data)
-    .then((result) => {
-        res.send(result);
-    });
+        BoardComment.create(data)
+        .then((rows) => {
+            // console.log(rows);
+            result['comment'] = rows;
+            res.send(result);
+        });
+    })
 }
 
 // 댓글 삭제
@@ -216,13 +230,14 @@ exports.commentUpdate = (req, res) => {
     BoardComment.update(data, {
         where: {number: req.body.commentNumber}
     })
-    .then((result)=>{
+    .then((result) => {
         res.send(result);
     });
 }
 
-// 대댓글 작성
+// 대댓글 답글 작성
 exports.nestedCommentWrite = (req, res) => {
+    let result = {id : req.session.user};
     let data = {
         id: req.session.user,
         boardnumber: req.body.boardNumber,
@@ -231,7 +246,43 @@ exports.nestedCommentWrite = (req, res) => {
         updateflag: '0'
     }
     BoardNestedComment.create(data)
+    .then((rows) => {
+        result['create'] = rows;
+        BoardNestedComment.findAll({
+            where: {
+                boardnumber: req.body.boardNumber,
+                commentnumber: req.body.commentNumber,
+            },
+            order: [["number", "DESC"]]
+        })
+        .then((rows) => {
+            result['list'] = rows;
+            res.send(result);
+        });
+    });
+}
+
+// 대댓글 답글 삭제
+exports.nestedCommentDelete = (req, res) => {
+    BoardNestedComment.destroy({
+        where: {number: req.body.nestedCommentNumber}
+    })
+    .then(() => {
+        res.send(true);
+    });
+}
+
+// 대댓글 및 답글 수정
+exports.nestedCommentUpdate = (req, res) => {
+    let data = {
+        content: req.body.nestedCommentContent.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
+        updateflag: '1'
+    }
+
+    BoardNestedComment.update(data, {
+        where: {number: req.body.nestedCommentNumber}
+    })
     .then((result) => {
         res.send(result);
-    });
+    })
 }

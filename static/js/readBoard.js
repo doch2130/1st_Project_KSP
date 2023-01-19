@@ -3,23 +3,8 @@ window.addEventListener('DOMContentLoaded', event => {
     // 답글 펼치기
     const commentViewList = document.getElementById('commentViewList');
     const commentViewRows = commentViewList.getElementsByClassName('row');
-    // console.log(commentViewRows);
-    // const collapseBtn = commentViewList.getElementsByClassName('collapse-btn');
-    // const collapse = commentViewList.getElementsByClassName('collapse');
-    // // console.log(collapse);
-
-    // let temp = '';
-    // let tempid = '';
-    // for (let i = 0; i < collapseBtn.length; i++) {
-    //     temp = '#collapseComment' + (i + 10);
-    //     tempid = 'collapseComment' + (i + 10);
-    //     collapseBtn[i].setAttribute('data-bs-target', temp);
-    //     collapse[i].id = tempid;
-    // }
 
     let temp = '';
-    let collapseList = commentViewList.getElementsByClassName('collapse-btn');
-    // console.log(collapseList.length);
     let collapseBtn;
     for (let i = 0; i < commentViewRows.length; i++) {
         temp = 'collapse-btn' + i;
@@ -41,7 +26,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // 게시글 삭제
 function delete_Board(boardnumber, status) {
-    console.log(boardnumber);
+    // console.log(boardnumber);
     let user = {
         number: boardnumber
     };
@@ -99,8 +84,8 @@ function commentWrite(boardNumber, status) {
             }
         })
         .then((response) => {
-            console.log(response);
-            const { id, content, writetime, number, updateflag } = response.data;
+            // console.log(response);
+            const { id, content, writetime, number } = response.data.comment;
             const writetimeDate = new Date(writetime);
 
             const commentViewList = document.getElementById('commentViewList');
@@ -110,11 +95,21 @@ function commentWrite(boardNumber, status) {
             let temp = `<div class="col-11">
             <p style="display: none">${number}</p>
             <p>${id}</p>
-            <p>${content}</p>
+            <pre>${content}</pre>
             <p>${writetimeDate.toLocaleDateString()}
             <span style="display: none">(수정됨)</span>
             <span class="nestedCommentBtn" onclick="nestedCommentBtn(this)">답글</span>
             </p>
+            <div class="col-11" style="display: none;">
+            <div class="nestedCommentDiv">
+            <form>
+            <textarea name="comment"></textarea>
+            <br />
+            <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentWrite(this, '${boardNumber}', '${status}', '${response.data.commentList.length}')">등록</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentCancel(this)">취소</button>
+            </form>
+            </div>
+            </div>
             </div>
             <div class="col-1">
             <div class="btn-group dropstart">
@@ -134,6 +129,8 @@ function commentWrite(boardNumber, status) {
             <button type="button" class="btn btn-outline-secondary" onclick="commentEditCancel(this)">취소</button>
             </form>
             </div>
+            </div>
+            <div class="col-12">
             </div>
             `;
 
@@ -169,7 +166,7 @@ function commentDelete(e, commentNumber) {
         .then(() => {
             commentParent.remove();
             // col1.remove();
-            alert('삭제하였습니다.');
+            // alert('삭제하였습니다.');
         });
     }
 }
@@ -249,7 +246,7 @@ function nestedCommentCancel(e) {
 }
 
 // 답글 등록
-function nestedCommentWrite(e, boardNumber, status) {
+function nestedCommentWrite(e, boardNumber, status, commentNumber) {
     const nestedCommentDiv = e.parentElement.parentElement.parentElement;
     if (status != "true") {
         alert("로그인 후 작성이 가능합니다.");
@@ -260,9 +257,7 @@ function nestedCommentWrite(e, boardNumber, status) {
 
     
     const nestedForm = e.parentElement;
-    const commentNumber = nestedCommentDiv.parentElement.children[0].textContent;
-    // console.log(commentNumber);
-    // console.log(commentNumber.textContent);
+    const commentNumValue = nestedCommentDiv.parentElement.children[0].textContent;
 
     if(nestedForm.comment.value === '') {
         alert('내용을 입력해주세요.');
@@ -279,17 +274,170 @@ function nestedCommentWrite(e, boardNumber, status) {
             url: '/board/comment/nestedcomment/write',
             data: {
                 boardNumber: boardNumber,
-                commentNumber: commentNumber,
+                commentNumber: commentNumValue,
                 nestedComment: nestedForm.comment.value
             }
         })
         .then((response) => {
-            console.log(response);
+            // console.log(response);
+            const { id, content, writetime, number } = response.data.create;
+            // console.log(id, content, writetime, number);
+            const writetimeDate = new Date(writetime);
             // alert('등록완료');
             nestedForm.comment.value = '';
             nestedCommentDiv.style.display = 'none';
-            nestedCommentDiv.focus();
+            // nestedCommentDiv.focus();
+
+            // col12
+            const nestedCommentListDiv = nestedCommentDiv.parentElement.parentElement.children[3];
+
+            const div = document.createElement('div');
+            div.className += 'row';
+
+            let temp = '';
+            if(response.data.list.length === 1) {
+                temp = `<button class="btn btn-secondary collapse-btn 'collapse-btn${commentNumber}'" 
+            type="button" data-bs-toggle="collapse" data-bs-target="#collapseComment${Number(commentNumber)+10}" 
+            aria-expanded="true" aria-controls="collapseExample">답글 ${response.data.list.length}개</button>
+            `;
+            nestedCommentListDiv.innerHTML = temp;
+            }
+            
+            temp = `<div class="col-11 collapse show" id="collapseComment${Number(commentNumber)+10}">
+            <div class="card card-body">
+            <p>${id}</p>
+            <pre>${content}</pre>
+            <p>${writetimeDate.toLocaleDateString()}</p>
+            </div>
+            </div>
+            <div class="col-1 collapse show" id="collapseComment${Number(commentNumber)+10}">
+            <div class="btn-group dropstart">
+            <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
+            <ul class="dropdown-menu">
+            <p onclick="nestedCommentEdit(this, '${content}')">수정</p>
+            <p onclick="nestedCommentDelete(this, '${number}')">삭제</p>
+            </ul>
+            </div>
+            </div>
+            <div class="col-12" style="display: none;">
+            <div id="nestedCommentWriteUpdate">
+            <form id="nestedCommentWriteUpdateForm" class="nestedCommentWriteUpdateForm">
+            <textarea name="comment"></textarea>
+            <br />
+            <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentEditUpdate(this, '${number}')">등록</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentEditCancel(this)">취소</button>
+            </form>
+            </div>
+            </div>`;
+            // console.log(nestedCommentListDiv);
+            // console.log(nestedCommentListDiv.children[0]);
+
+            div.innerHTML = temp;
+            nestedCommentListDiv.children[0].after(div);
+            nestedCommentListDiv.children[0].textContent = '답글 ' + response.data.list.length + '개';
+            // nestedCommentListDiv.appendTo(div);
+            // commentViewList.prepend(div);
         });
     }
 }
 
+
+
+// 대댓글 답글 삭제
+function nestedCommentDelete(e, nestedCommentNumber) {
+    // console.log(nestedCommentNumber);
+    // console.log(e.parentElement.parentElement.parentElement);
+    // console.log(e.parentElement.parentElement.parentElement.parentElement);
+    // console.log(e.parentElement.parentElement.parentElement.previousElementSibling);
+
+    let chooseMsg;
+    chooseMsg = confirm('댓글을 삭제하시겠습니까?');
+
+    if(chooseMsg) {
+        const nestedCommentBtn = e.parentElement.parentElement.parentElement.parentElement.parentElement.children[0];
+        const nestedCommentParent = e.parentElement.parentElement.parentElement.parentElement;
+        // console.log(nestedCommentBtn);
+        // console.log(nestedCommentParent);
+        // console.log(nestedCommentBtn.textContent);
+        // console.log(nestedCommentBtn.textContent.slice(3, -1));
+        // console.log(typeof(nestedCommentBtn.textContent.slice(3, -1)));
+        // // string
+        // console.log(Number(nestedCommentBtn.textContent.slice(3, -1))-1);
+
+        axios({
+            method: 'post',
+            url: '/board/comment/nestedcomment/delete',
+            data: {
+                nestedCommentNumber: nestedCommentNumber
+            }
+        })
+        .then(() => {
+            nestedCommentParent.remove();
+            const nestedCommentBtnNum = Number(nestedCommentBtn.textContent.slice(3, -1))-1;
+            if(nestedCommentBtnNum === 0) {
+                nestedCommentBtn.remove();
+            } else {
+                nestedCommentBtn.textContent = '답글 ' + nestedCommentBtnNum + '개'
+            }
+        });
+    }
+}
+
+// 대댓글 및 답글 수정 입력 창 표시
+function nestedCommentEdit(e, nestedCommentContent) {
+    const col1 = e.parentElement.parentElement.parentElement;
+    const col11 = col1.previousElementSibling;
+    const nestedCommentWriteUpdateParent = e.parentElement.parentElement.parentElement.nextElementSibling;
+    // console.log(nestedCommentWriteUpdateParent);
+
+    nestedCommentWriteUpdateParent.children[0].children[0].comment.textContent = nestedCommentContent;
+
+    nestedCommentWriteUpdateParent.style.display = 'block';
+    col1.style.display = 'none';
+    col11.style.display = 'none';
+}
+
+// 대댓글 및 답글 수정 취소
+function nestedCommentEditCancel(e) {
+    const col12 = e.parentElement.parentElement.parentElement;
+    const col1 = e.parentElement.parentElement.parentElement.previousElementSibling;
+    const col11 = e.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling;
+    col12.style.display = 'none';
+    col1.style.display = 'block';
+    col11.style.display = 'block';
+}
+
+
+// 대댓글 및 답글 수정 등록
+function nestedCommentEditUpdate(e, nestedCommentNumber) {
+    const nestedCommentWriteUpdateForm = e.parentElement;
+
+    if(nestedCommentWriteUpdateForm.comment.value === '') {
+        alert('내용을 입력해주세요.');
+        return false;
+    }
+    let chooseMsg;
+    chooseMsg = confirm('수정한 내용으로 등록하시겠습니까?');
+    
+    if (chooseMsg) {
+        axios({
+            method: 'post',
+            url: '/board/comment/nestedcomment/update',
+            data: {
+                nestedCommentNumber: nestedCommentNumber,
+                nestedCommentContent: nestedCommentWriteUpdateForm.comment.value
+            }
+        })
+        .then(() => {
+            const col12 = e.parentElement.parentElement.parentElement;
+            const col1 = e.parentElement.parentElement.parentElement.previousElementSibling;
+            const col11 = e.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling;
+            col12.style.display = 'none';
+            col1.style.display = 'block';
+            col11.style.display = 'block';
+            // console.log(col11.children[1]);
+            col11.children[0].children[1].textContent = nestedCommentWriteUpdateForm.comment.value;
+            col11.children[0].children[2].children[0].style.display = 'inline';
+        });
+    }
+}

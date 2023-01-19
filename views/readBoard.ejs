@@ -92,39 +92,40 @@
                                 <div class="col-11">
                                     <p style="display: none"><%= result.comment[i].number %></p>
                                     <p><%= result.comment[i].id %></p>
-                                    <p><%= result.comment[i].content %></p>
+                                    <pre><%= result.comment[i].content %></pre>
                                     <p><%= result.comment[i].writetime.toLocaleDateString() %>
                                         <% if (result.comment[i].updateflag) { %>
                                         <span>(수정됨)</span>
+                                        <% } else { %>
+                                        <span style="display: none;">(수정됨)</span>
                                         <% } %>
                                         <span class="nestedCommentBtn" onclick="nestedCommentBtn(this)">답글</span>
                                     </p>
+                                    <!-- 대댓글 및 답글 작성 및 등록 -->
                                     <div class="col-11" style="display: none;">
                                         <div class="nestedCommentDiv">
                                             <form>
                                                 <textarea name="comment"></textarea>
                                                 <br />
-                                                <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentWrite(this, '<%=result.Board.number%>', '<%=result.isLogin%>')">등록</button>
+                                                <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentWrite(this, '<%=result.Board.number%>', '<%=result.isLogin%>', '<%=i%>')">등록</button>
                                                 <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentCancel(this)">취소</button>
                                             </form>
                                         </div>
                                     </div>
-                                    <!-- 답글 버튼 및 리스트 *기존위치 -->
-                                    
                                 </div>
+                                <!-- 댓글 드롭다운 수정, 삭제 -->
                                 <div class="col-1">
-                                    <!-- Split dropstart button -->
                                     <div class="btn-group dropstart">
                                         <% if(result.id === result.comment[i].id) { %>
                                             <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
                                         <% } %>
                                         <ul class="dropdown-menu">
-                                            <!-- Dropdown menu links -->
                                             <p onclick="commentEdit(this, '<%= result.comment[i].content %>')">수정</p>
                                             <p onclick="commentDelete(this, '<%= result.comment[i].number %>')">삭제</p>
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- 댓글 수정 -->
                                 <div class="col-12" style="display: none;">
                                     <div id="commentWriteUpdate">
                                         <form id="commentWriteUpdateForm">
@@ -136,26 +137,52 @@
                                     </div>
                                 </div>
 
-                                <!-- 답글 버튼 및 리스트 *변경 -->
+                                <!-- 대댓글 및 답글 -->
                                 <div class="col-12">
                                     <% for (let j = 0; j < result.nestedComment.length; j++) { %>
                                     <% if (result.comment[i].number === result.nestedComment[j].commentnumber) { %>
-                                        <button class="btn btn-secondary collapse-btn <%='collapse-btn'+i%>" type="button" data-bs-toggle="collapse" data-bs-target="<%='#collapseComment'+(i+10)%>" aria-expanded="false" aria-controls="collapseExample">
+                                        <!-- 대댓글 및 답글 펼치기 -->
+                                        <button class="btn btn-secondary collapse-btn <%='collapse-btn'+i%>" type="button" data-bs-toggle="collapse" data-bs-target="<%='#collapseComment'+(i+10)%>" aria-expanded="true" aria-controls="collapseExample">
                                             답글 1개
                                         </button>
                                         <div class="row">
-                                        <div class="col-11 collapse" style="padding-left: 1rem; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
-                                            <div class="card card-body" style="background-color: black; padding: 0px;">
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].id %></p>
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].content %></p>
-                                                <p style="margin: 0px;"><%= result.nestedComment[j].writetime.toLocaleDateString() %></p>
+                                            <div class="col-11 collapse show" id="<%='collapseComment'+(i+10)%>">
+                                                <div class="card card-body">
+                                                    <p><%= result.nestedComment[j].id %></p>
+                                                    <pre><%= result.nestedComment[j].content %></pre>
+                                                    <p><%= result.nestedComment[j].writetime.toLocaleDateString() %>
+                                                        <% if (result.comment[i].updateflag) { %>
+                                                        <span>(수정됨)</span>
+                                                        <% } else { %>
+                                                        <span style="display: none;">(수정됨)</span>
+                                                        <% } %>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-1 collapse" style="color: white; margin-top: 1rem;" id="<%='collapseComment'+(i+10)%>">
-                                            <% if(result.id === result.comment[i].id) { %>
-                                                <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
-                                            <% } %>
-                                        </div>
+                                            <!-- 대댓글 및 답글 드롭두안 수정, 삭제 -->
+                                            <div class="col-1 collapse show" id="<%='collapseComment'+(i+10)%>">
+                                                <div class="btn-group dropstart">
+                                                <% if(result.id === result.comment[i].id) { %>
+                                                    <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
+                                                <% } %>
+                                                    <ul class="dropdown-menu">
+                                                        <!-- Dropdown menu links -->
+                                                        <p onclick="nestedCommentEdit(this, '<%= result.nestedComment[j].content %>')">수정</p>
+                                                        <p onclick="nestedCommentDelete(this, '<%= result.nestedComment[j].number %>')">삭제</p>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- 대댓글 및 답글 수정 -->
+                                            <div class="col-12" style="display: none;">
+                                                <div id="nestedCommentWriteUpdate">
+                                                    <form id="nestedCommentWriteUpdateForm" class="nestedCommentWriteUpdateForm">
+                                                        <textarea name="comment"></textarea>
+                                                        <br />
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentEditUpdate(this, '<%= result.nestedComment[j].number %>')">등록</button>
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="nestedCommentEditCancel(this)">취소</button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     <% } %>
                                     <% } %>

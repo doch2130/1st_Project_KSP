@@ -214,8 +214,13 @@ div.reactions__container{
     margin: 0px;
 }
 
+#commentViewList > div > div > p:nth-child(4) {
+    color: #d2d2d2;
+    font-size: 0.85rem;
+}
+
 #commentViewList > div > div > pre {
-    margin: 0px;
+    margin: 4px 0;
     font-size: 1rem;
     font-family: 'KOTRA_GOTHIC';
 }
@@ -265,6 +270,9 @@ div.reactions__container{
 /* 대댓글 작성 버튼 */
 .nestedCommentBtn {
     cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: white;
 }
 
 .nestedCommentBtn:hover {
@@ -285,10 +293,11 @@ div.reactions__container{
 
 /* 대댓글 펼치기 */
 .collapse-btn {
-    font-size: x-small;
+    font-size: small;
     background-color: black;
     border: 0px;
     color: #065fd4;
+    border-radius: 20px;
 }
 
 .collapse-btn:hover,
@@ -312,8 +321,13 @@ div.reactions__container{
     margin: 0px;
 }
 
+.card-body > p:nth-child(3) {
+    color: #d2d2d2;
+    font-size: 0.85rem;
+}
+
 .card-body > pre {
-    margin: 0px;
+    margin: 4px 0;
     font-size: 1rem;
     font-family: 'KOTRA_GOTHIC';
 }

@@ -3,7 +3,7 @@
 ## Project Described
 The theme of this project is to create a site where you can check all the other music chart sites in one place and communicate with each other like a guestbook.
 
-## Project
+## Project Work
 Date: 2022-12-13 ~ 2022-12-29   
 Team members: 4 people   
 Github Link: https://github.com/KimParkSam/1st_Project   

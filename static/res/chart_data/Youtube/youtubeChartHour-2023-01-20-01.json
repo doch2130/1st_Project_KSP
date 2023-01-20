@@ -1,17 +1,6 @@
 {
 	"data": [
 		{
-			"title": "OMG",
-			"rank": "1",
-			"lastWeekRank": "지난주 #2",
-			"albumImgSrc": "https://i.ytimg.com/vi/_ZAgIHmHLdc/mqdefault.jpg",
-			"albumImgFile": "01-00.jpg",
-			"singer": "NewJeans",
-			"chartDuration": "2주",
-			"views": "8.49M",
-			"link": "https://www.youtube.com/watch?v=_ZAgIHmHLdc"
-		},
-		{
 			"title": "Ditto",
 			"rank": "2",
 			"lastWeekRank": "지난주 #1",
@@ -21,6 +10,17 @@
 			"chartDuration": "4주",
 			"views": "7.64M",
 			"link": "https://www.youtube.com/watch?v=Km71Rr9K-Bw"
+		},
+		{
+			"title": "OMG",
+			"rank": "1",
+			"lastWeekRank": "지난주 #2",
+			"albumImgSrc": "https://i.ytimg.com/vi/_ZAgIHmHLdc/mqdefault.jpg",
+			"albumImgFile": "01-00.jpg",
+			"singer": "NewJeans",
+			"chartDuration": "2주",
+			"views": "8.49M",
+			"link": "https://www.youtube.com/watch?v=_ZAgIHmHLdc"
 		},
 		{
 			"title": "Hype Boy",

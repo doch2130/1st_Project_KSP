@@ -38,6 +38,9 @@ exports.melonFile = (fileHour) => {
                 }
             }
 
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
+
             // 기본 출력 + 시간변경 분기점
             if(fileHour) {
                 // 시간변경
@@ -58,7 +61,7 @@ exports.melonFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
@@ -71,7 +74,7 @@ exports.melonFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
@@ -124,13 +127,16 @@ exports.melonDayFile = () => {
                 }
             }
 
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
+
             // console.log(filelist[filelist.length-1]);
             fs.readFile('./static/res/chart_data/MelonDay/'+filelist[filelist.length-1], 'utf8')
             .then((response) => {
                 // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                 response = JSON.parse(response);
                 // console.log(response.data);
-                resolve([response.data, filelist]);
+                resolve([response.data, filelistResolve]);
             })
             .catch((err) => {
                 // res.send('에러 발생');

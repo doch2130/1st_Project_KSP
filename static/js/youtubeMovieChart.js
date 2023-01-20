@@ -270,6 +270,12 @@ window.addEventListener('DOMContentLoaded', event => {
             // ejs 파일의 html 태그 가져오기
             // container.innerHTML = youtubechartrealpage;
 
+            // ejsData.albumImg를 JS 파일에서 임의로 생성했지만, 여기서는 생성작업이 이루어지지 않기 떄문에
+            // Img src undefined 오류가 발생한다. 그래서 시간 변경할 때만 작업을 진행해준다.
+            for(let i = 0; i < ejsDataYoutubeMovie.length; i++) {
+                ejsDataYoutubeMovie[i].albumImg = '/static/res/chart_image/YoutubeMovie/' + ejsDataYoutubeMovie[i].albumImgFile;
+            }
+
             const dayTag = document.getElementById('dayTag');
             const fileday = response.data.result.youtubeMoviedata.filelist[response.data.result.youtubeMoviedata.filelist.length-1].slice(18, -8);
             dayTag.textContent = fileday;
@@ -294,7 +300,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
             // 데이저 재전송 및 html 로딩 이후
             // 서버 데이터 재출력 및 버튼 재수정 함수 다시 실행
-            viewCount = document.querySelectorAll('select')[1].value;
+            // viewCount = document.querySelectorAll('select')[1].value;
             // tableData(ejsDataYoutube, viewCount, 1);
             // let info = pageAlgo(ejsDataYoutubeMovie.length, 3, viewCount, 1);
             // pageBtn(info);

@@ -1,0 +1,1004 @@
+{
+	"data": [
+		{
+			"title": "Ditto",
+			"rank": "1",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-00.jpg",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 'OMG'",
+			"likeCount": "188,418"
+		},
+		{
+			"title": "OMG",
+			"rank": "2",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/27/145/11127145_20230102135733_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-01.jpg",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 'OMG'",
+			"likeCount": "100,070"
+		},
+		{
+			"title": "Hype boy",
+			"rank": "3",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/11/565/11011565_20220801102637_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-02.jpg",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 1st EP 'New Jeans'",
+			"likeCount": "215,628"
+		},
+		{
+			"title": "사건의 지평선",
+			"rank": "4",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/03/868/10903868_20220330103544_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-03.jpg",
+			"singer": "윤하 (YOUNHA)",
+			"albumTitle": "YOUNHA 6th Album Repackage 'END THEORY : Final Edition'",
+			"likeCount": "266,902"
+		},
+		{
+			"title": "VIBE (feat. Jimin of BTS)",
+			"rank": "5",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/46/937/11146937_20230112154123_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-04.jpg",
+			"singer": "태양",
+			"albumTitle": "VIBE (feat. Jimin of BTS)",
+			"likeCount": "55,138"
+		},
+		{
+			"title": "ANTIFRAGILE",
+			"rank": "6",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/78/496/11078496_20221014153848_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-05.jpg",
+			"singer": "LE SSERAFIM (르세라핌)",
+			"albumTitle": "ANTIFRAGILE",
+			"likeCount": "136,600"
+		},
+		{
+			"title": "Attention",
+			"rank": "7",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/11/565/11011565_20220801102637_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-06.jpg",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 1st EP 'New Jeans'",
+			"likeCount": "201,346"
+		},
+		{
+			"title": "After LIKE",
+			"rank": "8",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/34/298/11034298_20220822101843_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-07.jpg",
+			"singer": "IVE (아이브)",
+			"albumTitle": "After LIKE",
+			"likeCount": "212,352"
+		},
+		{
+			"title": "NOT SORRY (Feat. pH-1) (Prod. by Slom)",
+			"rank": "9",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/25/247/11125247_20221216121651_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-08.jpg",
+			"singer": "이영지",
+			"albumTitle": "쇼미더머니 11 Episode 3",
+			"likeCount": "78,333"
+		},
+		{
+			"title": "Candy",
+			"rank": "10",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/24/139/11124139_20221215162633_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-09.jpg",
+			"singer": "NCT DREAM",
+			"albumTitle": "Candy - Winter Special Mini Album",
+			"likeCount": "119,320"
+		},
+		{
+			"title": "Nxde",
+			"rank": "11",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/78/852/11078852_20221017102947_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-10.jpg",
+			"singer": "(여자)아이들",
+			"albumTitle": "I love",
+			"likeCount": "149,686"
+		},
+		{
+			"title": "LOVE DIVE",
+			"rank": "12",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/09/179/10909179_20220405103521_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-11.jpg",
+			"singer": "IVE (아이브)",
+			"albumTitle": "LOVE DIVE",
+			"likeCount": "223,130"
+		},
+		{
+			"title": "새삥 (Prod. ZICO) (Feat. 호미들)",
+			"rank": "13",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/45/985/11045985_20220905151107_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-12.jpg",
+			"singer": "지코 (ZICO)",
+			"albumTitle": "스트릿 맨 파이터(SMF) Original Vol.3 (계급미션)",
+			"likeCount": "139,635"
+		},
+		{
+			"title": "Monologue",
+			"rank": "14",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/57/545/11057545_20221021124737_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-13.jpg",
+			"singer": "테이",
+			"albumTitle": "Monologue",
+			"likeCount": "71,241"
+		},
+		{
+			"title": "마이웨이 (MY WAY) (Prod. R.Tee)",
+			"rank": "15",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/15/007/11115007_20221202105416_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-14.jpg",
+			"singer": "저스디스 (JUSTHIS)R.Tee던말릭 (DON MALIK)허성현 (Huh)KHAN맥대디 (Mckdaddy)로스 (Los)",
+			"albumTitle": "쇼미더머니 11 Episode 1",
+			"likeCount": "72,315"
+		},
+		{
+			"title": "너의 모든 순간",
+			"rank": "16",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/022/32/505/2232505_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-15.jpg",
+			"singer": "성시경",
+			"albumTitle": "별에서 온 그대 OST Part.7",
+			"likeCount": "246,750"
+		},
+		{
+			"title": "Cookie",
+			"rank": "17",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/11/565/11011565_20220801102637_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-16.jpg",
+			"singer": "NewJeans",
+			"albumTitle": "NewJeans 1st EP 'New Jeans'",
+			"likeCount": "116,821"
+		},
+		{
+			"title": "그대를 알고",
+			"rank": "18",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/21/346/11121346_20221213100914_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-17.jpg",
+			"singer": "송하예",
+			"albumTitle": "그대를 알고",
+			"likeCount": "23,603"
+		},
+		{
+			"title": "해요 (2022)",
+			"rank": "19",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/75/276/10975276_20220603165713_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-18.jpg",
+			"singer": "#안녕",
+			"albumTitle": "해요 (2022)",
+			"likeCount": "67,535"
+		},
+		{
+			"title": "사랑인가 봐",
+			"rank": "20",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/71/162/10871162_20220217162422_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-19.jpg",
+			"singer": "멜로망스",
+			"albumTitle": "사랑인가 봐 (사내맞선 OST 스페셜 트랙)",
+			"likeCount": "171,919"
+		},
+		{
+			"title": "Shut Down",
+			"rank": "21",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/33/394/11033394_20220916124707_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-20.jpg",
+			"singer": "BLACKPINK",
+			"albumTitle": "BORN PINK",
+			"likeCount": "110,065"
+		},
+		{
+			"title": "사랑은 늘 도망가",
+			"rank": "22",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/107/35/654/10735654_20211008114339_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-21.jpg",
+			"singer": "임영웅",
+			"albumTitle": "신사와 아가씨 OST Part.2",
+			"likeCount": "187,247"
+		},
+		{
+			"title": "Rush Hour (Feat. j-hope of BTS)",
+			"rank": "23",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/62/364/11062364_20220922182518_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-22.jpg",
+			"singer": "Crush",
+			"albumTitle": "Rush Hour",
+			"likeCount": "100,617"
+		},
+		{
+			"title": "Pink Venom",
+			"rank": "24",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/33/394/11033394_20220916124707_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-23.jpg",
+			"singer": "BLACKPINK",
+			"albumTitle": "BORN PINK",
+			"likeCount": "150,587"
+		},
+		{
+			"title": "Say I Love You",
+			"rank": "25",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/28/774/11128774_20221220164233_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-24.jpg",
+			"singer": "우디 (Woody)",
+			"albumTitle": "Say I Love You (Re : WIND 4MEN Vol.04)",
+			"likeCount": "25,904"
+		},
+		{
+			"title": "TOMBOY",
+			"rank": "26",
+			"rankVariance": "2 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/90/384/10890384_20220314111504_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-25.jpg",
+			"singer": "(여자)아이들",
+			"albumTitle": "I NEVER DIE",
+			"likeCount": "230,085"
+		},
+		{
+			"title": "잘가요",
+			"rank": "27",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/15/359/11115359_20221202124614_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-26.jpg",
+			"singer": "주호",
+			"albumTitle": "잘가요",
+			"likeCount": "25,143"
+		},
+		{
+			"title": "그댄 행복에 살텐데 (2022)",
+			"rank": "28",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/30/072/11130072_20221226144743_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-27.jpg",
+			"singer": "최유리",
+			"albumTitle": "그댄 행복에 살텐데 (2022)",
+			"likeCount": "17,077"
+		},
+		{
+			"title": "마지막 사랑",
+			"rank": "29",
+			"rankVariance": "17 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/46/628/11146628_20230112111111_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-28.jpg",
+			"singer": "신예영",
+			"albumTitle": "마지막 사랑",
+			"likeCount": "7,131"
+		},
+		{
+			"title": "그때 그 순간 그대로 (그그그)",
+			"rank": "30",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/00/171/11000171_20220708163659_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-29.jpg",
+			"singer": "WSG워너비 (가야G)",
+			"albumTitle": "WSG워너비 1집",
+			"likeCount": "123,960"
+		},
+		{
+			"title": "내가 아니라도",
+			"rank": "31",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/97/407/10897407_20220323150744_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-30.jpg",
+			"singer": "주호",
+			"albumTitle": "내가 아니라도",
+			"likeCount": "89,297"
+		},
+		{
+			"title": "FEARLESS",
+			"rank": "32",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/39/458/10939458_20220502123814_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-31.jpg",
+			"singer": "LE SSERAFIM (르세라핌)",
+			"albumTitle": "FEARLESS",
+			"likeCount": "96,985"
+		},
+		{
+			"title": "취중고백",
+			"rank": "33",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/16/959/10816959_20211217144957_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-32.jpg",
+			"singer": "김민석 (멜로망스)",
+			"albumTitle": "취중고백",
+			"likeCount": "155,951"
+		},
+		{
+			"title": "자격지심 (Feat. ZICO)",
+			"rank": "34",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/67/591/11067591_20220929100834_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-33.jpg",
+			"singer": "BEO (비오)",
+			"albumTitle": "FIVE SENSES",
+			"likeCount": "74,565"
+		},
+		{
+			"title": "정이라고 하자 (Feat. 10CM)",
+			"rank": "35",
+			"rankVariance": "2 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/25/762/10925762_20220419152007_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-34.jpg",
+			"singer": "BIG Naughty (서동현)",
+			"albumTitle": "정이라고 하자",
+			"likeCount": "197,161"
+		},
+		{
+			"title": "I Dont Think That I Like Her",
+			"rank": "36",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/44/485/10844485_20221006154824_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-35.jpg",
+			"singer": "Charlie Puth",
+			"albumTitle": "CHARLIE",
+			"likeCount": "86,742"
+		},
+		{
+			"title": "그라데이션",
+			"rank": "37",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/95/477/10995477_20220701165440_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-36.jpg",
+			"singer": "10CM",
+			"albumTitle": "5.3",
+			"likeCount": "129,752"
+		},
+		{
+			"title": "Dreamers [Music from the FIFA World Cup Qatar 2022 Official Soundtrack] (Feat. FIFA Sound)",
+			"rank": "38",
+			"rankVariance": "4 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/06/209/11106209_20221120120732_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-37.jpg",
+			"singer": "정국방탄소년단",
+			"albumTitle": "Dreamers [Music from the FIFA World Cup Qatar 2022 Official Soundtrack]",
+			"likeCount": "99,674"
+		},
+		{
+			"title": "딱 10CM만",
+			"rank": "39",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/63/205/11063205_20220923155512_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-38.jpg",
+			"singer": "10CMBIG Naughty (서동현)",
+			"albumTitle": "딱 10CM만",
+			"likeCount": "97,854"
+		},
+		{
+			"title": "ELEVEN",
+			"rank": "40",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/107/98/794/10798794_20211201113915_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-39.jpg",
+			"singer": "IVE (아이브)",
+			"albumTitle": "ELEVEN",
+			"likeCount": "173,716"
+		},
+		{
+			"title": "다정히 내 이름을 부르면",
+			"rank": "41",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/106/10/525/10610525_20210518143433_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-40.jpg",
+			"singer": "경서예지전건호",
+			"albumTitle": "다정히 내 이름을 부르면 (경서예지 x 전건호)",
+			"likeCount": "162,064"
+		},
+		{
+			"title": "나의 X에게",
+			"rank": "42",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/29/486/10929486_20220422151852_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-41.jpg",
+			"singer": "경서",
+			"albumTitle": "나의 X에게",
+			"likeCount": "136,324"
+		},
+		{
+			"title": "Thats Hilarious",
+			"rank": "43",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/44/485/10844485_20221006154824_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-42.jpg",
+			"singer": "Charlie Puth",
+			"albumTitle": "CHARLIE",
+			"likeCount": "140,866"
+		},
+		{
+			"title": "사랑해도 될까요",
+			"rank": "44",
+			"rankVariance": "25 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/48/251/11148251_20230113154153_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-43.jpg",
+			"singer": "양다일",
+			"albumTitle": "사랑해도 될까요",
+			"likeCount": "6,139"
+		},
+		{
+			"title": "WHEN I MOVE",
+			"rank": "45",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/12/312/11112312_20221129115017_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-44.jpg",
+			"singer": "카라",
+			"albumTitle": "MOVE AGAIN",
+			"likeCount": "42,346"
+		},
+		{
+			"title": "모든 날, 모든 순간 (Every day, Every Moment)",
+			"rank": "46",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/101/49/492/10149492_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-45.jpg",
+			"singer": "폴킴",
+			"albumTitle": "'키스 먼저 할까요?' OST Part.3",
+			"likeCount": "413,615"
+		},
+		{
+			"title": "우리들의 블루스",
+			"rank": "47",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-46.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "86,660"
+		},
+		{
+			"title": "보고싶었어",
+			"rank": "48",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/00/171/11000171_20220708163659_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-47.jpg",
+			"singer": "WSG워너비(4FIRE)",
+			"albumTitle": "WSG워너비 1집",
+			"likeCount": "124,104"
+		},
+		{
+			"title": "오르트구름",
+			"rank": "49",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/107/78/556/10778556_20211116105621_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-48.jpg",
+			"singer": "윤하 (YOUNHA)",
+			"albumTitle": "YOUNHA 6th Album 'END THEORY'",
+			"likeCount": "67,045"
+		},
+		{
+			"title": "떠나보낼 준비해 둘걸 그랬어",
+			"rank": "50",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/78/887/11078887_20221018101221_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-49.jpg",
+			"singer": "임한별",
+			"albumTitle": "떠나보낼 준비해 둘걸 그랬어",
+			"likeCount": "29,640"
+		},
+		{
+			"title": "첫사랑",
+			"rank": "51",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/102/10/149/10210149_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-50.jpg",
+			"singer": "백아",
+			"albumTitle": "첫사랑",
+			"likeCount": "121,561"
+		},
+		{
+			"title": "LOVE me",
+			"rank": "52",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/16/904/10916904_20220412101049_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-51.jpg",
+			"singer": "BEO (비오)",
+			"albumTitle": "LOVE me",
+			"likeCount": "132,687"
+		},
+		{
+			"title": "니 번호가 뜨는 일",
+			"rank": "53",
+			"rankVariance": "22 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/49/970/11149970_20230116194052_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-52.jpg",
+			"singer": "이예준",
+			"albumTitle": "니 번호가 뜨는 일",
+			"likeCount": "5,983"
+		},
+		{
+			"title": "우린 그렇게 사랑해서",
+			"rank": "54",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/63/334/11063334_20220923180858_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-53.jpg",
+			"singer": "강민경 (다비치)잔나비 최정훈",
+			"albumTitle": "우린 그렇게 사랑해서",
+			"likeCount": "59,656"
+		},
+		{
+			"title": "밤하늘의 별을(2020)",
+			"rank": "55",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/105/18/234/10518234_20210216102853_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-54.jpg",
+			"singer": "경서",
+			"albumTitle": "밤하늘의 별을(2020)",
+			"likeCount": "214,067"
+		},
+		{
+			"title": "STAY",
+			"rank": "56",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/106/46/395/10646395_20210707141710_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-55.jpg",
+			"singer": "The Kid LAROIJustin Bieber",
+			"albumTitle": "Stay",
+			"likeCount": "245,812"
+		},
+		{
+			"title": "That That (prod. and feat. SUGA of BTS)",
+			"rank": "57",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/37/474/10937474_20220428225312_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-56.jpg",
+			"singer": "싸이 (PSY)",
+			"albumTitle": "싸다9",
+			"likeCount": "128,959"
+		},
+		{
+			"title": "그 겨울이 잠든 거리에서",
+			"rank": "58",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/20/045/11120045_20221209143454_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-57.jpg",
+			"singer": "경서예지전건호",
+			"albumTitle": "그 겨울이 잠든 거리에서 (경서예지 x 전건호)",
+			"likeCount": "14,769"
+		},
+		{
+			"title": "봄여름가을겨울 (Still Life)",
+			"rank": "59",
+			"rankVariance": "3 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/08/834/10908834_20220404174407_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-58.jpg",
+			"singer": "BIGBANG (빅뱅)",
+			"albumTitle": "봄여름가을겨울 (Still Life)",
+			"likeCount": "290,146"
+		},
+		{
+			"title": "Dynamite",
+			"rank": "60",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/104/79/150/10479150_20200918102847_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-59.jpg",
+			"singer": "방탄소년단",
+			"albumTitle": "Dynamite (DayTime Version)",
+			"likeCount": "445,394"
+		},
+		{
+			"title": "내 기쁨은 너가 벤틀리를 끄는 거야",
+			"rank": "61",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/107/43/373/10743373_20211018161315_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-60.jpg",
+			"singer": "김승민",
+			"albumTitle": "PROTOTYPE RESEARCH #0063",
+			"likeCount": "90,607"
+		},
+		{
+			"title": "새벽에 걸려온 너의 전화는",
+			"rank": "62",
+			"rankVariance": "4 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/17/954/11017954_20220729152931_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-61.jpg",
+			"singer": "한동근",
+			"albumTitle": "미련을 말하는",
+			"likeCount": "47,746"
+		},
+		{
+			"title": "주저하는 연인들을 위해",
+			"rank": "63",
+			"rankVariance": "6 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/102/60/858/10260858_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-62.jpg",
+			"singer": "잔나비",
+			"albumTitle": "전설",
+			"likeCount": "362,791"
+		},
+		{
+			"title": "다시 만날 수 있을까",
+			"rank": "64",
+			"rankVariance": "5 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-63.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "70,015"
+		},
+		{
+			"title": "눈이 오잖아(Feat.헤이즈)",
+			"rank": "65",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/108/01/677/10801677_20211202181813_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-64.jpg",
+			"singer": "이무진",
+			"albumTitle": "눈이 오잖아(Feat.헤이즈)",
+			"likeCount": "108,015"
+		},
+		{
+			"title": "Snowman",
+			"rank": "66",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/101/07/511/10107511_20230102164649_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-65.jpg",
+			"singer": "Sia",
+			"albumTitle": "Everyday Is Christmas (Snowman Deluxe Edition)",
+			"likeCount": "243,083"
+		},
+		{
+			"title": "미운오리새끼 (Feat. 선우정아, BOBBY) (Prod. R.Tee)",
+			"rank": "67",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/29/861/11129861_20221222155738_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-66.jpg",
+			"singer": "허성현 (Huh)",
+			"albumTitle": "쇼미더머니 11 Semi Final",
+			"likeCount": "26,221"
+		},
+		{
+			"title": "위하여 (We Higher) (Prod. GroovyRoom)",
+			"rank": "68",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/15/007/11115007_20221202105416_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-67.jpg",
+			"singer": "그루비룸 (GroovyRoom)릴보이 (lIlBOI)Blase (블라세)노윤하PolodaredChillin HomieFleeky Bang",
+			"albumTitle": "쇼미더머니 11 Episode 1",
+			"likeCount": "33,576"
+		},
+		{
+			"title": "Love story",
+			"rank": "69",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/26/502/10926502_20220420071020_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-68.jpg",
+			"singer": "볼빨간사춘기",
+			"albumTitle": "Seoul",
+			"likeCount": "105,069"
+		},
+		{
+			"title": "FOREVER 1",
+			"rank": "70",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/23/224/11023224_20220804182919_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-69.jpg",
+			"singer": "소녀시대 (GIRLS GENERATION)",
+			"albumTitle": "FOREVER 1 - The 7th Album",
+			"likeCount": "105,038"
+		},
+		{
+			"title": "도깨비불 (Illusion)",
+			"rank": "71",
+			"rankVariance": "3 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/72/706/10972706_20220708111110_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-70.jpg",
+			"singer": "aespa",
+			"albumTitle": "Girls - The 2nd Mini Album",
+			"likeCount": "82,335"
+		},
+		{
+			"title": "가슴으로 운다",
+			"rank": "72",
+			"rankVariance": "5 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/44/817/11144817_20230111101609_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-71.jpg",
+			"singer": "김연지",
+			"albumTitle": "가슴으로 운다",
+			"likeCount": "5,866"
+		},
+		{
+			"title": "Butter",
+			"rank": "73",
+			"rankVariance": "3 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/106/12/483/10612483_20210521111412_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-72.jpg",
+			"singer": "방탄소년단",
+			"albumTitle": "Butter",
+			"likeCount": "281,832"
+		},
+		{
+			"title": "이제 나만 믿어요",
+			"rank": "74",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/104/12/319/10412319_20200403103006_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-73.jpg",
+			"singer": "임영웅",
+			"albumTitle": "내일은 미스터트롯 우승자 특전곡",
+			"likeCount": "164,080"
+		},
+		{
+			"title": "눈 (EYE) (Feat. BIG Naughty, 저스디스 (JUSTHIS)) (Prod. R.Tee)",
+			"rank": "75",
+			"rankVariance": "5 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/25/247/11125247_20221216121651_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-74.jpg",
+			"singer": "던말릭 (DON MALIK)",
+			"albumTitle": "쇼미더머니 11 Episode 3",
+			"likeCount": "30,707"
+		},
+		{
+			"title": "아픈 나를 (Prod. By 나얼)",
+			"rank": "76",
+			"rankVariance": "4 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/31/356/11131356_20221226161625_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-75.jpg",
+			"singer": "성시경",
+			"albumTitle": "나얼 <Ballad Pop City>",
+			"likeCount": "14,462"
+		},
+		{
+			"title": "봄날",
+			"rank": "77",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/100/37/969/10037969_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-76.jpg",
+			"singer": "방탄소년단",
+			"albumTitle": "YOU NEVER WALK ALONE",
+			"likeCount": "541,618"
+		},
+		{
+			"title": "Off My Face",
+			"rank": "78",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/105/80/103/10580103_20211008114642_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-77.jpg",
+			"singer": "Justin Bieber",
+			"albumTitle": "Justice (The Complete Edition)",
+			"likeCount": "151,566"
+		},
+		{
+			"title": "무지개",
+			"rank": "79",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-78.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "58,046"
+		},
+		{
+			"title": "Permission to Dance",
+			"rank": "80",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/106/48/182/10648182_20210709104950_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-79.jpg",
+			"singer": "방탄소년단",
+			"albumTitle": "Butter / Permission to Dance",
+			"likeCount": "217,426"
+		},
+		{
+			"title": "London Boy",
+			"rank": "81",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/02/375/11102375_20221115101140_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-80.jpg",
+			"singer": "임영웅",
+			"albumTitle": "Polaroid",
+			"likeCount": "43,252"
+		},
+		{
+			"title": "흩어지지 않게",
+			"rank": "82",
+			"rankVariance": "=",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/16/153/11116153_20221205072108_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-81.jpg",
+			"singer": "엠씨더맥스 (M.C the MAX)",
+			"albumTitle": "흩어지지 않게",
+			"likeCount": "17,714"
+		},
+		{
+			"title": "손을 마주 잡고",
+			"rank": "83",
+			"rankVariance": "NEW",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/50/702/11150702_20230117135140_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-82.jpg",
+			"singer": "BIG Naughty (서동현)",
+			"albumTitle": "사랑의 이해 OST Part.5",
+			"likeCount": "7,656"
+		},
+		{
+			"title": "Love War (Feat. BE‘O)",
+			"rank": "84",
+			"rankVariance": "12 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/48/137/11148137_20230113140639_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-83.jpg",
+			"singer": "YENA (최예나)",
+			"albumTitle": "Love War",
+			"likeCount": "15,339"
+		},
+		{
+			"title": "아버지",
+			"rank": "85",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-84.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "48,568"
+		},
+		{
+			"title": "Yet To Come",
+			"rank": "86",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/79/636/10979636_20220609175418_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-85.jpg",
+			"singer": "방탄소년단",
+			"albumTitle": "Proof",
+			"likeCount": "122,731"
+		},
+		{
+			"title": "Polaroid",
+			"rank": "87",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/02/375/11102375_20221115101140_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-86.jpg",
+			"singer": "임영웅",
+			"albumTitle": "Polaroid",
+			"likeCount": "39,379"
+		},
+		{
+			"title": "신호등",
+			"rank": "88",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/106/07/796/10607796_20210513201807_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-87.jpg",
+			"singer": "이무진",
+			"albumTitle": "신호등",
+			"likeCount": "293,230"
+		},
+		{
+			"title": "빡 (Feat. 팔로알토 (Paloalto), 저스디스 (JUSTHIS)) (Prod. R.Tee)",
+			"rank": "89",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/29/861/11129861_20221222155738_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-88.jpg",
+			"singer": "던말릭 (DON MALIK)",
+			"albumTitle": "쇼미더머니 11 Semi Final",
+			"likeCount": "15,825"
+		},
+		{
+			"title": "내 손을 잡아",
+			"rank": "90",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/012/86/252/1286252_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-89.jpg",
+			"singer": "아이유",
+			"albumTitle": "최고의 사랑 OST Part.4",
+			"likeCount": "204,559"
+		},
+		{
+			"title": "A bientot",
+			"rank": "91",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-90.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "46,671"
+		},
+		{
+			"title": "인생찬가",
+			"rank": "92",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-91.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "45,554"
+		},
+		{
+			"title": "Beautiful Liar",
+			"rank": "93",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/41/889/11141889_20230106190700_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-92.jpg",
+			"singer": "몬스타엑스",
+			"albumTitle": "REASON",
+			"likeCount": "26,663"
+		},
+		{
+			"title": "이 소설의 끝을 다시 써보려 해",
+			"rank": "94",
+			"rankVariance": "2 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/111/32/201/11132201_20221227152925_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-93.jpg",
+			"singer": "테이",
+			"albumTitle": "이 소설의 끝을 다시 써보려 해",
+			"likeCount": "8,019"
+		},
+		{
+			"title": "희재",
+			"rank": "95",
+			"rankVariance": "4 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/000/28/985/28985_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-94.jpg",
+			"singer": "성시경",
+			"albumTitle": "국화꽃 향기 OST",
+			"likeCount": "122,707"
+		},
+		{
+			"title": "SNEAKERS",
+			"rank": "96",
+			"rankVariance": "1 UP",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/110/04/992/11004992_20220722175827_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-95.jpg",
+			"singer": "ITZY (있지)",
+			"albumTitle": "CHECKMATE",
+			"likeCount": "76,539"
+		},
+		{
+			"title": "Dangerously",
+			"rank": "97",
+			"rankVariance": "3 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm/album/images/023/36/926/2336926_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-96.jpg",
+			"singer": "Charlie Puth",
+			"albumTitle": "Nine Track Mind (Deluxe Edition)",
+			"likeCount": "113,872"
+		},
+		{
+			"title": "손이 참 곱던 그대",
+			"rank": "98",
+			"rankVariance": "5 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-97.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "45,054"
+		},
+		{
+			"title": "strawberry moon",
+			"rank": "99",
+			"rankVariance": "1 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/107/43/453/10743453_20211018165252_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-98.jpg",
+			"singer": "아이유",
+			"albumTitle": "strawberry moon",
+			"likeCount": "217,812"
+		},
+		{
+			"title": "사랑해 진짜",
+			"rank": "100",
+			"rankVariance": "5 DN",
+			"albumImgSrc": "https://cdnimg.melon.co.kr/cm2/album/images/109/23/444/10923444_20220502140600_500.jpg/melon/resize/120/quality/80/optimize",
+			"albumImgFile": "15-99.jpg",
+			"singer": "임영웅",
+			"albumTitle": "IM HERO",
+			"likeCount": "46,029"
+		}
+	]
+}

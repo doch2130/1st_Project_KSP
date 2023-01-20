@@ -41,6 +41,9 @@ exports.genieFile = (fileHour) => {
                 }
             }
             
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
+
             // 기본 출력 + 시간변경 분기점
             if(fileHour) {
                 // 시간변경
@@ -63,7 +66,7 @@ exports.genieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
@@ -76,7 +79,7 @@ exports.genieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     throw err;
@@ -130,6 +133,9 @@ exports.genieMovieFile = (fileHour) => {
                 }
             }
 
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
+
             // 기본 출력 + 시간변경 분기점
             if(fileHour) {
                 // 시간변경
@@ -150,7 +156,7 @@ exports.genieMovieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve ([response.data, filelist]);
+                    resolve ([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
@@ -163,7 +169,7 @@ exports.genieMovieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve ([response.data, filelist]);
+                    resolve ([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     // res.send('에러 발생');

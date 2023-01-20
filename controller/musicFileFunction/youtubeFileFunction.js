@@ -21,10 +21,12 @@ exports.youtubeFile = (fileHour) => {
             // 리스트에서 현재 날짜 파일만 추출
             filelist.forEach((file, index) => {
                 if(compareDate == file.slice(17, -8)) {
-                    // console.log('b: ', file.slice(17, -8));
+                    // console.log('b:', file.slice(17, -8));
                     temp[index] = file;
                 }
             });
+
+
             // 00시 이후 크롤링 실행 전인 경우 현재 날짜 파일이 없을 수 있으므로, 제일 최신 파일 저장
             if(temp.length == 0) {
                 temp[0] = filelist[lastFile];
@@ -37,6 +39,9 @@ exports.youtubeFile = (fileHour) => {
                 i--; 
                 }
             }
+
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
 
             // 기본 출력 + 시간변경 분기점
             if(fileHour) {
@@ -58,7 +63,7 @@ exports.youtubeFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     throw err;
@@ -70,7 +75,7 @@ exports.youtubeFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     throw err;
@@ -119,6 +124,9 @@ exports.youtubeMovieFile = (fileHour) => {
                 }
             }
 
+            // 정리된 파일리스트 저장
+            const filelistResolve = temp;
+
             // 기본 출력 + 시간변경 분기점
             if(fileHour) {
                 // 시간변경
@@ -140,7 +148,7 @@ exports.youtubeMovieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     throw err;
@@ -152,7 +160,7 @@ exports.youtubeMovieFile = (fileHour) => {
                     // 불러온 파일의 데이터를 json으로 다시 parse 작업 해준다.
                     response = JSON.parse(response);
                     // console.log(response.data);
-                    resolve([response.data, filelist]);
+                    resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
                     throw err;

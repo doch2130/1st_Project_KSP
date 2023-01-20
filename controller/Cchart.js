@@ -63,8 +63,9 @@ exports.youtubeRealChartMain = async (req, res) => {
         let [youtubeData, filelist] = await youtubeFileFunction.youtubeFile(req.params.num);
         if(youtubeData) {
             result['youtubedata'] = {data: youtubeData, filelist: filelist, fileHour: req.params.num};
-            result['geniedata'] = {data: ''};
-            result['melondata'] = {data: ''};
+            // console.log('filelist', filelist);
+            // result['geniedata'] = {data: ''};
+            // result['melondata'] = {data: ''};
 
             ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
                 result['likeSing'] = {data: rows};
@@ -92,8 +93,8 @@ exports.youtubeRealChartMainType = async (req, res) => {
         let [youtubeData, filelist] = await youtubeFileFunction.youtubeFile(req.params.num);
         if(youtubeData) {
             result['youtubedata'] = {data: youtubeData, filelist: filelist, fileHour: req.params.num};
-            result['geniedata'] = {data: ''};
-            result['melondata'] = {data: ''};
+            // result['geniedata'] = {data: ''};
+            // result['melondata'] = {data: ''};
 
             ClikeSingFunction.LikeSingSearch(req.session.user, (rows) => {
                 result['likeSing'] = {data: rows};

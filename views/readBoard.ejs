@@ -84,7 +84,7 @@
                     <!-- 댓글 보기 -->
                     <div id="commentView">
                         <div>
-                            <p>댓글 <%= result.comment.length + result.nestedComment.length %>개</p>
+                            <p id="totalCommentCount">댓글 <%= result.comment.length + result.nestedComment.length %>개</p>
                         </div>
                         <div id="commentViewList">
                             <% for (let i = 0; i < result.comment.length; i++) { %>
@@ -121,7 +121,7 @@
                                         <% } %>
                                         <ul class="dropdown-menu">
                                             <p onclick="commentEdit(this, '<%= result.comment[i].content %>')">수정</p>
-                                            <p onclick="commentDelete(this, '<%= result.comment[i].number %>')">삭제</p>
+                                            <p onclick="commentDelete(this, '<%= result.comment[i].number %>', '<%=result.Board.number%>')">삭제</p>
                                         </ul>
                                     </div>
                                 </div>

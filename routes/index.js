@@ -33,19 +33,19 @@ router.delete('/user_delete', controllerUser.user_delete);
 router.get('/mypage', controllerUser.mypage);
 
 // 마이 페이지 업로드 설정
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'static/res/profile_img/');
-    },
-    filename: function (req, file, cb) {
-      // multer 한글 깨짐 방지
-      file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
-      const ext = path.extname(file.originalname);
-      cb(null, req.session.user + ext);
-    }
-  })
-});
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'static/res/profile_img/');
+//     },
+//     filename: function (req, file, cb) {
+//       // multer 한글 깨짐 방지
+//       file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
+//       const ext = path.extname(file.originalname);
+//       cb(null, req.session.user + ext);
+//     }
+//   })
+// });
 
 // 게시판 파일 업로드 설정
 const upload_board = multer({
@@ -102,7 +102,6 @@ router.get("/melonRealChart", controllerChart.melonRealChartMain);
 router.get("/melonRealChart/:num", controllerChart.melonRealChartMainType);
 // 멜론 - 일간
 router.get("/melonDayChart", controllerChart.melonDayChartMain);
-// router.get("/melonDayChart/:num", controllerChart.melonDayChartMainType);
 
 // 지니 차트 페이지
 // 지니 - top 100

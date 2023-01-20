@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', event => {
 
-    // 답글 펼치기
+    // 답글 펼치기 기능을 위한 각 클래스 부여 작업
     const commentViewList = document.getElementById('commentViewList');
     const commentViewRows = commentViewList.getElementsByClassName('row');
 
@@ -116,7 +116,7 @@ function commentWrite(boardNumber, status) {
             <button type="button" class="btn btn-secondary dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">:</button>
             <ul class="dropdown-menu">
             <p onclick="commentEdit(this, '${content}')">수정</p>
-            <p onclick="commentDelete(this, '${number}')">삭제</p>
+            <p onclick="commentDelete(this, '${number}', '${boardNumber}')">삭제</p>
             </ul>
             </div>
             </div>
@@ -138,12 +138,17 @@ function commentWrite(boardNumber, status) {
             commentViewList.prepend(div);
             form.comment.value = '';
             form.comment.focus();
+
+            // 총 댓글 개수 반영
+            // console.log(document.getElementById('totalCommentCount').textContent.slice(3, -1));
+            const totalCommentCount = Number(document.getElementById('totalCommentCount').textContent.slice(3, -1)) + 1;
+            document.getElementById('totalCommentCount').textContent = `댓글 ${totalCommentCount}개`;
         });
     }
 }
 
 // 댓글 삭제
-function commentDelete(e, commentNumber) {
+function commentDelete(e, commentNumber, boardNumber) {
     // console.log(commentnumber);
     // console.log(e.parentElement.parentElement.parentElement);
     // console.log(e.parentElement.parentElement.parentElement.parentElement);
@@ -160,13 +165,21 @@ function commentDelete(e, commentNumber) {
             method: 'post',
             url: '/board/comment/delete',
             data: {
-                commentNumber: commentNumber
+                commentNumber: commentNumber,
+                boardNumber: boardNumber
             }
         })
-        .then(() => {
+        .then((response) => {
             commentParent.remove();
             // col1.remove();
             // alert('삭제하였습니다.');
+
+            // 총 댓글 개수 반영
+            // 댓글을 삭제할 때 답글이 있는 경우 -1만 하면 답글 삭제 개수는 반영이 안되서
+            // DB에서 개수 조회 후 더하는 방식으로 변경
+            const totalCommentCount = response.data.nestedCommentList.length + response.data.commentList.length;
+            document.getElementById('totalCommentCount').textContent = `댓글 ${totalCommentCount}개`;
+
         });
     }
 }
@@ -250,8 +263,12 @@ function nestedCommentWrite(e, boardNumber, status, commentNumber) {
     const nestedCommentDiv = e.parentElement.parentElement.parentElement;
     if (status != "true") {
         alert("로그인 후 작성이 가능합니다.");
-        // document.location.href='/login';
         nestedCommentDiv.style.display = 'none';
+        
+        const commentChooseMsg = confirm('로그인 페이지로 이동하시겠습니까?');
+        if(commentChooseMsg) {
+            document.location.href='/login';
+        }
         return false;
     }
 
@@ -337,6 +354,12 @@ function nestedCommentWrite(e, boardNumber, status, commentNumber) {
             nestedCommentListDiv.children[0].textContent = '답글 ' + response.data.list.length + '개';
             // nestedCommentListDiv.appendTo(div);
             // commentViewList.prepend(div);
+
+
+            // 총 댓글 개수 반영
+            // console.log(document.getElementById('totalCommentCount').textContent.slice(3, -1));
+            const totalCommentCount = Number(document.getElementById('totalCommentCount').textContent.slice(3, -1)) + 1;
+            document.getElementById('totalCommentCount').textContent = `댓글 ${totalCommentCount}개`;
         });
     }
 }
@@ -379,6 +402,11 @@ function nestedCommentDelete(e, nestedCommentNumber) {
             } else {
                 nestedCommentBtn.textContent = '답글 ' + nestedCommentBtnNum + '개'
             }
+
+            // 총 댓글 개수 반영
+            // console.log(document.getElementById('totalCommentCount').textContent.slice(3, -1));
+            const totalCommentCount = Number(document.getElementById('totalCommentCount').textContent.slice(3, -1)) - 1;
+            document.getElementById('totalCommentCount').textContent = `댓글 ${totalCommentCount}개`;
         });
     }
 }

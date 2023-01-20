@@ -193,6 +193,7 @@ exports.commentWrite = (req, res) => {
         content: req.body.content.replace(/(?:\r\n|\r|\n)/g, '<br/>'),
         updateflag: '0'
     }
+
     BoardComment.findAll({
         where: {
             boardnumber: req.body.boardNumber
@@ -212,11 +213,22 @@ exports.commentWrite = (req, res) => {
 
 // 댓글 삭제
 exports.commentDelete = (req, res) => {
+    let result = {id : req.session.user};
     BoardComment.destroy({
         where: {number: req.body.commentNumber}
     })
-    .then(() => {
-        res.send(true);
+    .then(async () => {
+        result['nestedCommentList'] = await BoardNestedComment.findAll({
+            where: {
+                boardnumber: req.body.boardNumber
+            }
+        });
+        result['commentList'] = await BoardComment.findAll({
+            where: {
+                boardnumber: req.body.boardNumber
+            }
+        });
+        res.send(result);
     });
 }
 

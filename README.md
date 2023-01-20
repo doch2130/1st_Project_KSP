@@ -1,17 +1,19 @@
 # 1st_Project_SeSAC_KSP
 
-#Project Described
+## Project Described
 The theme of this project is to create a site where you can check all the other music chart sites in one place and communicate with each other like a guestbook.
 
-#Project
+## Project
 Date: 2022-12-13 ~ 2022-12-29
 Team members: 4 people
+Github Link: https://github.com/KimParkSam/1st_Project
 
-#Project Additional Work
+## Project Additional Work
 Date: 2022-12-30 ~ 2023-01-20
 Members: 1 people
 
-#Project Tree   
+## Project Tree   
+
 📦1st_Project_SeSAC_KSP   
  ┣ 📂config   
  ┃ ┗ 📜config.json   
@@ -191,4 +193,3 @@ Members: 1 people
  ┣ 📜.gitignore   
  ┣ 📜index.js   
  ┗ 📜package.json   
- 

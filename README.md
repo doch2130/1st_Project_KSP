@@ -11,13 +11,13 @@ Team members: 4 people
 Date: 2022-12-30 ~ 2023-01-20
 Members: 1 people
 
-#Project Tree
-📦1st_Project_SeSAC_KSP
- ┣ 📂config
- ┃ ┗ 📜config.json
- ┣ 📂controller
- ┃ ┣ 📂crawlingFunction
- ┃ ┃ ┣ 📜puppeteer_Genie.js
+#Project Tree   
+📦1st_Project_SeSAC_KSP   
+ ┣ 📂config   
+ ┃ ┗ 📜config.json   
+ ┣ 📂controller   
+ ┃ ┣ 📂crawlingFunction   
+ ┃ ┃ ┣ 📜puppeteer_Genie.js   
  ┃ ┃ ┣ 📜puppeteer_Melon.js
  ┃ ┃ ┗ 📜puppeteer_Youtube.js
  ┃ ┣ 📂musicFileFunction

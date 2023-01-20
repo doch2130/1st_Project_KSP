@@ -11,6 +11,7 @@ Github Link: https://github.com/KimParkSam/1st_Project
 ## Project Additional Work
 Date: 2022-12-30 ~ 2023-01-20   
 Members: 1 people   
+Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 
 ## Project Tree   
 

@@ -26,12 +26,6 @@ app.get('*', (req, res) => {
     res.status(404).render('error/404');
 });
 
-// 에러 미들웨어 테스트 해보기
-app.use((err, req, res, next) => {
-    console.log('error middleware: ', err);
-    res.status(500).send('서버에 일시적인 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.');
-});
-
 app.listen(port, () => {
     console.log("server open: ", port);
     // 임시 사용 중지

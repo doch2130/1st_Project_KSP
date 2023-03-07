@@ -6,19 +6,23 @@ exports.manager = (req, res) => {
 };
 
 //로그인 기능
-exports.manager_login = (req, res) => {
-    if(req.body.id === 'test1') {
-        User.findOne({
-            where : { id : req.body.id, pw : req.body.pw },
-        }) 
-        .then((rows)=>{   
-            if(rows) {
-                res.send(true);
-            } else {
-                res.send(false);
-            }
-        });
-    } else {
-        res.send(false);
-    }
+exports.manager_login = (req, res, next) => {
+    try {
+        if(req.body.id === 'test1') {
+            User.findOne({
+                where : { id : req.body.id, pw : req.body.pw },
+            }) 
+            .then((rows)=>{   
+                if(rows) {
+                    res.send(true);
+                } else {
+                    res.send(false);
+                }
+            });
+        } else {
+            res.send(false);
+        }
+    } catch (err) {
+        next(err);
+    }  
 };

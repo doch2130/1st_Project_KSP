@@ -279,7 +279,7 @@ youtubeCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }
@@ -302,7 +302,7 @@ youtubeMovieCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }

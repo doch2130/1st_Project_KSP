@@ -87,13 +87,10 @@ const staticCrawling = () => {
                 });
 
             }).catch(err => {
-                console.log(err);
+                console.log('crawling err', err);
             });
         }
-
-        console.log(data);
-
-
+        // console.log(data);
         return true;
 
     })();

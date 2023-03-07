@@ -47,11 +47,11 @@ exports.melon_All_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }
@@ -106,11 +106,11 @@ exports.melon_ALL_Day_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }
@@ -161,11 +161,11 @@ exports.genie_All_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }
@@ -217,11 +217,11 @@ exports.genieMovie_All_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }
@@ -274,11 +274,11 @@ exports.youtube_All_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }
@@ -331,11 +331,11 @@ exports.youtubeMovie_All_File = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 }

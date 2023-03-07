@@ -70,7 +70,7 @@ exports.genieFile = (fileHour) => {
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
-                    throw err;
+                    console.log('File err', err);
                 });
             } else {
                 // 기본 값 = 최신파일 출력
@@ -82,12 +82,12 @@ exports.genieFile = (fileHour) => {
                     resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
-                    throw err;
+                    console.log('File err', err);
                 });
             }
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 };
@@ -160,7 +160,7 @@ exports.genieMovieFile = (fileHour) => {
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
-                    throw err;
+                    console.log('File err', err);
                 });
             } else {
                 // 기본 값 - 최신파일 출력
@@ -173,12 +173,12 @@ exports.genieMovieFile = (fileHour) => {
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
-                    throw err;
+                    console.log('File err', err);
                 });
             }
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 };

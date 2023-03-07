@@ -66,7 +66,7 @@ exports.youtubeFile = (fileHour) => {
                     resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
-                    throw err;
+                    console.log('File err', err);
                 });
             } else {
                 // 기본 값 = 최신파일 출력
@@ -78,12 +78,12 @@ exports.youtubeFile = (fileHour) => {
                     resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
-                    throw err;
+                    console.log('File err', err);
                 });
             }
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 };
@@ -151,7 +151,7 @@ exports.youtubeMovieFile = (fileHour) => {
                     resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
-                    throw err;
+                    console.log('File err', err);
                 });
             } else {
                 // 기본 값 = 최신파일 출력
@@ -163,12 +163,12 @@ exports.youtubeMovieFile = (fileHour) => {
                     resolve([response.data, filelistResolve]);
                 })
                 .catch((err) => {
-                    throw err;
+                    console.log('File err', err);
                 });
             }
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
 
     });

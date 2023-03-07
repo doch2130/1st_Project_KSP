@@ -25,7 +25,7 @@ exports.LikeSingSearch = (userSession, cb) => {
 }
 
 // 좋아요 등록
-exports.LikeSingRegister = (req, res) => {
+exports.LikeSingRegister = (req, res, next) => {
     LikeSing.create({
         user_id: req.session.user,
         title: req.body.likeTitle,
@@ -38,12 +38,12 @@ exports.LikeSingRegister = (req, res) => {
         }
     })
     .catch((err) => {
-        throw err;
+        next(err);
     });
 }
 
 // 좋아요 삭제
-exports.LikeSingDelete = (req, res) => {
+exports.LikeSingDelete = (req, res, next) => {
     LikeSing.destroy({
         where: {
             user_id: req.session.user,
@@ -57,12 +57,12 @@ exports.LikeSingDelete = (req, res) => {
         }
     })
     .catch((err) => {
-        throw err;
+        next(err);
     });
 }
 
 // 마이 페이지 좋아요 삭제
-exports.Mypage_LikeSingDelete = (req, res) => {
+exports.Mypage_LikeSingDelete = (req, res, next) => {
     let result = {id : req.session.user};
 
     // 좋아요 삭제
@@ -105,38 +105,42 @@ exports.Mypage_LikeSingDelete = (req, res) => {
             }
         })
         .catch((err) => {
-            throw err;
+            next(err);
         });
 
     })
     .catch((err) => {
-        throw err;
+        next(err);
     });
 }
 
 // Chart 페이지 viewCount 변경 후 정보 갱신
 // Chart 페이지 버튼 이동할 때 마다 호출
-exports.LikeSing_ReSearch = (req, res) => {
-    if(req.session.user === undefined) {
-        res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
-    } else {
-        LikeSing.findAll({
-            where: {
-                user_id: req.session.user
-            }
-        }).then((rows) => {
-            // 처음 사용자는 좋아요 등록이 없으므로 Error 발생확인
-            // 초기 값으로 데이터 저장
-            if(rows[0] === undefined) {
-                const data = {
-                    "albumImg": '',
-                    "title": '',
-                    "singer": '',
+exports.LikeSing_ReSearch = (req, res, next) => {
+    try {
+        if(req.session.user === undefined) {
+            res.send("<script>alert('로그인 후 이용가능합니다.');location.href='/login';</script>");
+        } else {
+            LikeSing.findAll({
+                where: {
+                    user_id: req.session.user
                 }
-                rows.push(data);
-            }
-            let result = {likesing : rows};
-            res.send({result});
-        });
+            }).then((rows) => {
+                // 처음 사용자는 좋아요 등록이 없으므로 Error 발생확인
+                // 초기 값으로 데이터 저장
+                if(rows[0] === undefined) {
+                    const data = {
+                        "albumImg": '',
+                        "title": '',
+                        "singer": '',
+                    }
+                    rows.push(data);
+                }
+                let result = {likesing : rows};
+                res.send({result});
+            });
+        }
+    } catch (err) {
+        next(err);
     }
 };

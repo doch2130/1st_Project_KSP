@@ -14,6 +14,7 @@ exports.youtubeCrawlingFunction = (cb) => {
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
+        try {
         // json 데이터 저장 변수
         let data = {};
         data.data = [];
@@ -116,9 +117,11 @@ exports.youtubeCrawlingFunction = (cb) => {
         });
 
         const check = await youtubeCrawling_ImgFileSave(fileName);
-        console.log(check);
+        // console.log(check);
         cb(true);
-
+    } catch (err) {
+        console.log('crawling err', err);
+    }
     })();
 
 }
@@ -134,6 +137,7 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
+        try {
         // json 데이터 저장 변수
         let data = {};
         data.data = [];
@@ -238,10 +242,12 @@ exports.youtubeMovieCrawlingFunction = (cb) => {
         const check = await youtubeMovieCrawling_ImgFileSave(fileName);
         console.log(check);
         cb(true);
-
+    } catch (err) {
+        console.log('crawling err', err);
+    }
     })();
-
 }
+
 youtubeCrawling_ImgFileSave = (fileName) => {
     return new Promise((resolve, reject) => {
         fs.readFile(fileName, 'utf8')
@@ -259,7 +265,7 @@ youtubeCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }
@@ -282,7 +288,7 @@ youtubeMovieCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }

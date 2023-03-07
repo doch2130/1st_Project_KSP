@@ -19,6 +19,7 @@ exports.genieCrawlingFunction = (cb) => {
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
+        try {
         // json 데이터 저장 변수
         let data = {};
         data.data = [];
@@ -179,8 +180,11 @@ exports.genieCrawlingFunction = (cb) => {
         });
 
         const check = await genieCrawling_ImgFileSave(fileName);
-        console.log(check);
+        // console.log(check);
         cb(true);
+    } catch (err) {
+        console.log('crawling err', err);
+    }
 
     })();
 }
@@ -201,6 +205,7 @@ exports.genieMovieCrawlingFunction = (cb) => {
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
+        try {
         // json 데이터 저장 변수
         let data = {};
         data.data = [];
@@ -361,8 +366,11 @@ exports.genieMovieCrawlingFunction = (cb) => {
         });
 
         const check = await genieMovieCrawling_ImgFileSave(fileName);
-        console.log(check);
+        // console.log(check);
         cb(true);
+    } catch (err) {
+        console.log('crawling err', err);
+    }
 
     })();
 }
@@ -385,7 +393,7 @@ genieCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }
@@ -407,7 +415,7 @@ genieMovieCrawling_ImgFileSave = (fileName) => {
             resolve(true);
         })
         .catch((err) => {
-            throw err;
+            console.log(err);
         });
     });
 }

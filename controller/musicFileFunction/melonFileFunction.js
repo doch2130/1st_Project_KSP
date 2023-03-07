@@ -65,7 +65,7 @@ exports.melonFile = (fileHour) => {
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
-                    throw err;
+                    console.log('File err', err);
                 });
             } else {
                 // 기본 값 = 최신파일 출력
@@ -78,12 +78,12 @@ exports.melonFile = (fileHour) => {
                 })
                 .catch((err) => {
                     // res.send('에러 발생');
-                    throw err;
+                    console.log('File err', err);
                 });
             }
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 };
@@ -140,11 +140,11 @@ exports.melonDayFile = () => {
             })
             .catch((err) => {
                 // res.send('에러 발생');
-                throw err;
+                console.log('File err', err);
             });
         })
         .catch((err) => {
-            throw err;
+            console.log('File err', err);
         });
     });
 };

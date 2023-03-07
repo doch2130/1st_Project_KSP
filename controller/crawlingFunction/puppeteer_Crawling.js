@@ -10,6 +10,8 @@ const dynamicCrawling = () => {
 
     // 크롤링 + 파일 저장 함수 시작
     (async() => {
+        try {
+
         // json 데이터 저장 변수
         let data = {};
         data.data = [];
@@ -103,10 +105,11 @@ const dynamicCrawling = () => {
             browser.close();
         }
 
-        console.log(data);
-
+        // console.log(data);
         return true;
-
+    } catch (err) {
+        console.log('crawling err', err);
+    }
     })();
 }
 

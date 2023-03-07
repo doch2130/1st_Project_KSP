@@ -9,7 +9,7 @@ exports.comparative_graph = () => {
             resolve (response);
         })
         .catch((err) => {
-            throw err;
+            reject(err);
         });
     });
 };

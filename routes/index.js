@@ -16,8 +16,11 @@ router.get("/", controllerMain.main);
 // 로그인 and 회원가입 페이지
 router.get("/login", controllerUser.login_main);
 router.post("/signin", controllerUser.user_login);
-router.get('/signup', controllerUser.register);
-router.post('/signup', controllerUser.post_signup);
+// router.get('/signup', controllerUser.register);
+// router.post('/signup', controllerUser.post_signup);
+router.route('/signup')
+  .get(controllerUser.register)
+  .post(controllerUser.post_signup);
 // 로그아웃
 router.delete('/logout', controllerUser.user_logout);
 // 회원가입 중복 검사
@@ -31,21 +34,6 @@ router.patch('/Edit_info_update', controllerUser.Edit_info_update);
 router.delete('/user_delete', controllerUser.user_delete);
 // 마이 페이지
 router.get('/mypage', controllerUser.mypage);
-
-// 마이 페이지 업로드 설정
-// const upload = multer({
-//   storage: multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'static/res/profile_img/');
-//     },
-//     filename: function (req, file, cb) {
-//       // multer 한글 깨짐 방지
-//       file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
-//       const ext = path.extname(file.originalname);
-//       cb(null, req.session.user + ext);
-//     }
-//   })
-// });
 
 // 게시판 파일 업로드 설정
 const upload_board = multer({

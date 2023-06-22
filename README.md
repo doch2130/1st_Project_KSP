@@ -1,12 +1,12 @@
 <h1> KSP (1st_Project_SeSAC_KSP) </h1>
 
 <h1> 프로젝트 소개 (Project Described) </h1>
-<h2> 1. 기획 의도 </h2>
+<h3> 1. 기획 의도 </h3>
 이 프로젝트의 주제는 다른 모든 음원차트 사이트를 한곳에서 확인하고 서로 방명록처럼 소통할 수 있는 사이트를 만드는 것입니다.
 <br />
 The theme of this project is to create a site where you can check all the other music chart sites in one place and communicate with each other like a guestbook.
 
-<h2> 2. 주요 기능 </h2>
+<h3> 2. 주요 기능 </h3>
 
 |기능| 설명|
 |:---|:---|
@@ -19,7 +19,7 @@ The theme of this project is to create a site where you can check all the other 
 |mongoDB|1. users <br>  a. 회원가입 시 아이디, 비밀번호, permission, token의 항목을 가진 스키마 생성<br>  b. 회원가입 시 비밀번호는 암호화하여 저장.(Bcrypt 이용)<br>  c. 로그인 시 입력된 비밀번호와 데이터베이스에 있는 암호화된 비밀번호가 같은지 비교<br>  d. 로그인 시 jsonwebtoken을 이용해 토큰 생성(JWT 이용)<br>  e. 로그아웃 시 토큰은 빈값으로 만들어 주어 쿠키는 자동으로 없어지도록 구현<br>2. chatting<br>  a. chatroom: 각 유저의 채팅방에 대한 정보 및 userSocketID, userID가 기록된다. <br>*  로그인을 하지 않은 사용자의 경우 임의 값이 설정된다. <br>*  24시간 이후 자동 삭제가 되지만, 사용자가 연결을 종료해도 삭제된다. <br>*  관리자가 수동으로 방을 나가는 경우에도 삭제가 된다. <br> b. chats: 사용자들의 메시지 기록이 저장되는 곳이며, 이 때 저장되는 정보는 사용자 정보, 메시지 정보, 방 정보가 저장된다. <br>*  24시간 이후 자동 삭제가 되지만, 사용자가 연결을 종료해도 삭제된다.<br>3. Board<br>  a.  book, movie, performance의 스키마 형성<br>  b.  데이터 객체 안에는 유저 email, 날짜, 폼 정보 등이 들어있다.|
 |Chatting|[ 공통 ]<br>1. 챗봇 아이콘을 누르면 채팅창이 열린다. <br>2. 새로운 메시지가 올 경우 챗봇 아이콘에 빨간색 알림이 나온다. <br>[ 관리자 전용 ]<br>1. 채팅방 리스트가 있다.<br>2. 채팅방 리스트 데이터 : 새로고침 시 DB에서 받아오기 or 사용자가 메시지를 입력하면 자동 생성 (단, 관리자가 접속해 있는 경우에만)<br>3. 채팅방 나가기 기능이 있다.<br>4. 새로운 메시지가 올 경우 각 방 별로 데이터가 갱신된다.<br>5. 각 방에 대한 마지막 메시지와 메시지 전송한 사람의 ID 또는 닉네임을 볼 수 있다.<br>6. 각 방에 새로운 메시지가 오면 시간에 따라 최상단으로 이동한다.<br>7. 각 방에 새로운 메시지가 오면 읽지 않은 메시지 숫자와 알림이 표시된다.|
 
-<h2> 3. 프로젝트 기간 </h2>
+<h3> 3. 프로젝트 기간 </h3>
 
 ## 프로젝트 작업 (Project Work)
 Date: 2022-12-13 ~ 2022-12-29   
@@ -27,12 +27,13 @@ Team members: 4 people
 Source Code Github Link: https://github.com/KimParkSam/1st_Project   
 
 <h3> 프로젝트 팀원 </h3>
+
 |박현목(FE)|박효현(FE, BE)|박아름(FE, BE)|김미정(FE, BE)| 
 |:---:|:---:|:---:|:---:|
 |<img src="https://avatars.githubusercontent.com/u/116782334?v=4" width="100">|<img src="https://avatars.githubusercontent.com/u/116782344?v=4" width="100" >|<img src="https://avatars.githubusercontent.com/u/116782319?v=4" width="100" >|<img src="https://avatars.githubusercontent.com/u/116782390?v=4" width="100">| 
 |<a href="https://github.com/mcthemox"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a> |<a href="https://github.com/doch2130"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>|<a href="https://github.com/AHRUMPARK"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>|<a href="https://github.com/mijeongkim3"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>| 
 
-<h2> 4. 프로젝트 개선 기간 </h2>
+<h3> 4. 프로젝트 개선 기간 </h3>
 ## 프로젝트 개선 작업 (Project Additional Work)
 Date: 2022-12-30 ~ 2023-01-20   
 Members: 1 people   
@@ -44,11 +45,11 @@ Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 |<img src="https://avatars.githubusercontent.com/u/116782319?v=4" width="100" >|<img src="https://avatars.githubusercontent.com/u/116782390?v=4" width="100">| 
 
 
-<h2> 5. 배포 사이트 </h2>
+<h3> 5. 배포 사이트 </h3>
 <a href="http://101.101.210.118:8080/>"><b>KSP</b></a>
 
 
-<h2> 6. 기술 스택 </h2>
+<h3> 6. 기술 스택 </h3>
 <h3> Front-end </h3>
 <div>
 <img src="https://img.shields.io/badge/-react-blue"/>
@@ -72,13 +73,6 @@ Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 <img src="https://img.shields.io/badge/-bcrypt-orange"/>
 
 </div>
-
-
-
-
-
-
-
 
 
 <h3> 5. 프로젝트 폴더 구조 </h3>

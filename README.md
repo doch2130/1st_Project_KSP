@@ -44,7 +44,7 @@ Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 |<a href="https://github.com/doch2130"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>| 
 
 <h3> 5. 배포 사이트 </h3>
-<a href="http://101.101.210.118:8080/>"><b>KSP</b></a>
+<a href="http://101.101.210.118:8080/>"><img src="static/res/image/KSPLogo.png" /></a>
 
 
 <h3> 6. 기술 스택 </h3>

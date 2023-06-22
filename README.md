@@ -1,10 +1,9 @@
-# 1st_Project_SeSAC_KSP
-
-<h1> KSP </h1>
+<h1> KSP (1st_Project_SeSAC_KSP) </h1>
 
 <h1> 프로젝트 소개 (Project Described) </h1>
 <h2> 1. 기획 의도 </h2>
 이 프로젝트의 주제는 다른 모든 음원차트 사이트를 한곳에서 확인하고 서로 방명록처럼 소통할 수 있는 사이트를 만드는 것입니다.
+<br />
 The theme of this project is to create a site where you can check all the other music chart sites in one place and communicate with each other like a guestbook.
 
 <h2> 2. 주요 기능 </h2>

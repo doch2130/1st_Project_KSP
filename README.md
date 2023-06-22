@@ -12,6 +12,7 @@ The theme of this project is to create a site where you can check all the other 
 |:---|:---|
 |Header|1. 로그인, 로그아웃, 회원정보 수정, 마이 페이지 이동 기능.|
 |Main Page|1. 음악 실시간 Top 10.<br>2. 배경화면 랜덤 뮤직비디오 재생.|
+|SignUp, Login, Logout|1. 아이디 중복 검사 기능.<br>2. 회원가입 유효성 검사 기능.|
 |My Page|1. 프로필 사진 변경 기능.<br>2. 나의 음악 좋아요 리스트.<br>3. 내가 작성한 게시글.|
 |All Chart Page|1. 오늘 날짜에 대한 음악 순위 제공.<br>2. 3개 사이트에 대한 네이버 검색량 비교 그래프.|
 |Chart Page|1. 오늘 날짜에 대한 음악 순위 제공.<br>2. 시간에 따른 음악 순위 제공.<br>3. 페이지에 따른 보기 개수 변경 기능.<br>나의 음악 좋아요 체크 기능.|
@@ -69,7 +70,10 @@ Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 </div>
 
 
-<h3> 7. 프로젝트 폴더 구조 </h3>
+<h3> 7. ErDiagram</h3>
+<img style="width: 700px" src="/static/res/erDiagram/KSP_ErDiagram.png">
+
+<h3> 8. 프로젝트 폴더 구조 </h3>
 
 ## Project Tree   
 📦1st_Project_SeSAC_KSP   

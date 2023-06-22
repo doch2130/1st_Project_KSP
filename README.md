@@ -37,7 +37,8 @@ Members: 1 people<br />
 Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 
 <h3> 프로젝트 팀원 </h3>
-|박효현(FE, BE)|
+
+|박효현(FE, BE)| 
 |:---:|
 |<img src="https://avatars.githubusercontent.com/u/116782344?v=4" width="100" >| 
 |<a href="https://github.com/doch2130"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>| 

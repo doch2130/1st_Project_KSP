@@ -16,6 +16,8 @@ The theme of this project is to create a site where you can check all the other 
 |All Chart Page|1. 오늘 날짜에 대한 음악 순위 제공.<br>2. 3개 사이트에 대한 네이버 검색량 비교 그래프.|
 |Chart Page|1. 오늘 날짜에 대한 음악 순위 제공.<br>2. 시간에 따른 음악 순위 제공.<br>3. 페이지에 따른 보기 개수 변경 기능.<br>나의 음악 좋아요 체크 기능.|
 |Board Page|1. 회원간의 자유게시판.<br>2. 게시판 글 작성 기능, 음악 및 사진 파일 업로드 기능.<br>3. 게시판 댓글, 대댓글 기능.<br>4. 본인 게시판 수정, 삭제 기능.|
+|Manager Page|1. 관리자에 한해 수동 크롤링 기능 실행.|
+|Crawling Function|1. 크롤링 실행 시 페이지에 따라서 Cheerio 또는 Puppeteer 기능 실행.<br>2. 앨범 이미지 서버에 저장 작업.<br>3. 데이터 수집 후 필요한 데이터에 맞춰서 데이터 가공 작업.<br>4. 가공한 데이터를 JSON 형식으로 서버에 저장.|
 
 <h3> 3. 프로젝트 기간 (Project Work) </h3>
 Date: 2022-12-13 ~ 2022-12-29<br />

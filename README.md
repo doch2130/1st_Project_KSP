@@ -20,9 +20,9 @@ The theme of this project is to create a site where you can check all the other 
 |Chatting|[ 공통 ]<br>1. 챗봇 아이콘을 누르면 채팅창이 열린다. <br>2. 새로운 메시지가 올 경우 챗봇 아이콘에 빨간색 알림이 나온다. <br>[ 관리자 전용 ]<br>1. 채팅방 리스트가 있다.<br>2. 채팅방 리스트 데이터 : 새로고침 시 DB에서 받아오기 or 사용자가 메시지를 입력하면 자동 생성 (단, 관리자가 접속해 있는 경우에만)<br>3. 채팅방 나가기 기능이 있다.<br>4. 새로운 메시지가 올 경우 각 방 별로 데이터가 갱신된다.<br>5. 각 방에 대한 마지막 메시지와 메시지 전송한 사람의 ID 또는 닉네임을 볼 수 있다.<br>6. 각 방에 새로운 메시지가 오면 시간에 따라 최상단으로 이동한다.<br>7. 각 방에 새로운 메시지가 오면 읽지 않은 메시지 숫자와 알림이 표시된다.|
 
 <h3> 3. 프로젝트 기간 (Project Work) </h3>
-Date: 2022-12-13 ~ 2022-12-29   
-Team members: 4 people   
-Source Code Github Link: https://github.com/KimParkSam/1st_Project   
+Date: 2022-12-13 ~ 2022-12-29<br />
+Team members: 4 people<br />
+Source Code Github Link: https://github.com/KimParkSam/1st_Project
 
 <h3> 프로젝트 팀원 </h3>
 
@@ -32,8 +32,8 @@ Source Code Github Link: https://github.com/KimParkSam/1st_Project
 |<a href="https://github.com/mcthemox"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a> |<a href="https://github.com/doch2130"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>|<a href="https://github.com/AHRUMPARK"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>|<a href="https://github.com/mijeongkim3"><img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/></a>| 
 
 <h3> 4. 프로젝트 개선 기간 (Project Additional Work) </h3>
-Date: 2022-12-30 ~ 2023-01-20   
-Members: 1 people   
+Date: 2022-12-30 ~ 2023-01-20<br />
+Members: 1 people<br />
 Source Code Github Link: https://github.com/doch2130/1st_Project_SeSAC_KSP
 
 <h3> 프로젝트 팀원 </h3>

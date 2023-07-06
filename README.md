@@ -1,4 +1,4 @@
-<h1> KSP (1st_Project_SeSAC_KSP) </h1>
+<h1> KSP (1st_Project_KSP) </h1>
 
 <h1> 프로젝트 소개 (Project Described) </h1>
 <h3> 1. 기획 의도 </h3>
